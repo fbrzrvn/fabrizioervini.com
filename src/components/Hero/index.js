@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Video from '../../video/video.mp4';
+import Button from '../Button';
 import {
   HeroContainer,
   HeroBg,
@@ -7,9 +8,18 @@ import {
   HeroContent,
   HeroH1,
   HeroP,
-  HeroBtn, } from './HeroElements';
+  HeroBtn,
+  ArrowForward,
+  ArrowRight, } from './HeroElements';
 
 const Hero = () => {
+
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  }
+
   return (
     <>
       <HeroContainer>
@@ -23,6 +33,18 @@ const Hero = () => {
             I love create custom and modern website.
           </HeroP>
           <HeroBtn>
+            <Button to="portfolio"
+              onMouseEnter={onHover}
+              onMouseLeave={onHover}
+              primary="true"
+              dark="true"
+              smooth={true}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+            View Portfolio {hover ? <ArrowForward /> : <ArrowRight />}
+            </Button>
           </HeroBtn>
         </HeroContent>
       </HeroContainer>
