@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '../Button';
-import Svg1 from '../../images/react.svg';
-import Svg2 from '../../images/mobile.svg';
-import Svg3 from '../../images/plant.svg';
+import Svg1 from '../../assets/images/react.svg';
+import Svg2 from '../../assets/images/mobile.svg';
+import Svg3 from '../../assets/images/plant.svg';
 import {
   PortfolioContainer,
   PortfolioH1,
