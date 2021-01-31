@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { animateScroll as scroll } from 'react-scroll';
 import { FaBars } from 'react-icons/fa';
 import Button from '../Button';
 import {
@@ -23,6 +24,10 @@ const Navbar = ({toggle}) => {
     }
   }
 
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', changeNavBg);
     return () => {
@@ -34,7 +39,7 @@ const Navbar = ({toggle}) => {
     <>
       <Nav scrollNav={scrollNav}>
         <NavContainer>
-          <NavLogo>faber</NavLogo>
+          <NavLogo to="home" onClick={toggleHome}>faber</NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
@@ -45,7 +50,7 @@ const Navbar = ({toggle}) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-80}
+                offset={80}
               >About</NavLink>
             </NavItem>
             <NavItem>
@@ -54,7 +59,7 @@ const Navbar = ({toggle}) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-80}
+                offset={80}
               >Portfolio</NavLink>
             </NavItem>
             <NavItem>
@@ -63,7 +68,7 @@ const Navbar = ({toggle}) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-80}
+                offset={80}
               >Blog</NavLink>
             </NavItem>
             <NavItem>
@@ -72,7 +77,7 @@ const Navbar = ({toggle}) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={-80}
+                offset={80}
               >Contact</NavLink>
             </NavItem>
           </NavMenu>

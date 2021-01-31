@@ -27,15 +27,18 @@ export const NavContainer = styled.div`
   z-index: 1;
 `;
 
-export const NavLogo = styled.p`
+export const NavLogo = styled(LinkScroll)`
   color: #fff;
   display: flex;
   justify-self: flex-start;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  text-decoration: none;
   margin-left: 24px;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const MobileIcon = styled.div`
