@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../Button';
-import Svg1 from '../../images/react.svg';
-import Svg2 from '../../images/mobile.svg';
-import Svg3 from '../../images/plant.svg';
+import BtnLink from '../BtnLink';
+import Svg1 from '../../assets/images/react.svg';
+import Svg2 from '../../assets/images/mobile.svg';
+import Svg3 from '../../assets/images/plant.svg';
 import {
   PortfolioContainer,
   PortfolioH1,
@@ -23,10 +23,10 @@ const Portfolio = () => {
           <PortfolioH2>Work 1</PortfolioH2>
           <PortfolioP>Work Description</PortfolioP>
           <BtnWrap>
-            <Button to="#"
+            <BtnLink to="/web1"
               primary="true"
               dark="true"
-            >View Website</Button>
+            >View Website</BtnLink>
           </BtnWrap>
         </PortfolioCard>
         <PortfolioCard>
@@ -34,10 +34,10 @@ const Portfolio = () => {
           <PortfolioH2>Work 2</PortfolioH2>
           <PortfolioP>Work Description</PortfolioP>
           <BtnWrap>
-            <Button to="#"
+            <BtnLink to="/web2"
               primary="true"
               dark="true"
-            >View Website</Button>
+            >View Website</BtnLink>
           </BtnWrap>
         </PortfolioCard>
         <PortfolioCard>
@@ -45,10 +45,10 @@ const Portfolio = () => {
           <PortfolioH2>Work 3</PortfolioH2>
           <PortfolioP>Work Description</PortfolioP>
           <BtnWrap>
-            <Button to="#"
+            <BtnLink to="/web3"
               primary="true"
               dark="true"
-            >View Website</Button>
+            >View Website</BtnLink>
           </BtnWrap>
         </PortfolioCard>
       </PortfolioWrapper>

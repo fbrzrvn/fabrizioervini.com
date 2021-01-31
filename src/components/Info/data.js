@@ -1,6 +1,6 @@
-import Svg1 from '../../images/profile.svg';
-import Svg2 from '../../images/blog.svg';
-import Svg3 from '../../images/mail.svg';
+import Svg1 from '../../assets/images/profile.svg';
+import Svg2 from '../../assets/images/blog.svg';
+import Svg3 from '../../assets/images/mail.svg';
 
 export const homeObjOne = {
   id: 'about',
@@ -14,7 +14,7 @@ export const homeObjOne = {
     Interessed in the entire frontend spectrum and working in ambitious projects with postive people.
     `,
   buttonLabel: 'Find Out More',
-  goToLink: '/faber',
+  goToLink: '/about',
   imgStart: false,
   img: Svg1,
   alt: 'Profile',

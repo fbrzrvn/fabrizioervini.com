@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button';
+import BtnLink from '../BtnLink';
 import {
   SidebarContainer,
   Icon,
@@ -23,11 +23,10 @@ const Sidebar = ({isOpen, toggle}) => {
           <SidebarLink to="contact" onClick={toggle}>Contact</SidebarLink>
         </SidebarMenu>
         <SidebarBtn>
-          <Button to="contact"
+          <BtnLink to="/contact"
             dark="true"
             primary="true"
-            big="false"
-          >Contact</Button>
+          >Contact Me</BtnLink>
         </SidebarBtn>
       </SidebarWrapper>
     </SidebarContainer>
