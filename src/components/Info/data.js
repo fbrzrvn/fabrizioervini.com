@@ -7,7 +7,7 @@ export const homeObjOne = {
   lightBg: false,
   lightText: true,
   ligthTextDescr: true,
-  topLine: 'Web designer and frontend developer',
+  topLine: 'frontend developer',
   headline: 'I design and build custom website',
   description:
     `Well organised person, problem solver, independent, employee with high attetion to details.

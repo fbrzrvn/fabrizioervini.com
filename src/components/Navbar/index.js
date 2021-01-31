@@ -50,7 +50,7 @@ const Navbar = ({toggle}) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={80}
+                offset={-80}
               >About</NavLink>
             </NavItem>
             <NavItem>
@@ -59,7 +59,7 @@ const Navbar = ({toggle}) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={80}
+                offset={-80}
               >Portfolio</NavLink>
             </NavItem>
             <NavItem>
@@ -68,7 +68,7 @@ const Navbar = ({toggle}) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={80}
+                offset={-80}
               >Blog</NavLink>
             </NavItem>
             <NavItem>
@@ -77,7 +77,7 @@ const Navbar = ({toggle}) => {
                 duration={500}
                 spy={true}
                 exact="true"
-                offset={80}
+                offset={-80}
               >Contact</NavLink>
             </NavItem>
           </NavMenu>
@@ -85,8 +85,7 @@ const Navbar = ({toggle}) => {
             <Button to="contact"
               primary="true"
               dark="true"
-              big="false"
-            >Contact</Button>
+            >Contact Me</Button>
           </NavBtn>
         </NavContainer>
       </Nav>

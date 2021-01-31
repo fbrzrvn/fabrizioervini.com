@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const PortfolioContainer = styled.div`
   background: #fff;
-  min-height: 800px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 100px 0;
   @media screen and (max-width: 768px) {
     min-height: 1100px;
-    padding: 100px 0;
   }
   @media screen and (max-width: 480px) {
     min-height: 1300px;
