@@ -14,7 +14,7 @@ export const homeObjOne = {
     Interessed in the entire frontend spectrum and working in ambitious projects with postive people.
     `,
   buttonLabel: 'Find Out More',
-  goToLink: '/faber',
+  goToLink: '/about',
   imgStart: false,
   img: Svg1,
   alt: 'Profile',

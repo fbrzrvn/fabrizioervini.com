@@ -94,20 +94,3 @@ export const NavBtn = styled.div`
     display: none;
   }
 `;
-
-export const NavBtnLink = styled(LinkRouter)`
-  border-radius: 50px;
-  background: #61dafb;
-  color: #282c34;
-  padding: 10px 22px;
-  white-space: nowrap;
-  font-size: 1rem;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer;
-  trasition: all .2s ease-in-out;
-  &:hover {
-    trasition: all .2s ease-in-out;
-    background: #fff;
-  }
-`;
