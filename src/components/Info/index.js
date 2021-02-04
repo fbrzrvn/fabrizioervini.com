@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button';
+import BtnLink from '../BtnLink';
 import {
   InfoContainer,
   InfoWrapper,
@@ -40,11 +40,11 @@ const Info = ({
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button
+                  <BtnLink
                     to={goToLink}
                     primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
-                  >{buttonLabel}</Button>
+                  >{buttonLabel}</BtnLink>
                 </BtnWrap>
               </TextWrapper>
             </Column1>

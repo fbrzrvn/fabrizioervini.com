@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link as LinkScroll} from 'react-scroll';
+import { Link as LinkRouter } from 'react-router-dom';
 
 export const Nav = styled.nav`
   background: ${({scrollNav}) => (scrollNav ? '#000' : 'transparent')};
@@ -27,13 +28,14 @@ export const NavContainer = styled.div`
   z-index: 1;
 `;
 
-export const NavLogo = styled(LinkScroll)`
+export const NavLogo = styled(LinkRouter)`
   color: #fff;
   display: flex;
   justify-self: flex-start;
   align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
+  text-decoration: none;
   margin-left: 24px;
   cursor: pointer;
 `;
