@@ -24,7 +24,7 @@ const Hero = () => {
     <>
       <HeroContainer id="home">
         <HeroBg>
-          <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
+          <VideoBg playsinline autoPlay loop muted src={Video} type="video/mp4" />
         </HeroBg>
         <HeroContent>
           <HeroH1>Hi! I'm faber.</HeroH1>
