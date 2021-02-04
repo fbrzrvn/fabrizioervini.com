@@ -23,7 +23,7 @@ const Portfolio = () => {
           <PortfolioH2>Work 1</PortfolioH2>
           <PortfolioP>Work Description</PortfolioP>
           <BtnWrap>
-            <BtnLink to="/web1"
+            <BtnLink to="#"
               primary="true"
               dark="true"
             >View Website</BtnLink>
@@ -34,7 +34,7 @@ const Portfolio = () => {
           <PortfolioH2>Work 2</PortfolioH2>
           <PortfolioP>Work Description</PortfolioP>
           <BtnWrap>
-            <BtnLink to="/web2"
+            <BtnLink to="#"
               primary="true"
               dark="true"
             >View Website</BtnLink>
@@ -45,7 +45,7 @@ const Portfolio = () => {
           <PortfolioH2>Work 3</PortfolioH2>
           <PortfolioP>Work Description</PortfolioP>
           <BtnWrap>
-            <BtnLink to="/web3"
+            <BtnLink to="#"
               primary="true"
               dark="true"
             >View Website</BtnLink>

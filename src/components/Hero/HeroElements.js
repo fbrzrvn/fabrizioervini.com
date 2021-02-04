@@ -84,10 +84,12 @@ export const Button = styled(LinkScroll)`
   border-radius: 50px;
   background: #61dafb;
   color: #282c34;
-  padding: 10px 22px;
+  padding: 12px 30px;
   white-space: nowrap;
   font-size: 1rem;
   text-decoration: none;
+  display: flex;
+  align-items: center;
   outline: none;
   cursor: pointer;
   trasition: all .2s ease-in-out;

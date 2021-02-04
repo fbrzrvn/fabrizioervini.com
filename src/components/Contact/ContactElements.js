@@ -98,9 +98,9 @@ export const FormTextarea = styled.textarea`
 
 export const FormBtn = styled.button`
   background: #61dafb;
-  padding: 16px 0;
+  padding: 12px 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 50px;
   color: #fff;
   font-size: 20px;
   outline: none;
