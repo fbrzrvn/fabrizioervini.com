@@ -13,6 +13,8 @@ export const Container = styled.div`
 
 export const BlogWrapper = styled.div`
   height: 100%;
+  width: 90vw;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
