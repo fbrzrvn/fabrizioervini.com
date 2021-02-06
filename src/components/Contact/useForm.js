@@ -24,13 +24,12 @@ const useForm = (callback, validateForm) => {
     e.preventDefault();
 
     setErros(validateForm(values));
-    setIsSubmitting(true);
 
     if (!values.user_name || !values.user_email || !values.user_message) return;
 
     emailjs.sendForm('contact_service', 'contact_form', e.target, process.env.REACT_APP_EMAILJS_KEY)
-    .then((result) => {
-      console.log(result.text);
+    .then(() => {
+      setIsSubmitting(true);
     },
     (error) => {
       alert(error.text);
