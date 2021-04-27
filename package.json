@@ -1,26 +1,69 @@
 {
-  "name": "test-deploy",
-  "version": "0.1.0",
+  "name": "fabrizioervini.com",
+  "version": "1.0.0",
+  "description": "fabrizioervini.com Personal Website",
+  "keywords": [
+    "fabrizioervini.com",
+    "Personal Website"
+  ],
   "private": true,
+  "license": "MIT",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.2",
-    "emailjs-com": "^2.6.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.1.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "react-scroll": "^1.8.1",
-    "styled-components": "^5.2.1",
-    "web-vitals": "^0.2.4"
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/eslint-parser": "^7.13.10",
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "@html-eslint/eslint-plugin": "^0.8.0",
+    "@html-eslint/parser": "^0.8.0",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-babel": "^0.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-compat": "^3.9.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.2.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-markdown": "^2.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^3.10.1",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:watch": "react-scripts test --watchAll",
+    "test:ci:all": "cross-env CI=true react-scripts test --all --env=jsdom",
+    "test:related": "cross-env CI=true react-scripts test --bail --findRelatedTests --env=jsdom",
+    "lint:js": "eslint . --ext .js",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:format": "prettier --write .",
+    "lint:format:check": "prettier --check .",
+    "prepare": "husky install",
+    "precommit": "lint-staged",
+    "prepush": "npm run lint:js && npm run lint:format:check && npm run test:ci:all"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +82,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fab-rvn/fabrizioervini.com.git"
   }
 }
