@@ -50,6 +50,7 @@ export const FooterCopy = styled.small`
   color: ${({ theme }) => theme.textSecondary};
   @media screen and (max-width: 820px) {
     order: 3;
+    text-align: center;
   }
 `;
 
@@ -61,6 +62,12 @@ export const FooterIcons = styled.div`
   @media screen and (max-width: 820px) {
     order: 2;
     margin-bottom: 16px;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 8px auto;
+  }
+  @media screen and (max-width: 304px) {
+    width: 100%;
   }
 `;
 
