@@ -28,6 +28,7 @@ export const SectionRow = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `"col1" "col2"` : `"col1 col1" "col2 col2"`};
+    display: block;
   }
 `;
 
@@ -51,8 +52,8 @@ export const TextWrapper = styled.div`
 
 export const TopLine = styled.p`
   color: ${({ theme }) => theme.primary};
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 18px;
+  line-height: 18px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -90,6 +91,7 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
   width: 100%;
-  margin-bottom: 10px;
+  border-radius: 50%;
+  filter: grayscale(25%);
   padding-right: 0;
 `;

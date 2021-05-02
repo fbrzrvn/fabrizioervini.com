@@ -1,11 +1,13 @@
+import ProfileImg from '../../assets/profile.jpeg';
+
 export const aboutSection = {
   id: 'about',
-  topLine: 'frontend developer',
-  headLine: 'I design and build custom website',
+  topLine: 'React specialist also confident with the MERN stack.',
+  headLine: 'I love develop modern websites and apps.',
   description:
-    'Well organised person, problem solver, independent, employee with high attetion to details. Interessed in the entire frontend spectrum and working in ambitious projects with postive people.',
+    'I’m always looking for new challenges and opportunities that can help me continue to become a better developer, and person overall. I have a passion for self-learning the latest techniques and tools. Improving each day to challenge my skills to become better at what I do.',
   imgStart: false,
-  img: '',
+  img: ProfileImg,
   alt: 'Profile',
 };
 
