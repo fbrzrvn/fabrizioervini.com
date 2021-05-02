@@ -1,23 +1,19 @@
+import TodoImg from '../../assets/todo.jpeg';
+import TrackerImg from '../../assets/tracker.png';
+
 export const works = [
   {
     id: 1,
-    title: 'Work 1',
-    description: 'my first work',
-    img: '',
-    link: '',
+    title: 'Todo app',
+    description: 'Todo app build with React, Redux, styled-components',
+    img: TodoImg,
+    link: 'https://frontendmaster-todo-app.netlify.app/',
   },
   {
     id: 2,
-    title: 'Work 2',
-    description: 'my second work',
-    img: '',
-    link: '',
-  },
-  {
-    id: 3,
-    title: 'Work 3',
-    description: 'my third work',
-    img: '',
-    link: '',
+    title: 'Expense Tracker App',
+    description: 'Expense tracker build using React, Context API, Material-UI',
+    img: TrackerImg,
+    link: 'https://loving-snyder-66f3f9.netlify.app/',
   },
 ];

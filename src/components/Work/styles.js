@@ -31,7 +31,6 @@ export const WorkWrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   grid-gap: 16px;
-  padding: 0 24px;
   margin: 0 auto;
   width: 100%;
   max-width: 1100px;
@@ -40,7 +39,6 @@ export const WorkWrapper = styled.div`
   }
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 0 20px;
   }
 `;
 
@@ -49,8 +47,6 @@ export const WorkCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
   cursor: pointer;
@@ -59,17 +55,42 @@ export const WorkCard = styled.div`
     transform: scale(1.05);
     transition: all 0.2 ease-in-out;
   }
+  @media screen and (max-width: 768px) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: 520px) {
+    flex-direction: column;
+  }
 `;
 
 export const WorkImg = styled.img`
-  height: 160px;
-  width: 160px;
+  height: 100%;
+  width: 100%;
   margin-bottom: 10px;
+  @media screen and (max-width: 768px) {
+    height: 100%;
+    width: 250px;
+    margin-bottom: 0;
+  }
+  @media screen and (max-width: 520px) {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+`;
+
+export const WorkInfo = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 16px 16px;
+  padding: 16px;
 `;
 
 export const WorkH2 = styled.h2`
   color: ${({ theme }) => theme.primary};
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
 `;
 
@@ -82,4 +103,25 @@ export const WorkP = styled.p`
 export const BtnWrap = styled.div`
   display: flex;
   justify-content: flex-start;
+`;
+
+export const BtnLink = styled.a`
+  color: #1c1e21;
+  background: #ebedf0;
+  border: 1px solid #d4d5d8;
+  border-radius: 50px;
+  font-size: 16px;
+  white-space: nowrap;
+  text-decoration: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    transition: all 200ms ease-in-out;
+    background: #e3e6e8;
+  }
 `;

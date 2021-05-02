@@ -1,12 +1,13 @@
 import React from 'react';
-import BtnLink from '../BtnLink';
 import { works } from './data';
 import {
+  BtnLink,
   WorkCard,
   WorkContainer,
   WorkH1,
   WorkH2,
   WorkImg,
+  WorkInfo,
   WorkP,
   WorkWrapper,
 } from './styles';
@@ -19,9 +20,13 @@ const Work = () => {
         {works.map(work => (
           <WorkCard key={work.id}>
             <WorkImg src={work.img} alt={work.title} />
-            <WorkH2>{work.title}</WorkH2>
-            <WorkP>{work.description}</WorkP>
-            <BtnLink to={work.link}>Visit Website</BtnLink>
+            <WorkInfo>
+              <WorkH2>{work.title}</WorkH2>
+              <WorkP>{work.description}</WorkP>
+              <BtnLink href={work.link} target="blank">
+                Visit Website
+              </BtnLink>
+            </WorkInfo>
           </WorkCard>
         ))}
       </WorkWrapper>
