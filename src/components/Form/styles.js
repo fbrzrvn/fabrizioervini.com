@@ -6,16 +6,13 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 110px);
-  @media screen and (max-width: 768px) {
-    height: calc(100vh - 170px);
-  }
+  min-height: calc(100vh - 190px);
 `;
 
 export const FormWrapper = styled.div`
   height: 100%;
   width: 100vw;
-  margin: auto;
+  margin: 32px auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +22,7 @@ export const FormWrapper = styled.div`
 `;
 
 export const Icon = styled(LinkRouter)`
-  padding: 32px;
+  padding: 32px 32px 16px;
   text-decoration: none;
   color: ${({ theme }) => theme.text};
   font-weight: 700;
@@ -89,6 +86,7 @@ export const FormInput = styled.input`
   margin-bottom: 24px;
   border: none;
   border-radius: 4px;
+  border: ${({ error }) => error && '1px solid #d32f2f'};
 `;
 
 export const FormTextarea = styled.textarea`
@@ -97,6 +95,7 @@ export const FormTextarea = styled.textarea`
   border: none;
   border-radius: 4px;
   font-family: inherit;
+  border: ${({ error }) => error && '1px solid #d32f2f'};
 `;
 
 export const FormBtn = styled.button`
@@ -115,17 +114,25 @@ export const FormBtn = styled.button`
   }
 `;
 export const ErrorMsg = styled.p`
-  color: #f80008;
-  font-weight: 300;
+  color: #f44336;
+  background: #ffcdd2;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
   margin-top: -16px;
   margin-bottom: 24px;
+  padding: 16px;
   &.last {
     margin-top: -24px;
     margin-bottom: 32px;
   }
 `;
-
-export const Img = styled.img`
-  width: 250px;
-  margin: 32px auto 24px;
+export const SuccessMsg = styled.p`
+  color: #4caf50;
+  background: #c8e6c9;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 16px;
 `;
