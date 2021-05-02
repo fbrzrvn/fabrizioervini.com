@@ -54,7 +54,7 @@ export const SidebarLink = styled(LinkScroll)`
   cursor: pointer;
   transition: all 300ms ease-in-out;
   &:hover {
-    color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.navbarLink};
     transition: all 300ms ease-in-out;
   }
 `;
