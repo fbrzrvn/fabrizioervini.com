@@ -3,7 +3,7 @@ import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
 
 export const HeroContainer = styled.div`
-  background: ${({ theme }) => theme.body};
+  background: ${({ theme }) => theme.footer};
   height: 100vh;
   display: flex;
   align-items: center;

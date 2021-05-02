@@ -21,10 +21,12 @@ const Hero = () => {
       <HeroContent>
         <HeroH1>Hi! I&apos;m faber.</HeroH1>
         <HeroP>
-          Web designer and developer based in Barcelona, ES. Well organized
-          person, problem solver, with high attention to details. Interessed in
-          the entire frontend spectrum and working in ambitious projects with
-          postive people.
+          Born and raised in Italy, after travel around the world I finally
+          settled in the sunny Barcelona, Spain.
+        </HeroP>
+        <HeroP>
+          Well organized person, problem solver, with high attention to details.
+          Looking forward to work in ambitious projects with positive people.
         </HeroP>
         <HeroBtn>
           <Button
