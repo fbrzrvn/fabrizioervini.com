@@ -1,7 +1,7 @@
 import React from 'react';
 import BtnLink from '../BtnLink';
+import { works } from './data';
 import {
-  BtnWrap,
   WorkCard,
   WorkContainer,
   WorkH1,
@@ -16,26 +16,14 @@ const Work = () => {
     <WorkContainer id="work">
       <WorkH1>Some of my lastest works</WorkH1>
       <WorkWrapper>
-        <WorkCard>
-          <WorkImg src="" alt="work1" />
-          <WorkH2>Work 1</WorkH2>
-          <WorkP>Work Description</WorkP>
-          <BtnLink to="">Visit Website</BtnLink>
-        </WorkCard>
-        <WorkCard>
-          <WorkImg src="" alt="work2" />
-          <WorkH2>Work 2</WorkH2>
-          <WorkP>Work Description</WorkP>
-          <BtnLink to="">Visit Website</BtnLink>
-        </WorkCard>
-        <WorkCard>
-          <WorkImg src="" alt="work3" />
-          <WorkH2>Work 3</WorkH2>
-          <WorkP>Work Description</WorkP>
-          <BtnWrap>
-            <BtnLink to="">Visit Website</BtnLink>
-          </BtnWrap>
-        </WorkCard>
+        {works.map(work => (
+          <WorkCard key={work.id}>
+            <WorkImg src={work.img} alt={work.title} />
+            <WorkH2>{work.title}</WorkH2>
+            <WorkP>{work.description}</WorkP>
+            <BtnLink to={work.link}>Visit Website</BtnLink>
+          </WorkCard>
+        ))}
       </WorkWrapper>
     </WorkContainer>
   );
