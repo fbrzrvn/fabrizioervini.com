@@ -1,7 +1,8 @@
 import { func } from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { animateScroll as scroll } from 'react-scroll';
+import useScroll from '../../utils/useScroll';
 import {
   MobileIcon,
   Nav,
@@ -13,26 +14,10 @@ import {
 } from './styles';
 
 const Navbar = ({ toggleNavbar }) => {
-  const [scrollNav, setScrollNav] = useState(false);
-
-  const changeNavBg = () => {
-    if (window.scrollY >= 80) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-  };
-
+  const scrollNav = useScroll();
   const toggleHome = () => {
     scroll.scrollToTop();
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', changeNavBg);
-    return () => {
-      window.removeEventListener('scroll', changeNavBg);
-    };
-  }, []);
 
   return (
     <Nav scrollNav={scrollNav}>

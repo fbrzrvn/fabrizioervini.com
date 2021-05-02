@@ -1,16 +1,14 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Form from '../components/Form';
-import { Nav, NavContainer, NavLogo } from '../components/Navbar/styles';
+import Header from '../components/Header';
+import ScrollToTop from '../utils/ScrollToTop';
 
 const ContactPage = () => {
   return (
     <>
-      <Nav>
-        <NavContainer>
-          <NavLogo to="/">faber</NavLogo>
-        </NavContainer>
-      </Nav>
+      <ScrollToTop />
+      <Header />
       <Form />
       <Footer />
     </>
