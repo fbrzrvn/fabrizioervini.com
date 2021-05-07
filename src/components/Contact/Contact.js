@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <ContactContainer id="contact">
       <ContactContent>
-        <ContactH1>Get in touch</ContactH1>
+        <ContactH1>Have a project in mind?</ContactH1>
         <ContactP>
           I&apos;m currently available for freelance work. If you have a project
           that you want to get started or just fancy saying hey, get in touch.

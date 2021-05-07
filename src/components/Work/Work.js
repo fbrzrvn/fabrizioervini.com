@@ -15,7 +15,7 @@ import {
 const Work = () => {
   return (
     <WorkContainer id="work">
-      <WorkH1>Some of my lastest works</WorkH1>
+      <WorkH1>Some of my latest works</WorkH1>
       <WorkWrapper>
         {works.map(work => (
           <WorkCard key={work.id}>
