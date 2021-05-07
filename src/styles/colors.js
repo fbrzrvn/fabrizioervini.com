@@ -11,7 +11,7 @@ export const COLOR = {
   darkBackground: '#18191A',
   darkNavbar: '#242526',
   darkNavbarLink: '#BA8FFF',
-  darkPrimary: '#B97CFD',
+  darkPrimary: '#a162e8',
   darkText: '#F5F6F7',
   darkTextSecondary: '#DADDE1',
   darkFooter: '#1C1E21',
@@ -23,4 +23,18 @@ export const COLOR = {
   primaryLight: '#B97CFD',
   primaryLighter: '#CC8FFC',
   primaryLightest: '#FCF2FF',
+
+  success300: '#c8e6c9',
+  success500: '#4caf50',
+  danger300: '#ffcdd2',
+  danger500: '#f44336',
+  danger700: '#d32f2f',
+
+  linearGradient: `linear-gradient(
+    271deg,
+    #a0e9ff 30%,
+    #a162e8 50%,
+    #f093b0 70%,
+    #edca85 94%
+  )`,
 };

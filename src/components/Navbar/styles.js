@@ -1,6 +1,7 @@
 import { Link as LinkRouter } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
+import { COLOR } from '../../styles/colors';
 
 export const Nav = styled.nav`
   background: ${({ scrollNav, theme }) =>
@@ -77,13 +78,18 @@ export const NavLink = styled(LinkScroll)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
   &:hover {
     color: ${({ theme }) => theme.navbarLink};
-    transition: all 300ms ease-in-out;
   }
   &.active {
-    border-bottom: 3px solid ${({ theme }) => theme.navbarLink};
+    border-bottom: 3px solid transparent;
+    background: ${COLOR.linearGradient};
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 3px;
+    background-clip: border-box;
+    background-origin: border-box;
+    -webkit-background-clip: border-box;
   }
 `;
 

@@ -1,6 +1,7 @@
 import { AiOutlineArrowRight, AiOutlineRight } from 'react-icons/ai';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
+import { COLOR } from '../../styles/colors';
 
 export const HeroContainer = styled.div`
   background: ${({ theme }) => theme.footer};
@@ -57,11 +58,14 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroH1 = styled.h1`
-  color: ${({ theme }) => theme.primary};
+  background: ${COLOR.linearGradient};
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 48px;
   text-align: center;
   margin-bottom: 24px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 480px) {
     font-size: 32px;
   }
 `;
@@ -72,7 +76,7 @@ export const HeroP = styled.p`
   text-align: center;
   max-width: 600px;
   @media screen and (max-width: 480px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 

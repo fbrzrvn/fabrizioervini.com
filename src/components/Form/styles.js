@@ -1,5 +1,6 @@
 import { Link as LinkRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import { COLOR } from '../../styles/colors';
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.body};
@@ -43,12 +44,18 @@ export const FormContent = styled.div`
 `;
 
 export const FormH1 = styled.h1`
-  color: ${({ theme }) => theme.primary};
-  font-size: 32px;
+  background: ${COLOR.linearGradient};
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 48px;
   font-weight: 700;
   text-align: center;
   max-width: 80%;
   margin: 0 auto;
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
 `;
 
 export const FormP = styled.p`
@@ -86,7 +93,7 @@ export const FormInput = styled.input`
   margin-bottom: 24px;
   border: none;
   border-radius: 4px;
-  border: ${({ error }) => error && '1px solid #d32f2f'};
+  border: ${({ error }) => error && `1px solid ${COLOR.danger700}`};
 `;
 
 export const FormTextarea = styled.textarea`
@@ -95,27 +102,28 @@ export const FormTextarea = styled.textarea`
   border: none;
   border-radius: 4px;
   font-family: inherit;
-  border: ${({ error }) => error && '1px solid #d32f2f'};
+  border: ${({ error }) => error && `1px solid ${COLOR.danger700}`};
 `;
 
 export const FormBtn = styled.button`
-  background: #ebedf0;
-  padding: 12px 0;
-  border: none;
   border-radius: 50px;
+  border: 1px solid #d4d5d8;
+  background: #ebedf0;
   color: #1c1e21;
+  padding: 12px 30px;
+  white-space: nowrap;
   font-size: 20px;
   outline: none;
   cursor: pointer;
-  transition: all 0.2 ease-out;
+  transition: all 300ms ease-in-out;
   &:hover {
+    transition: all 300ms ease-in-out;
     background: #e3e6e8;
-    transition: all 0.2 ease-out;
   }
 `;
 export const ErrorMsg = styled.p`
-  color: #f44336;
-  background: #ffcdd2;
+  color: ${COLOR.danger500};
+  background: ${COLOR.danger300};
   border-radius: 4px;
   font-size: 0.8rem;
   font-weight: 500;
@@ -128,8 +136,8 @@ export const ErrorMsg = styled.p`
   }
 `;
 export const SuccessMsg = styled.p`
-  color: #4caf50;
-  background: #c8e6c9;
+  color: ${COLOR.success500};
+  background: ${COLOR.success300};
   font-size: 1.2rem;
   font-weight: 400;
   text-align: center;

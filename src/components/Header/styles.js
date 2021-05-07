@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const Nav = styled.nav`
   background: ${({ scrollNav, theme }) =>
     scrollNav ? theme.navbarBg : 'transparent'};
+  background: ${({ theme }) => theme.navbarBg};
   height: 80px;
   display: flex;
   justify-content: center;

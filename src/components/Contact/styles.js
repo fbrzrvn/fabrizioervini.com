@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLOR } from '../../styles/colors';
 
 export const ContactContainer = styled.div`
   background: ${({ theme }) => theme.navbarBg};
@@ -55,11 +56,14 @@ export const ContactContent = styled.div`
 `;
 
 export const ContactH1 = styled.h1`
-  color: ${({ theme }) => theme.primary};
+  background: ${COLOR.linearGradient};
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 48px;
   text-align: center;
   margin-bottom: 24px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 480px) {
     font-size: 32px;
   }
 `;

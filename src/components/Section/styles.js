@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLOR } from '../../styles/colors';
 
 export const SectionContainer = styled.div`
   color: ${({ theme }) => theme.text};
@@ -48,6 +49,9 @@ export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 0;
+  }
 `;
 
 export const TopLine = styled.p`
@@ -65,7 +69,10 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ theme }) => theme.text};
+  background: ${COLOR.linearGradient};
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   @media screen and (max-width: 480px) {
     font-size: 32px;
   }
@@ -94,4 +101,9 @@ export const Img = styled.img`
   border-radius: 50%;
   filter: grayscale(25%);
   padding-right: 0;
+  @media screen and (max-width: 768px) {
+    width: 60%;
+    display: block;
+    margin: auto;
+  }
 `;
