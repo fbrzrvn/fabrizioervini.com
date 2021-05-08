@@ -102,7 +102,7 @@ export const FormTextarea = styled.textarea`
   border: none;
   border-radius: 4px;
   font-family: inherit;
-  border: ${({ error }) => error && `1px solid ${COLOR.danger700}`};
+  border: ${({ error }) => error && `2px solid ${COLOR.danger700}`};
 `;
 
 export const FormBtn = styled.button`
@@ -122,10 +122,10 @@ export const FormBtn = styled.button`
   }
 `;
 export const ErrorMsg = styled.p`
-  color: ${COLOR.danger500};
-  background: ${COLOR.danger300};
+  color: ${COLOR.danger900};
+  background: ${COLOR.danger100};
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 500;
   margin-top: -16px;
   margin-bottom: 24px;
@@ -136,11 +136,12 @@ export const ErrorMsg = styled.p`
   }
 `;
 export const SuccessMsg = styled.p`
-  color: ${COLOR.success500};
-  background: ${COLOR.success300};
+  color: ${COLOR.success900};
+  background: ${COLOR.success100};
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
+  margin-top: -32px;
   margin-bottom: 24px;
   padding: 16px;
 `;

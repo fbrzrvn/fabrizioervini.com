@@ -20,6 +20,7 @@ const useForm = validateForm => {
       ...values,
       [name]: value,
     });
+    setErrors(validateForm(values));
   };
 
   const handleSubmit = e => {

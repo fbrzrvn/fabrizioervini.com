@@ -24,11 +24,14 @@ export const COLOR = {
   primaryLighter: '#CC8FFC',
   primaryLightest: '#FCF2FF',
 
-  success300: '#c8e6c9',
+  success100: '#c8e6c9',
   success500: '#4caf50',
-  danger300: '#ffcdd2',
+  success700: '#388e3c',
+  success900: '#1b5e20',
+  danger100: '#ffcdd2',
   danger500: '#f44336',
   danger700: '#d32f2f',
+  danger900: '#b71c1c',
 
   linearGradient: `linear-gradient(
     271deg,

@@ -40,6 +40,7 @@ const Form = () => {
               placeholder="Enter your name"
               value={values.name}
               onChange={handleChange}
+              onBlur={handleChange}
               error={errors.name}
             />
             {errors.name && <ErrorMsg>{errors.name}</ErrorMsg>}
@@ -49,6 +50,7 @@ const Form = () => {
               placeholder="Enter your email"
               values={values.email}
               onChange={handleChange}
+              onBlur={handleChange}
               error={errors.email}
             />
             {errors.email && <ErrorMsg>{errors.email}</ErrorMsg>}
@@ -60,6 +62,7 @@ const Form = () => {
               cols={5}
               value={values.message}
               onChange={handleChange}
+              onBlur={handleChange}
               error={errors.message}
             />
             {errors.message && (
