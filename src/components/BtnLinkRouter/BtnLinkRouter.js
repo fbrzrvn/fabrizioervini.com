@@ -1,7 +1,7 @@
 import { Link as LinkRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-const BtnLink = styled(LinkRouter)`
+const BtnLinkRouter = styled(LinkRouter)`
   color: #1c1e21;
   background: #ebedf0;
   border: 1px solid #d4d5d8;
@@ -22,4 +22,4 @@ const BtnLink = styled(LinkRouter)`
   }
 `;
 
-export default BtnLink;
+export default BtnLinkRouter;

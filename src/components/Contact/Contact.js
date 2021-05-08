@@ -1,5 +1,5 @@
 import React from 'react';
-import BtnLink from '../BtnLink';
+import BtnLinkRouter from '../BtnLinkRouter';
 import {
   ContactBtn,
   ContactContainer,
@@ -18,7 +18,7 @@ const Contact = () => {
           that you want to get started or just fancy saying hey, get in touch.
         </ContactP>
         <ContactBtn>
-          <BtnLink to="/contact">Contact Me</BtnLink>
+          <BtnLinkRouter to="/contact">Contact Me</BtnLinkRouter>
         </ContactBtn>
       </ContactContent>
     </ContactContainer>
