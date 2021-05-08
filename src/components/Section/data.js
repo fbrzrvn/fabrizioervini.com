@@ -1,4 +1,5 @@
 import ProfileImg from '../../assets/profile.jpeg';
+import Blog from '../../assets/undraw.svg';
 
 export const aboutSection = {
   id: 'about',
@@ -9,6 +10,7 @@ export const aboutSection = {
   imgStart: false,
   img: ProfileImg,
   alt: 'Profile',
+  isCircular: true,
 };
 
 export const blogSection = {
@@ -17,6 +19,7 @@ export const blogSection = {
   headLine: 'Check out my latest post',
   description: 'The Blog: Thoughts on life, work and everything in between.',
   imgStart: true,
-  img: '',
+  img: Blog,
   alt: 'Blog',
+  isCircular: false,
 };

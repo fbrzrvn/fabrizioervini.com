@@ -98,7 +98,7 @@ export const ImgWrap = styled.div`
 
 export const Img = styled.img`
   width: 100%;
-  border-radius: 50%;
+  border-radius: ${({ isCircular }) => (isCircular ? '50%' : '')};
   filter: grayscale(25%);
   padding-right: 0;
   @media screen and (max-width: 768px) {

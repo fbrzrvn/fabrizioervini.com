@@ -22,6 +22,7 @@ const Section = ({
   description,
   img,
   altImg,
+  isCircular,
 }) => {
   return (
     <SectionContainer id={id}>
@@ -36,7 +37,7 @@ const Section = ({
           </Column1>
           <Column2>
             <ImgWrap>
-              <Img src={img} alt={altImg} />
+              <Img src={img} alt={altImg} isCircular={isCircular} />
             </ImgWrap>
           </Column2>
         </SectionRow>
@@ -53,6 +54,7 @@ Section.propTypes = {
   description: string.isRequired,
   img: string,
   altImg: string,
+  isCircular: bool.isRequired,
 };
 
 Section.defaultProps = {
