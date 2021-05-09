@@ -5,19 +5,23 @@ export const SectionContainer = styled.div`
   color: ${({ theme }) => theme.text};
   background: ${({ theme }) => theme.body};
   @media screen and (max-width: 768px) {
-    padding: 100px 0;
+    padding: 50px 0;
   }
 `;
 
 export const SectionWrapper = styled.div`
   display: grid;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
   z-index: 1;
+  @media screen and (max-width: 768px) {
+    min-height: 800px;
+  }
 `;
 
 export const SectionRow = styled.div`
