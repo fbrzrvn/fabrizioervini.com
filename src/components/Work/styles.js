@@ -92,9 +92,8 @@ export const BtnWrap = styled.div`
 `;
 
 export const BtnLink = styled.a`
-  color: #1c1e21;
-  background: #ebedf0;
-  border: 1px solid #d4d5d8;
+  color: ${COLOR.btnPrimaryColor};
+  background: ${COLOR.btnPrimary};
   border-radius: 50px;
   font-size: 16px;
   white-space: nowrap;
@@ -108,7 +107,7 @@ export const BtnLink = styled.a`
   cursor: pointer;
   transition: all 200ms ease-in-out;
   &:hover {
+    background: ${COLOR.btnPrimaryHover};
     transition: all 200ms ease-in-out;
-    background: #e3e6e8;
   }
 `;

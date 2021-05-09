@@ -107,18 +107,19 @@ export const FormTextarea = styled.textarea`
 
 export const FormBtn = styled.button`
   border-radius: 50px;
-  border: 1px solid #d4d5d8;
-  background: #ebedf0;
-  color: #1c1e21;
+  background: ${COLOR.btnSecondary};
+  color: ${COLOR.btnSecondaryColor};
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   padding: 12px 30px;
   white-space: nowrap;
   font-size: 20px;
+  border: none;
   outline: none;
   cursor: pointer;
   transition: all 300ms ease-in-out;
   &:hover {
+    background: ${COLOR.btnSecondaryHover};
     transition: all 300ms ease-in-out;
-    background: #e3e6e8;
   }
 `;
 export const ErrorMsg = styled.p`
