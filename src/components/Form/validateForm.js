@@ -3,9 +3,7 @@ const validateForm = values => {
 
   if (!values.name.trim()) {
     errors.name = 'Please enter your name.';
-  } else if (
-    !/^[A-Za-z]([-']?[a-z]+)*( [A-Za-z]([-']?[a-z]+)*)+$/.test(values.name)
-  ) {
+  } else if (!/^[A-Za-z\s]{3,15}$/.test(values.name)) {
     errors.name = 'Please enter a valid name.';
   }
 
