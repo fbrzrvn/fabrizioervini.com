@@ -1,5 +1,5 @@
+import TrackerImg from '../../assets/expense-tracker.png';
 import TodoImg from '../../assets/todo.jpeg';
-import TrackerImg from '../../assets/tracker.png';
 
 export const works = [
   {
