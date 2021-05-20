@@ -93,7 +93,16 @@ export const FormInput = styled.input`
   margin-bottom: 24px;
   border: none;
   border-radius: 4px;
-  border: ${({ error }) => error && `1px solid ${COLOR.danger700}`};
+  border: ${({ error }) => error && `2px solid ${COLOR.danger700}`};
+  outline: none;
+  &:active,
+  &:focus {
+    border-radius: 4px;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: ${COLOR.linearGradient};
+  }
 `;
 
 export const FormTextarea = styled.textarea`
@@ -103,6 +112,15 @@ export const FormTextarea = styled.textarea`
   border-radius: 4px;
   font-family: inherit;
   border: ${({ error }) => error && `2px solid ${COLOR.danger700}`};
+  outline: none;
+  &:active,
+  &:focus {
+    border-radius: 4px;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: ${COLOR.linearGradient};
+  }
 `;
 
 export const FormBtn = styled.button`
