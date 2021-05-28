@@ -1,3 +1,4 @@
+import ApollofyImg from '../../assets/apollofy.png';
 import TrackerImg from '../../assets/expense-tracker.png';
 import PunkApiImg from '../../assets/punkApi.png';
 import TodoImg from '../../assets/todo.jpeg';
@@ -26,5 +27,13 @@ export const works = [
       "Website that use the Punk API V2 to fetch Brewdog's beers and display it. Built using React, punk API V2, and Material UI.",
     img: PunkApiImg,
     link: 'https://punk-api.netlify.app',
+  },
+  {
+    id: 4,
+    title: 'Apollofy',
+    description:
+      'Music web platform inspired by Spotify and SoundCloud. Built with React, Redux, Tailwind, NodeJs, Express, MongoDB, FireBase and Cloudinary.',
+    img: ApollofyImg,
+    link: 'https://apollofy-music.netlify.app/',
   },
 ];
