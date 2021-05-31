@@ -103,7 +103,7 @@ export const BtnLink = styled.a`
   align-items: center;
   justify-content: center;
   padding: 12px 30px;
-  margin: 8px 0 16px;
+  margin-top: 8px;
   cursor: pointer;
   transition: all 200ms ease-in-out;
   &:hover {
