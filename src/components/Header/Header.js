@@ -1,4 +1,5 @@
 import React from 'react';
+import * as ROUTES from '../../routes';
 import useScroll from '../../utils/useScroll';
 import { Nav, NavContainer, NavLogo } from './styles';
 
@@ -8,7 +9,7 @@ const Header = () => {
   return (
     <Nav scrollNav={scrollNav}>
       <NavContainer>
-        <NavLogo to="/">faber</NavLogo>
+        <NavLogo to={ROUTES.HOME}>faber</NavLogo>
       </NavContainer>
     </Nav>
   );

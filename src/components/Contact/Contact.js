@@ -1,4 +1,5 @@
 import React from 'react';
+import * as ROUTES from '../../routes';
 import BtnLinkRouter from '../BtnLinkRouter';
 import {
   ContactBtn,
@@ -18,7 +19,7 @@ const Contact = () => {
           that you want to get started or just fancy saying hey, get in touch.
         </ContactP>
         <ContactBtn>
-          <BtnLinkRouter to="/contact">Contact Me</BtnLinkRouter>
+          <BtnLinkRouter to={ROUTES.CONTACT}>Contact Me</BtnLinkRouter>
         </ContactBtn>
       </ContactContent>
     </ContactContainer>

@@ -5,6 +5,7 @@ import {
   AiOutlineTwitter,
 } from 'react-icons/ai';
 import { animateScroll as scroll } from 'react-scroll';
+import * as ROUTES from '../../routes';
 import {
   FooterContainer,
   FooterCopy,
@@ -26,27 +27,27 @@ const Footer = () => {
       <FooterWrapper>
         <FooterLinks>
           <FooterLinksWrapper>
-            <FooterLogo to="/" onClick={toggleHome}>
+            <FooterLogo to={ROUTES.HOME} onClick={toggleHome}>
               faber
             </FooterLogo>
             <FooterCopy>© faber 2021 All rights are reserved.</FooterCopy>
             <FooterIcons>
               <FooterIconLink
-                href="https://github.com/fab-rvn"
+                href={ROUTES.GITHUB}
                 target="blank"
                 aria-label="GitHub"
               >
                 <AiOutlineGithub />
               </FooterIconLink>
               <FooterIconLink
-                href="https://www.linkedin.com/in/fabrizio-ervini-a9557356/"
+                href={ROUTES.LINKEDIN}
                 target="blank"
                 aria-label="LinkedIn"
               >
                 <AiFillLinkedin />
               </FooterIconLink>
               <FooterIconLink
-                href="https://twitter.com/faber_dev"
+                href={ROUTES.TWITTER}
                 target="blank"
                 aria-label="Twitter"
               >

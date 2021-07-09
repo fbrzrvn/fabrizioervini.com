@@ -2,6 +2,7 @@ import { func } from 'prop-types';
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { animateScroll as scroll } from 'react-scroll';
+import * as ROUTES from '../../routes';
 import useScroll from '../../utils/useScroll';
 import {
   MobileIcon,
@@ -22,7 +23,7 @@ const Navbar = ({ toggleNavbar }) => {
   return (
     <Nav scrollNav={scrollNav}>
       <NavContainer>
-        <NavLogo to="/" onClick={toggleHome}>
+        <NavLogo to={ROUTES.HOME} onClick={toggleHome}>
           faber
         </NavLogo>
         <MobileIcon onClick={toggleNavbar}>

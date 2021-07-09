@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
+import * as ROUTES from './routes';
 import { darkTheme, GlobalStyles, lightTheme } from './styles/globals';
 import useTheme from './utils/useTheme';
 
@@ -15,8 +16,8 @@ function App() {
       <GlobalStyles />
       <Router>
         <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/contact" component={ContactPage} exact />
+          <Route path={ROUTES.HOME} component={Home} exact />
+          <Route path={ROUTES.CONTACT} component={ContactPage} exact />
         </Switch>
       </Router>
     </ThemeProvider>
