@@ -50,7 +50,6 @@ export const WorkCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 24px;
   margin-bottom: 16px;
   border-radius: 10px;
   cursor: pointer;
@@ -62,16 +61,17 @@ export const WorkCard = styled.div`
 `;
 
 export const WorkImg = styled.img`
-  width: 250px;
-  height: 200px;
+  width: 100%;
+  height: auto;
   margin-bottom: 16px;
+  border-radius: 10px 10px 0 0;
 `;
 
 export const WorkInfo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 250px;
+  padding: 0 24px 24px;
 `;
 
 export const WorkH2 = styled.h2`
@@ -89,6 +89,7 @@ export const WorkP = styled.p`
 export const BtnWrap = styled.div`
   display: flex;
   justify-content: flex-start;
+  padding: 24px;
 `;
 
 export const BtnLink = styled.a`

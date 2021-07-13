@@ -1,8 +1,8 @@
 import ApollofyImg from '../../assets/apollofy.png';
-import TrackerImg from '../../assets/expense-tracker.png';
 import MemoriesImg from '../../assets/memories.png';
 import PunkApiImg from '../../assets/punkApi.png';
-import TodoImg from '../../assets/todo.jpeg';
+import TodoImg from '../../assets/todo.png';
+import TrackerImg from '../../assets/tracker.png';
 
 export const works = [
   {
