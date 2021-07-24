@@ -1,5 +1,5 @@
 import React from 'react';
-import * as ROUTES from '../../routes';
+import ROUTES from '../../routes';
 import BtnLinkRouter from '../BtnLinkRouter';
 import {
   ContactBtn,

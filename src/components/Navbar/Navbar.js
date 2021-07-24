@@ -2,7 +2,7 @@ import { func } from 'prop-types';
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { animateScroll as scroll } from 'react-scroll';
-import * as ROUTES from '../../routes';
+import ROUTES from '../../routes';
 import useScroll from '../../utils/useScroll';
 import {
   MobileIcon,

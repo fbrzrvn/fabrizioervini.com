@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
-import * as ROUTES from './routes';
+import ROUTES from './routes';
 import { darkTheme, GlobalStyles, lightTheme } from './styles/globals';
 import useTheme from './utils/useTheme';
 

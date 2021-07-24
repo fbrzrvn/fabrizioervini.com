@@ -5,7 +5,7 @@ import {
   AiOutlineTwitter,
 } from 'react-icons/ai';
 import { animateScroll as scroll } from 'react-scroll';
-import * as ROUTES from '../../routes';
+import ROUTES from '../../routes';
 import {
   FooterContainer,
   FooterCopy,
