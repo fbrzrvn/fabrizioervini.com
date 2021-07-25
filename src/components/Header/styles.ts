@@ -1,9 +1,9 @@
 import { Link as LinkRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
-interface HeaderProps {
+type HeaderProps = {
   scrollNav: boolean;
-}
+};
 
 export const Nav = styled.nav<HeaderProps>`
   background: ${({ scrollNav, theme }) =>
