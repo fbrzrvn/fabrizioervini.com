@@ -48,7 +48,7 @@ const Form = () => {
             <FormInput
               name="email"
               placeholder="Enter your email"
-              values={values.email}
+              value={values.email}
               onChange={handleChange}
               onBlur={handleChange}
               error={errors.email}

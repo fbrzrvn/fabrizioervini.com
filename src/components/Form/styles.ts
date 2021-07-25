@@ -2,9 +2,9 @@ import { Link as LinkRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
-interface FormProps {
+type FormProps = {
   error: boolean;
-}
+};
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.body};

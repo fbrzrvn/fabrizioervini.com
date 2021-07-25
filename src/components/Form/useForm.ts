@@ -1,8 +1,9 @@
 import emailjs from 'emailjs-com';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { FormValuesTypes } from './types';
 
-const useForm = validateForm => {
+const useForm = (validateForm: (values: FormValuesTypes) => any) => {
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -14,8 +15,8 @@ const useForm = validateForm => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const history = useHistory();
 
-  const handleChange = e => {
-    const { name, value } = e.target;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
     setValues({
       ...values,
       [name]: value,
@@ -23,8 +24,8 @@ const useForm = validateForm => {
     setErrors(validateForm(values));
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     setErrors(validateForm(values));
 
@@ -34,7 +35,7 @@ const useForm = validateForm => {
       .sendForm(
         'contact_service',
         'contact_form',
-        e.target,
+        event.currentTarget,
         process.env.REACT_APP_EMAILJS_KEY,
       )
       .then(
