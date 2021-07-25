@@ -3,7 +3,11 @@ import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
-export const Nav = styled.nav`
+interface NavbarProps {
+  scrollNav: Boolean;
+}
+
+export const Nav = styled.nav<NavbarProps>`
   background: ${({ scrollNav, theme }) =>
     scrollNav ? theme.navbarBg : 'transparent'};
   height: 80px;

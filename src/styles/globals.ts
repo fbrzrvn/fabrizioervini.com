@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, DefaultTheme } from 'styled-components';
 import { COLOR } from './colors';
 
 export const GlobalStyles = createGlobalStyle`
@@ -34,24 +34,22 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export const lightTheme = {
+export const lightTheme: DefaultTheme = {
   body: COLOR.lightBackground,
   text: COLOR.lightText,
   textSecondary: COLOR.lightTextSecondary,
   primary: COLOR.lightPrimary,
   navbarBg: COLOR.lightNavbar,
   navbarLink: COLOR.lightNavbarLink,
-  gradient: COLOR.lightGradient,
   footer: COLOR.lightFooter,
 };
 
-export const darkTheme = {
+export const darkTheme: DefaultTheme = {
   body: COLOR.darkBackground,
   text: COLOR.darkText,
   textSecondary: COLOR.darkTextSecondary,
   primary: COLOR.darkPrimary,
   navbarBg: COLOR.darkNavbar,
   navbarLink: COLOR.darkNavbarLink,
-  gradient: COLOR.darkGradient,
   footer: COLOR.darkFooter,
 };

@@ -2,7 +2,11 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
 
-export const SidebarContainer = styled.aside`
+interface SidebarProps {
+  isOpen: boolean;
+}
+
+export const SidebarContainer = styled.aside<SidebarProps>`
   background: ${({ theme }) => theme.body};
   display: grid;
   align-items: center;

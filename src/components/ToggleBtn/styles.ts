@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { COLOR } from '../../styles/colors';
 
 export const ToggleThemeWrap = styled.div`
   position: relative;
@@ -11,7 +10,7 @@ export const ToggleThemeLabel = styled.label`
   width: 42px;
   height: 26px;
   border-radius: 15px;
-  background: ${({ theme }) => theme.gradient};
+  background: #bdbdbd;
   cursor: pointer;
   &::after {
     content: '';
@@ -20,7 +19,7 @@ export const ToggleThemeLabel = styled.label`
     width: 18px;
     height: 18px;
     margin: 3px;
-    background: ${COLOR.gray200};
+    background: #eee;
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
     transition: 0.2s;
   }
@@ -32,7 +31,7 @@ export const ToggleSwitch = styled.input`
   width: 42px;
   height: 26px;
   &:checked + ${ToggleThemeLabel} {
-    background: ${({ theme }) => theme.gradient};
+    background: #bdbdbd;
     &::after {
       content: '';
       display: block;
