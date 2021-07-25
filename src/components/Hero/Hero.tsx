@@ -33,11 +33,8 @@ const Hero = () => {
             to="work"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
-            primary="true"
-            dark="true"
             smooth
             spy
-            exact="true"
             offset={-80}
           >
             View my Works {hover ? <ArrowForward /> : <ArrowRight />}

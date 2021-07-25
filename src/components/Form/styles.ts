@@ -2,6 +2,10 @@ import { Link as LinkRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
+type FormProps = {
+  error: boolean;
+};
+
 export const Container = styled.div`
   background: ${({ theme }) => theme.body};
   display: flex;
@@ -88,7 +92,7 @@ export const FormLabel = styled.label`
   color: ${({ theme }) => theme.text};
 `;
 
-export const FormInput = styled.input`
+export const FormInput = styled.input<FormProps>`
   padding: 10px;
   margin-bottom: 24px;
   border: none;
@@ -105,7 +109,7 @@ export const FormInput = styled.input`
   }
 `;
 
-export const FormTextarea = styled.textarea`
+export const FormTextarea = styled.textarea<FormProps>`
   padding: 10px;
   margin-bottom: 32px;
   border: none;

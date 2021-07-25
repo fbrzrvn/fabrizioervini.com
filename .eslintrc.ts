@@ -9,6 +9,7 @@ module.exports = {
   },
   extends: [
     'airbnb',
+    'airbnb-typescript/base',
     'eslint:recommended',
     'plugin:compat/recommended',
     'plugin:react/recommended',
@@ -21,7 +22,8 @@ module.exports = {
     'react-app',
     'react-app/jest',
   ],
-  parser: '@babel/eslint-parser',
+  // parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
@@ -36,9 +38,13 @@ module.exports = {
     'markdown',
     'react-hooks',
     'import',
+    '@typescript-eslint',
   ],
   settings: {
     react: {
+      version: 'detect',
+    },
+    jest: {
       version: 'detect',
     },
   },
@@ -50,7 +56,8 @@ module.exports = {
     },
   ],
   rules: {
-    'react/jsx-filename-extension': 'off',
+    'react/jsx-filename-extension': '[1, { extensions: [".tsx", ".ts"] }]',
+    'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'prefer-destructuring': 'off',
     'object-shorthand': 'off',

@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
+type GridProps = {
+  imgStart: boolean;
+};
+type ImgProps = {
+  isCircular: boolean;
+};
+
 export const SectionContainer = styled.div`
   color: ${({ theme }) => theme.text};
   background: ${({ theme }) => theme.body};
@@ -24,7 +31,7 @@ export const SectionWrapper = styled.div`
   }
 `;
 
-export const SectionRow = styled.div`
+export const SectionRow = styled.div<GridProps>`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
@@ -100,7 +107,7 @@ export const ImgWrap = styled.div`
   height: 100%;
 `;
 
-export const Img = styled.img`
+export const Img = styled.img<ImgProps>`
   width: 100%;
   border-radius: ${({ isCircular }) => (isCircular ? '50%' : '')};
   filter: grayscale(25%);

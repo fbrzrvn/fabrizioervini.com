@@ -1,6 +1,6 @@
 module.exports = {
-  '**/*.js': [
-    'npm run lint:js',
+  '**/*.ts?(x)': [
+    'npm run lint',
     'npm run lint:format:check',
     'npm run test:related',
   ],

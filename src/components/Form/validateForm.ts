@@ -1,5 +1,7 @@
-const validateForm = values => {
-  const errors = [];
+import { FormErrorsTypes, FormValuesTypes } from './types';
+
+const validateForm = (values: FormValuesTypes) => {
+  const errors: FormErrorsTypes = {} as FormErrorsTypes;
 
   if (!values.name.trim()) {
     errors.name = 'Please enter your name.';
