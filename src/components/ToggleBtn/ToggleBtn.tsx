@@ -1,18 +1,21 @@
-import { func } from 'prop-types';
 import React from 'react';
 import { ToggleSwitch, ToggleThemeLabel, ToggleThemeWrap } from './styles';
 
-const ToggleBtn = ({ toggleTheme }) => {
+type toogleBtnProps = {
+  toggleTheme: (boolean: boolean) => string;
+};
+
+const ToggleBtn = ({ toggleTheme }: toogleBtnProps) => {
   return (
     <ToggleThemeWrap>
-      <ToggleSwitch id="toggleSwitch" type="checkbox" onClick={toggleTheme} />
+      <ToggleSwitch
+        id="toggleSwitch"
+        type="checkbox"
+        onClick={() => toggleTheme}
+      />
       <ToggleThemeLabel htmlFor="toggleSwitch" />
     </ToggleThemeWrap>
   );
-};
-
-ToggleBtn.propTypes = {
-  toggleTheme: func.isRequired,
 };
 
 export default ToggleBtn;
