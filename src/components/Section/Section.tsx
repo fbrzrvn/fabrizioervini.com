@@ -1,4 +1,3 @@
-import { bool, string } from 'prop-types';
 import React from 'react';
 import {
   Column1,
@@ -13,6 +12,7 @@ import {
   TextWrapper,
   TopLine,
 } from './styles';
+import { SectionProps } from './types';
 
 const Section = ({
   id,
@@ -23,7 +23,7 @@ const Section = ({
   img,
   altImg,
   isCircular,
-}) => {
+}: SectionProps) => {
   return (
     <SectionContainer id={id}>
       <SectionWrapper>
@@ -44,22 +44,6 @@ const Section = ({
       </SectionWrapper>
     </SectionContainer>
   );
-};
-
-Section.propTypes = {
-  id: string.isRequired,
-  imgStart: bool.isRequired,
-  topLine: string.isRequired,
-  headLine: string.isRequired,
-  description: string.isRequired,
-  img: string,
-  altImg: string,
-  isCircular: bool.isRequired,
-};
-
-Section.defaultProps = {
-  img: '',
-  altImg: '',
 };
 
 export default Section;
