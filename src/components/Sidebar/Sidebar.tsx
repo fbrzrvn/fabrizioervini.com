@@ -9,7 +9,7 @@ import {
 } from './styles';
 
 type SidebarProps = {
-  toggleNavbar: (boolean: boolean) => void;
+  toggleNavbar: boolean | (() => void);
   isOpen: boolean;
 };
 

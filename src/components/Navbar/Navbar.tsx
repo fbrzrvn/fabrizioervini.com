@@ -14,7 +14,7 @@ import {
 } from './styles';
 
 type NavbarProps = {
-  toggleNavbar: (boolean: boolean) => void;
+  toggleNavbar: boolean | (() => void);
 };
 
 const Navbar = ({ toggleNavbar }: NavbarProps) => {
