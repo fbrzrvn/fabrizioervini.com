@@ -4,7 +4,15 @@ import PunkApiImg from '../../assets/punkApi.png';
 import TodoImg from '../../assets/todo.png';
 import TrackerImg from '../../assets/tracker.png';
 
-export const works = [
+interface IWorkData {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+  link: string;
+}
+
+export const works: IWorkData[] = [
   {
     id: 5,
     title: 'Memories',
