@@ -14,7 +14,7 @@ import {
 } from './styles';
 
 type NavbarProps = {
-  toggleNavbar: boolean | (() => void);
+  toggleNavbar: boolean | any;
 };
 
 const Navbar = ({ toggleNavbar }: NavbarProps) => {
@@ -29,7 +29,7 @@ const Navbar = ({ toggleNavbar }: NavbarProps) => {
         <NavLogo to={ROUTES.HOME} onClick={toggleHome}>
           faber
         </NavLogo>
-        <MobileIcon onClick={() => toggleNavbar}>
+        <MobileIcon onClick={() => toggleNavbar()}>
           <AiOutlineMenu />
         </MobileIcon>
         <NavMenu>
