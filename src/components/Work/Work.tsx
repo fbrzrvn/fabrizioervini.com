@@ -23,7 +23,11 @@ const Work = () => {
             <WorkInfo>
               <WorkH2>{work.title}</WorkH2>
               <WorkP>{work.description}</WorkP>
-              <BtnLink href={work.link} target="blank">
+              <BtnLink
+                href={work.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Visit Website
               </BtnLink>
             </WorkInfo>
