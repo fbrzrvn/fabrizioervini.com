@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from './Carousel';
 import { works } from './data';
 import {
   BtnLink,
@@ -9,14 +10,13 @@ import {
   WorkImg,
   WorkInfo,
   WorkP,
-  WorkWrapper,
 } from './styles';
 
 const Work = () => {
   return (
     <WorkContainer id="work">
       <WorkH1>Some of my latest works</WorkH1>
-      <WorkWrapper>
+      <Carousel>
         {works.map(work => (
           <WorkCard key={work.id}>
             <WorkImg src={work.img} alt={work.title} />
@@ -33,7 +33,7 @@ const Work = () => {
             </WorkInfo>
           </WorkCard>
         ))}
-      </WorkWrapper>
+      </Carousel>
     </WorkContainer>
   );
 };

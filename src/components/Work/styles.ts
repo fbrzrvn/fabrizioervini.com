@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import styled, { css } from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
 export const WorkContainer = styled.div`
@@ -30,60 +31,126 @@ export const WorkH1 = styled.h1`
   }
 `;
 
-export const WorkWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  grid-gap: 16px;
-  margin: 0 auto;
+/*****************
+  CAROUSEL
+******************/
+export const CarouselContainer = styled.div`
+  position: relative;
+  width: 100%;
   max-width: 1100px;
-  @media screen and (max-width: 1100px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: 670px) {
-    grid-template-columns: 1fr;
+  overflow: hidden;
+  scroll-behavior: smooth;
+`;
+const ArrowIcon = css`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  padding: 6px 6px 6px 4px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  z-index: 5;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
   }
 `;
+export const ArrowIconLeft = styled(AiOutlineLeft)`
+  ${ArrowIcon};
+  left: 8px;
+  padding: 6px 6px 6px 4px;
+`;
+export const ArrowIconRight = styled(AiOutlineRight)`
+  ${ArrowIcon};
+  right: 8px;
+  padding: 6px 4px 6px 6px;
+`;
+export const CarouselWrapper = styled.div`
+  display: flex;
+  transform: translateX(0%);
+  transition: transform 800ms ease-in-out;
+`;
+export const DotsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
+`;
+export const Dots = styled.button<{ isActive: boolean }>`
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: ${({ isActive, theme }) =>
+    isActive ? theme.primary : theme.textSecondary};
+  cursor: pointer;
+`;
 
+/****************
+  WORK CARD
+****************/
 export const WorkCard = styled.div`
-  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: 16px;
+  min-width: 100%;
+  width: 100%;
   border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.2 ease-in-out;
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2 ease-in-out;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
 export const WorkImg = styled.img`
+  aspect-ratio: 16/9;
   width: 100%;
-  height: auto;
-  margin-bottom: 16px;
-  border-radius: 10px 10px 0 0;
+  height: 300px;
+  margin: auto;
+  border-radius: 10px;
+  @media screen and (min-width: 768px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 450px;
+    margin-left: 60px;
+    margin-bottom: 0;
+  }
 `;
 
 export const WorkInfo = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 24px 24px;
+  padding: 24px 0 0;
+  margin: auto;
+  @media screen and (min-width: 768px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 24px;
+  }
 `;
 
 export const WorkH2 = styled.h2`
-  color: ${({ theme }) => theme.primary};
-  font-size: 1.5rem;
+  width: 90%;
   margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.primary};
 `;
 
 export const WorkP = styled.p`
-  color: ${({ theme }) => theme.navbarBg};
-  font-size: 1rem;
   margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 20px;
+  color: ${({ theme }) => theme.text};
+  @media screen and (min-width: 1024px) {
+    width: 90%;
+  }
 `;
 
 export const BtnWrap = styled.div`
@@ -93,22 +160,25 @@ export const BtnWrap = styled.div`
 `;
 
 export const BtnLink = styled.a`
-  color: ${COLOR.btnPrimaryColor};
-  background: ${COLOR.btnPrimary};
-  border-radius: 50px;
-  font-size: 16px;
-  white-space: nowrap;
-  text-decoration: none;
-  outline: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 30px;
   margin-top: 8px;
+  padding: 12px 30px;
+  font-size: 16px;
+  white-space: nowrap;
+  color: ${COLOR.btnPrimaryColor};
+  background: ${COLOR.btnPrimary};
+  border-radius: 50px;
+  text-decoration: none;
+  outline: none;
   cursor: pointer;
   transition: all 200ms ease-in-out;
   &:hover {
     background: ${COLOR.btnPrimaryHover};
     transition: all 200ms ease-in-out;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 90%;
   }
 `;
