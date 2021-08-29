@@ -3,29 +3,23 @@ import styled, { css } from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
 export const WorkContainer = styled.div`
-  background: ${({ theme }) => theme.navbarBg};
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   padding: 100px 24px;
-  @media screen and (max-width: 768px) {
-    min-height: 1100px;
-  }
-  @media screen and (max-width: 480px) {
-    min-height: 1300px;
-  }
+  background: ${({ theme }) => theme.navbarBg};
 `;
 
 export const WorkH1 = styled.h1`
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 64px;
   background: ${COLOR.linearGradient};
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: 2.5rem;
-  text-align: center;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 64px;
   @media screen and (max-width: 480px) {
     font-size: 2rem;
   }
@@ -63,11 +57,17 @@ export const ArrowIconLeft = styled(AiOutlineLeft)`
   ${ArrowIcon};
   left: 8px;
   padding: 6px 6px 6px 4px;
+  @media screen and (max-width: 600px) {
+    left: 0;
+  }
 `;
 export const ArrowIconRight = styled(AiOutlineRight)`
   ${ArrowIcon};
   right: 8px;
   padding: 6px 4px 6px 6px;
+  @media screen and (max-width: 600px) {
+    right: 0;
+  }
 `;
 export const CarouselWrapper = styled.div`
   display: flex;
@@ -110,62 +110,70 @@ export const WorkCard = styled.div`
 export const WorkImg = styled.img`
   aspect-ratio: 16/9;
   width: 100%;
-  height: 300px;
   margin: auto;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   @media screen and (min-width: 768px) {
     width: 80%;
+    height: 300px;
   }
   @media screen and (min-width: 1024px) {
-    max-width: 450px;
+    max-width: 500px;
+    height: 400px;
     margin-left: 60px;
     margin-bottom: 0;
+    border-radius: 10px 0 0 10px;
   }
 `;
 
 export const WorkInfo = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 24px 0 0;
-  margin: auto;
+  padding: 24px 24px 32px;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
   @media screen and (min-width: 768px) {
     width: 80%;
+    margin: auto;
   }
   @media screen and (min-width: 1024px) {
-    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    margin: initial;
+    margin-right: 60px;
+    padding: 0;
+    border-radius: 0 10px 10px 0;
   }
 `;
 
 export const WorkH2 = styled.h2`
-  width: 90%;
   margin-bottom: 10px;
   font-size: 1.5rem;
   color: ${({ theme }) => theme.primary};
+  @media screen and (min-width: 1024px) {
+    width: 80%;
+  }
 `;
 
 export const WorkP = styled.p`
   margin-bottom: 10px;
-  font-size: 1rem;
-  line-height: 20px;
-  color: ${({ theme }) => theme.text};
+  font-size: 18px;
+  line-height: 24px;
+  color: ${({ theme }) => theme.navbarBg};
   @media screen and (min-width: 1024px) {
-    width: 90%;
+    width: 80%;
   }
 `;
 
 export const BtnWrap = styled.div`
   display: flex;
-  justify-content: flex-start;
-  padding: 24px;
+  margin: 8px 0;
+  @media screen and (min-width: 1024px) {
+    width: 80%;
+  }
 `;
 
 export const BtnLink = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8px;
   padding: 12px 30px;
-  font-size: 16px;
   white-space: nowrap;
   color: ${COLOR.btnPrimaryColor};
   background: ${COLOR.btnPrimary};
@@ -177,8 +185,5 @@ export const BtnLink = styled.a`
   &:hover {
     background: ${COLOR.btnPrimaryHover};
     transition: all 200ms ease-in-out;
-  }
-  @media screen and (min-width: 1024px) {
-    width: 90%;
   }
 `;

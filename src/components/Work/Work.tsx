@@ -3,6 +3,7 @@ import Carousel from './Carousel';
 import { works } from './data';
 import {
   BtnLink,
+  BtnWrap,
   WorkCard,
   WorkContainer,
   WorkH1,
@@ -23,13 +24,15 @@ const Work = () => {
             <WorkInfo>
               <WorkH2>{work.title}</WorkH2>
               <WorkP>{work.description}</WorkP>
-              <BtnLink
-                href={work.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit Website
-              </BtnLink>
+              <BtnWrap>
+                <BtnLink
+                  href={work.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit Website
+                </BtnLink>
+              </BtnWrap>
             </WorkInfo>
           </WorkCard>
         ))}
