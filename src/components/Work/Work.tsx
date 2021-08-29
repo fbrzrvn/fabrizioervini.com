@@ -1,7 +1,9 @@
 import React from 'react';
+import Carousel from './Carousel';
 import { works } from './data';
 import {
   BtnLink,
+  BtnWrap,
   WorkCard,
   WorkContainer,
   WorkH1,
@@ -9,27 +11,32 @@ import {
   WorkImg,
   WorkInfo,
   WorkP,
-  WorkWrapper,
 } from './styles';
 
 const Work = () => {
   return (
     <WorkContainer id="work">
       <WorkH1>Some of my latest works</WorkH1>
-      <WorkWrapper>
+      <Carousel>
         {works.map(work => (
           <WorkCard key={work.id}>
             <WorkImg src={work.img} alt={work.title} />
             <WorkInfo>
               <WorkH2>{work.title}</WorkH2>
               <WorkP>{work.description}</WorkP>
-              <BtnLink href={work.link} target="blank">
-                Visit Website
-              </BtnLink>
+              <BtnWrap>
+                <BtnLink
+                  href={work.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit Website
+                </BtnLink>
+              </BtnWrap>
             </WorkInfo>
           </WorkCard>
         ))}
-      </WorkWrapper>
+      </Carousel>
     </WorkContainer>
   );
 };

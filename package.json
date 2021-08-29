@@ -20,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.2",
+    "react-swipeable": "^6.2.0",
     "styled-components": "^5.2.3",
     "web-vitals": "^1.0.1"
   },
@@ -52,7 +53,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.2.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-markdown": "^2.0.0",
+    "eslint-plugin-markdown": "^2.2.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",

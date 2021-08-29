@@ -34,21 +34,24 @@ const Footer = () => {
             <FooterIcons>
               <FooterIconLink
                 href={ROUTES.GITHUB}
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
               >
                 <AiOutlineGithub />
               </FooterIconLink>
               <FooterIconLink
                 href={ROUTES.LINKEDIN}
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 <AiFillLinkedin />
               </FooterIconLink>
               <FooterIconLink
                 href={ROUTES.TWITTER}
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Twitter"
               >
                 <AiOutlineTwitter />

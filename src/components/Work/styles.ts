@@ -1,110 +1,185 @@
-import styled from 'styled-components';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import styled, { css } from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
 export const WorkContainer = styled.div`
-  background: ${({ theme }) => theme.navbarBg};
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   padding: 100px 24px;
-  @media screen and (max-width: 768px) {
-    min-height: 1100px;
-  }
-  @media screen and (max-width: 480px) {
-    min-height: 1300px;
-  }
+  background: ${({ theme }) => theme.navbarBg};
 `;
 
 export const WorkH1 = styled.h1`
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 64px;
   background: ${COLOR.linearGradient};
   background-clip: text;
   -webkit-background-clip: text;
-  font-size: 2.5rem;
-  text-align: center;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 64px;
   @media screen and (max-width: 480px) {
     font-size: 2rem;
   }
 `;
 
-export const WorkWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  grid-gap: 16px;
-  margin: 0 auto;
+/*****************
+  CAROUSEL
+******************/
+export const CarouselContainer = styled.div`
+  position: relative;
+  width: 100%;
   max-width: 1100px;
-  @media screen and (max-width: 1100px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: 670px) {
-    grid-template-columns: 1fr;
+  overflow: hidden;
+  scroll-behavior: smooth;
+`;
+const ArrowIcon = css`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  padding: 6px 6px 6px 4px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  z-index: 5;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
   }
 `;
+export const ArrowIconLeft = styled(AiOutlineLeft)`
+  ${ArrowIcon};
+  left: 8px;
+  padding: 6px 6px 6px 4px;
+  @media screen and (max-width: 600px) {
+    left: 0;
+  }
+`;
+export const ArrowIconRight = styled(AiOutlineRight)`
+  ${ArrowIcon};
+  right: 8px;
+  padding: 6px 4px 6px 6px;
+  @media screen and (max-width: 600px) {
+    right: 0;
+  }
+`;
+export const CarouselWrapper = styled.div`
+  display: flex;
+  transform: translateX(0%);
+  transition: transform 800ms ease-in-out;
+`;
+export const DotsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
+`;
+export const Dots = styled.button<{ isActive: boolean }>`
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: ${({ isActive, theme }) =>
+    isActive ? theme.primary : theme.textSecondary};
+  cursor: pointer;
+`;
 
+/****************
+  WORK CARD
+****************/
 export const WorkCard = styled.div`
-  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: 16px;
+  min-width: 100%;
+  width: 100%;
   border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.2 ease-in-out;
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2 ease-in-out;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
 export const WorkImg = styled.img`
+  aspect-ratio: 16/9;
   width: 100%;
-  height: auto;
-  margin-bottom: 16px;
+  margin: auto;
   border-radius: 10px 10px 0 0;
+  @media screen and (min-width: 768px) {
+    width: 80%;
+    height: 300px;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 500px;
+    height: 400px;
+    margin-left: 60px;
+    margin-bottom: 0;
+    border-radius: 10px 0 0 10px;
+  }
 `;
 
 export const WorkInfo = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 24px 24px;
+  padding: 24px 24px 32px;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  @media screen and (min-width: 768px) {
+    width: 80%;
+    margin: auto;
+  }
+  @media screen and (min-width: 1024px) {
+    align-items: center;
+    justify-content: center;
+    margin: initial;
+    margin-right: 60px;
+    padding: 0;
+    border-radius: 0 10px 10px 0;
+  }
 `;
 
 export const WorkH2 = styled.h2`
-  color: ${({ theme }) => theme.primary};
-  font-size: 1.5rem;
   margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.primary};
+  @media screen and (min-width: 1024px) {
+    width: 80%;
+  }
 `;
 
 export const WorkP = styled.p`
-  color: ${({ theme }) => theme.navbarBg};
-  font-size: 1rem;
   margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  color: ${({ theme }) => theme.navbarBg};
+  @media screen and (min-width: 1024px) {
+    width: 80%;
+  }
 `;
 
 export const BtnWrap = styled.div`
   display: flex;
-  justify-content: flex-start;
-  padding: 24px;
+  margin: 8px 0;
+  @media screen and (min-width: 1024px) {
+    width: 80%;
+  }
 `;
 
 export const BtnLink = styled.a`
+  padding: 12px 30px;
+  white-space: nowrap;
   color: ${COLOR.btnPrimaryColor};
   background: ${COLOR.btnPrimary};
   border-radius: 50px;
-  font-size: 16px;
-  white-space: nowrap;
   text-decoration: none;
   outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 30px;
-  margin-top: 8px;
   cursor: pointer;
   transition: all 200ms ease-in-out;
   &:hover {
