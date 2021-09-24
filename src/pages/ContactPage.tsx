@@ -1,17 +1,12 @@
 import React from 'react';
-import Footer from '../components/Footer';
 import Form from '../components/Form';
-import Header from '../components/Header';
-import ScrollToTop from '../utils/ScrollToTop';
+import CustomLayout from '../layout/CustomLayout';
 
 const ContactPage = () => {
   return (
-    <>
-      <ScrollToTop />
-      <Header />
+    <CustomLayout hasFooter>
       <Form />
-      <Footer />
-    </>
+    </CustomLayout>
   );
 };
 
