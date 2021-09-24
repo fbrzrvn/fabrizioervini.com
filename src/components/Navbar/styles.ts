@@ -8,16 +8,16 @@ type NavbarProps = {
 };
 
 export const Nav = styled.nav<NavbarProps>`
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: ${({ scrollNav, theme }) =>
     scrollNav ? theme.navbarBg : 'transparent'};
   height: 80px;
   margin-top: -80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1rem;
-  position: sticky;
-  top: 0;
   z-index: 10;
   @media screen and (max-width: 968px) {
     transition: all 800ms ease;
@@ -30,7 +30,6 @@ export const NavContainer = styled.div`
   height: 80px;
   width: 100%;
   max-width: 1100px;
-  z-index: 1;
 `;
 
 export const NavLogo = styled(LinkRouter)`
@@ -98,12 +97,12 @@ export const NavLink = styled(LinkScroll)`
 `;
 
 export const NavLinkRouter = styled(LinkRouter)`
-  color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
   height: 100%;
+  padding: 0 1rem;
+  color: ${({ theme }) => theme.text};
+  text-decoration: none;
   cursor: pointer;
   transition: all 300ms ease-in-out;
   &:hover {

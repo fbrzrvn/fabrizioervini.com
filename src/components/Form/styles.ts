@@ -20,11 +20,11 @@ export const FormH1 = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 48px;
   font-weight: 700;
+  font-size: 32px;
   text-align: center;
-  @media screen and (max-width: 480px) {
-    font-size: 32px;
+  @media screen and (min-width: 480px) {
+    font-size: 48px;
   }
 `;
 

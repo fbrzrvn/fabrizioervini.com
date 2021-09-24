@@ -7,15 +7,15 @@ type SidebarProps = {
 };
 
 export const SidebarContainer = styled.aside<SidebarProps>`
-  background: ${({ theme }) => theme.body};
+  position: fixed;
+  right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  top: 0;
+  z-index: 100;
   display: grid;
   align-items: center;
-  z-index: 100;
-  position: fixed;
-  width: 100%;
   height: 100%;
-  top: 0;
-  right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  width: 100%;
+  background: ${({ theme }) => theme.body};
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transition: all 500ms ease-in-out;
 `;
@@ -28,8 +28,8 @@ export const Icon = styled.div`
   position: absolute;
   top: 1.2rem;
   right: 1.5rem;
-  font-size: 2rem;
   background: transparent;
+  font-size: 2rem;
   outline: none;
   cursor: pointer;
 `;
@@ -41,10 +41,10 @@ export const SidebarWrapper = styled.div`
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 80px);
+  grid-template-rows: repeat(5, 60px);
   text-align: center;
-  @media screen and(max-width: 480px) {
-    grid-template-rows: repeat(5, 60px);
+  @media screen and(min-width: 480px) {
+    grid-template-rows: repeat(5, 80px);
   }
 `;
 
@@ -52,9 +52,9 @@ export const SidebarLink = styled(LinkScroll)`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
   text-decoration: none;
-  color: ${({ theme }) => theme.text};
   cursor: pointer;
   transition: all 300ms ease-in-out;
   &:hover {
