@@ -1,7 +1,7 @@
-import { FormErrorsTypes, FormValuesTypes } from './types';
+import { IFormErrors, IFormValues } from './types';
 
-const validateForm = (values: FormValuesTypes) => {
-  const errors: FormErrorsTypes = {} as FormErrorsTypes;
+const validateForm = (values: IFormValues) => {
+  const errors: IFormErrors = {} as IFormErrors;
 
   if (!values.name.trim()) {
     errors.name = 'Please enter your name.';
