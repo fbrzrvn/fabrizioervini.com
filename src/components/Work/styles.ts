@@ -13,15 +13,15 @@ export const WorkContainer = styled.div`
 `;
 
 export const WorkH1 = styled.h1`
-  font-size: 2.5rem;
-  text-align: center;
   margin-bottom: 64px;
   background: ${COLOR.linearGradient};
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  @media screen and (max-width: 480px) {
-    font-size: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  @media screen and (min-width: 480px) {
+    font-size: 2.5rem;
   }
 `;
 
@@ -39,12 +39,13 @@ const ArrowIcon = css`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  display: none;
   width: 44px;
   height: 44px;
   padding: 6px 6px 6px 4px;
   border: none;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   color: #fff;
   z-index: 5;
   cursor: pointer;
@@ -52,22 +53,25 @@ const ArrowIcon = css`
   &:hover {
     background: rgba(0, 0, 0, 0.5);
   }
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 `;
 export const ArrowIconLeft = styled(AiOutlineLeft)`
   ${ArrowIcon};
-  left: 8px;
+  left: 0;
   padding: 6px 6px 6px 4px;
-  @media screen and (max-width: 600px) {
-    left: 0;
-  }
+  /* @media screen and (min-width: 600px) {
+    left: 8px;
+  } */
 `;
 export const ArrowIconRight = styled(AiOutlineRight)`
   ${ArrowIcon};
-  right: 8px;
+  right: 0;
   padding: 6px 4px 6px 6px;
-  @media screen and (max-width: 600px) {
-    right: 0;
-  }
+  /* @media screen and (min-width: 600px) {
+    right: 8px;
+  } */
 `;
 export const CarouselWrapper = styled.div`
   display: flex;
@@ -108,9 +112,9 @@ export const WorkCard = styled.div`
 `;
 
 export const WorkImg = styled.img`
-  aspect-ratio: 16/9;
-  width: 100%;
   margin: auto;
+  width: 100%;
+  aspect-ratio: 16/9;
   border-radius: 10px 10px 0 0;
   @media screen and (min-width: 768px) {
     width: 80%;

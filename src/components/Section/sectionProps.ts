@@ -3,6 +3,9 @@ export type SectionProps = {
   topLine: string;
   headLine: string;
   description: string;
+  hasLink?: boolean;
+  linkLabel?: string;
+  linkUrl?: string;
   imgStart: boolean;
   img: string;
   altImg: string;

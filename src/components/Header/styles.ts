@@ -6,40 +6,36 @@ type HeaderProps = {
 };
 
 export const Nav = styled.nav<HeaderProps>`
-  background: ${({ scrollNav, theme }) =>
-    scrollNav ? theme.navbarBg : 'transparent'};
-  background: ${({ theme }) => theme.navbarBg};
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
   position: sticky;
   top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  background: ${({ scrollNav, theme }) =>
+    scrollNav ? theme.navbarBg : 'transparent'};
+  font-size: 1rem;
   z-index: 10;
-  @media screen and (max-width: 968px) {
-    transition: all 0.8s ease;
-  }
+  transition: all 0.8s ease;
 `;
 
 export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 24px;
   height: 80px;
   width: 100%;
   max-width: 1100px;
-  z-index: 1;
+  padding: 0 24px;
 `;
 
 export const NavLogo = styled(LinkRouter)`
-  color: ${({ theme }) => theme.text};
   display: flex;
   justify-self: flex-start;
   align-items: center;
+  margin-left: 24px;
+  color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
-  margin-left: 24px;
   cursor: pointer;
 `;

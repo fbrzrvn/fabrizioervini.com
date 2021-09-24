@@ -3,17 +3,15 @@ import styled from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
 const BtnLinkRouter = styled(LinkRouter)`
-  color: ${COLOR.btnPrimaryColor};
-  background-image: ${COLOR.btnPrimary};
-  border-radius: 50px;
-  font-size: 16px;
-  white-space: nowrap;
-  text-decoration: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 160px;
   padding: 12px 30px;
+  border-radius: 50px;
+  background-image: ${COLOR.btnPrimary};
+  color: ${COLOR.btnPrimaryColor};
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  outline: none;
   cursor: pointer;
   transition: all 200ms ease-in-out;
   &:hover {

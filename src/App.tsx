@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import ContactPage from './pages/ContactPage';
+import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import ROUTES from './routes';
 import { darkTheme, GlobalStyles, lightTheme } from './styles/globals';
@@ -18,6 +19,7 @@ function App() {
         <Switch>
           <Route path={ROUTES.HOME} component={Home} exact />
           <Route path={ROUTES.CONTACT} component={ContactPage} exact />
+          <Route component={ErrorPage} />
         </Switch>
       </Router>
     </ThemeProvider>

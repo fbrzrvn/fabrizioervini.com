@@ -28,7 +28,7 @@ const Footer = () => {
         <FooterLinks>
           <FooterLinksWrapper>
             <FooterLogo to={ROUTES.HOME} onClick={toggleHome}>
-              faber
+              <span>faber</span>
             </FooterLogo>
             <FooterCopy>© faber 2021 All rights are reserved.</FooterCopy>
             <FooterIcons>

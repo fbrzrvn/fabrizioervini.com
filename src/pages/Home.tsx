@@ -4,9 +4,10 @@ import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import Section from '../components/Section';
-import { aboutSection, blogSection } from '../components/Section/data';
 import Sidebar from '../components/Sidebar';
 import Work from '../components/Work';
+import { aboutSection } from '../data/aboutSection';
+import { blogSection } from '../data/blogSection';
 import useNavbar from '../utils/useNavbar';
 
 const Home = () => {

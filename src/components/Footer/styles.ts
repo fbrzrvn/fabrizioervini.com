@@ -9,69 +9,77 @@ export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 24px;
   max-width: 1100px;
   margin: 0 auto;
+  padding: 24px;
+  @media screen and (min-width: 768px) {
+    padding: 40px 24px;
+  }
 `;
 
 export const FooterLinks = styled.section`
-  max-width: 1100px;
   width: 100%;
+  max-width: 1100px;
 `;
 
 export const FooterLinksWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  max-width: 1100px;
+  justify-content: center;
   margin: auto;
-  @media screen and (max-width: 820px) {
-    flex-direction: column;
+  max-width: 1100px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
 export const FooterLogo = styled(LinkRouter)`
-  color: ${({ theme }) => theme.text};
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 16px;
+  color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
   font-weight: 700;
   cursor: pointer;
-  @media screen and (max-width: 820px) {
-    margin-bottom: 16px;
+  & span {
+    width: 168px;
+    text-align: center;
   }
-  @media screen and (max-width: 768px) {
-    margin-bottom: 8px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    & span {
+      text-align: left;
+    }
   }
 `;
 
 export const FooterCopy = styled.small`
+  order: 3;
   color: ${({ theme }) => theme.textSecondary};
-  @media screen and (max-width: 820px) {
-    order: 3;
-    text-align: center;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    order: initial;
   }
 `;
 
 export const FooterIcons = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 240px;
-  @media screen and (max-width: 820px) {
-    order: 2;
-    margin-bottom: 16px;
-  }
-  @media screen and (max-width: 768px) {
-    margin: 8px auto;
-  }
-  @media screen and (max-width: 304px) {
-    width: 100%;
+  justify-content: center;
+  order: 2;
+  width: 100%;
+  margin: 0 auto 16px;
+  @media screen and (min-width: 768px) {
+    order: initial;
+    width: unset;
+    margin: initial;
   }
 `;
 
 export const FooterIconLink = styled.a`
+  padding: 0 16px;
   color: ${({ theme }) => theme.text};
   font-size: 24px;
   cursor: pointer;
