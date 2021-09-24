@@ -21,7 +21,7 @@ export const SectionWrapper = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -55,9 +55,9 @@ export const Column2 = styled.div`
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: 60px;
   @media screen and (min-width: 768px) {
-    padding-bottom: 60px;
+    padding-bottom: 0;
   }
 `;
 

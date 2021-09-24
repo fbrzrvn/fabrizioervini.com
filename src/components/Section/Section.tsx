@@ -1,4 +1,7 @@
 import React from 'react';
+import ROUTES from '../../routes';
+import BtnLinkRouter from '../BtnLinkRouter';
+import { SectionProps } from './sectionProps';
 import {
   Column1,
   Column2,
@@ -12,7 +15,6 @@ import {
   TextWrapper,
   TopLine,
 } from './styles';
-import { SectionProps } from './types';
 
 const Section = ({
   id,
@@ -20,6 +22,9 @@ const Section = ({
   topLine,
   headLine,
   description,
+  hasLink,
+  linkLabel,
+  linkUrl,
   img,
   altImg,
   isCircular,
@@ -33,6 +38,11 @@ const Section = ({
               <TopLine>{topLine}</TopLine>
               <Heading>{headLine}</Heading>
               <Subtitle>{description}</Subtitle>
+              {hasLink && (
+                <BtnLinkRouter to={linkUrl ?? ROUTES.HOME}>
+                  {linkLabel}
+                </BtnLinkRouter>
+              )}
             </TextWrapper>
           </Column1>
           <Column2>
