@@ -9,15 +9,17 @@ import Work from '../components/Work';
 import { aboutSection } from '../data/aboutSection';
 import { blogSection } from '../data/blogSection';
 import useNavbar from '../utils/useNavbar';
+import useTranslation from '../utils/useTranslation';
 
 const Home = () => {
   const [isOpen, toggleNavbar] = useNavbar();
+  const { t } = useTranslation();
 
   return (
     <>
       <Sidebar isOpen={isOpen as boolean} toggleNavbar={toggleNavbar} />
       <Navbar toggleNavbar={toggleNavbar} />
-      <Hero />
+      <Hero t={t} />
       <Section {...aboutSection} />
       <Work />
       <Section {...blogSection} />
