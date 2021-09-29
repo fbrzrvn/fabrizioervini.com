@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import TranslationsProvider from './context/translationsProvider';
 import ContactPage from './pages/ContactPage';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
@@ -15,13 +16,15 @@ function App() {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <Router>
-        <Switch>
-          <Route path={ROUTES.HOME} component={Home} exact />
-          <Route path={ROUTES.CONTACT} component={ContactPage} exact />
-          <Route component={ErrorPage} />
-        </Switch>
-      </Router>
+      <TranslationsProvider>
+        <Router>
+          <Switch>
+            <Route path={ROUTES.HOME} component={Home} exact />
+            <Route path={ROUTES.CONTACT} component={ContactPage} exact />
+            <Route component={ErrorPage} />
+          </Switch>
+        </Router>
+      </TranslationsProvider>
     </ThemeProvider>
   );
 }
