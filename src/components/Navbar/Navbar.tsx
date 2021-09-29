@@ -1,8 +1,11 @@
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { animateScroll as scroll } from 'react-scroll';
+import { links } from '../../data/links';
+import { NavProps } from '../../models/props';
 import ROUTES from '../../routes';
 import useScroll from '../../utils/useScroll';
+import Select from '../Select';
 import {
   MobileIcon,
   Nav,
@@ -13,12 +16,9 @@ import {
   NavMenu,
 } from './styles';
 
-type NavbarProps = {
-  toggleNavbar: boolean | any;
-};
-
-const Navbar = ({ toggleNavbar }: NavbarProps) => {
+const Navbar = ({ toggleNavbar }: NavProps) => {
   const scrollNav = useScroll();
+
   const toggleHome = () => {
     scroll.scrollToTop();
   };
@@ -26,34 +26,22 @@ const Navbar = ({ toggleNavbar }: NavbarProps) => {
   return (
     <Nav scrollNav={scrollNav}>
       <NavContainer>
-        <NavLogo to={ROUTES.HOME} onClick={toggleHome}>
-          faber
-        </NavLogo>
         <MobileIcon onClick={() => toggleNavbar()}>
           <AiOutlineMenu />
         </MobileIcon>
+        <NavLogo to={ROUTES.HOME} onClick={toggleHome}>
+          faber
+        </NavLogo>
         <NavMenu>
-          <NavItem>
-            <NavLink to="about" smooth duration={500} spy offset={-80}>
-              About
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="work" smooth duration={500} spy offset={-80}>
-              Work
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="blog" smooth duration={500} spy offset={-80}>
-              Blog
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="contact" smooth duration={500} spy offset={-80}>
-              Contact
-            </NavLink>
-          </NavItem>
+          {links.map(link => (
+            <NavItem key={link.id}>
+              <NavLink to={link.url} smooth duration={500} spy offset={-80}>
+                {link.label}
+              </NavLink>
+            </NavItem>
+          ))}
         </NavMenu>
+        <Select />
       </NavContainer>
     </Nav>
   );

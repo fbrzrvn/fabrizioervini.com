@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <>
       <Sidebar isOpen={isOpen as boolean} toggleNavbar={toggleNavbar} />
-      <Navbar toggleNavbar={toggleNavbar} />
+      <Navbar isOpen={false} toggleNavbar={toggleNavbar} />
       <Hero t={t} />
       <Section {...aboutSection} />
       <Work />

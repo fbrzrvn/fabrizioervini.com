@@ -1,4 +1,6 @@
 import React from 'react';
+import { links } from '../../data/links';
+import { NavProps } from '../../models/props';
 import {
   CloseIcon,
   Icon,
@@ -8,12 +10,7 @@ import {
   SidebarWrapper,
 } from './styles';
 
-type SidebarProps = {
-  toggleNavbar: boolean | any;
-  isOpen: boolean;
-};
-
-const Sidebar = ({ toggleNavbar, isOpen }: SidebarProps) => {
+const Sidebar = ({ toggleNavbar, isOpen }: NavProps) => {
   return (
     <SidebarContainer isOpen={isOpen} onClick={() => toggleNavbar()}>
       <Icon onClick={() => toggleNavbar()}>
@@ -21,18 +18,15 @@ const Sidebar = ({ toggleNavbar, isOpen }: SidebarProps) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="about" onClick={() => toggleNavbar()}>
-            About
-          </SidebarLink>
-          <SidebarLink to="work" onClick={() => toggleNavbar()}>
-            Work
-          </SidebarLink>
-          <SidebarLink to="blog" onClick={() => toggleNavbar()}>
-            Blog
-          </SidebarLink>
-          <SidebarLink to="contact" onClick={() => toggleNavbar()}>
-            Contact
-          </SidebarLink>
+          {links.map(link => (
+            <SidebarLink
+              key={link.id}
+              to={link.url}
+              onClick={() => toggleNavbar()}
+            >
+              {link.label}
+            </SidebarLink>
+          ))}
         </SidebarMenu>
       </SidebarWrapper>
     </SidebarContainer>

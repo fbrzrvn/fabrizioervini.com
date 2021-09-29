@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TranslateProps } from '../../models/translation';
+import { TranslateProps } from '../../models/props';
 import {
   ArrowForward,
   ArrowRight,

@@ -26,8 +26,10 @@ export const Nav = styled.nav<NavbarProps>`
 
 export const NavContainer = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   height: 80px;
+  padding: 0 2rem;
   width: 100%;
   max-width: 1100px;
 `;
@@ -48,10 +50,6 @@ export const MobileIcon = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
     font-size: 1.8rem;
     color: ${({ theme }) => theme.text};
     cursor: pointer;
