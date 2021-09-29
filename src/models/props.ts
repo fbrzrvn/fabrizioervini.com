@@ -4,8 +4,9 @@ export type LinkProps = {
   url: string;
 };
 
-export type FlagProps = {
+export type LanguageProps = {
   id: number;
+  value: string;
   label: string;
   img: string;
 };
