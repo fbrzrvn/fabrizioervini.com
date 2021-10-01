@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type LinkProps = {
   id: number;
   label: string;
@@ -18,4 +20,8 @@ export type TranslateProps = {
 export type NavProps = {
   toggleNavbar: boolean | any;
   isOpen: boolean;
+};
+
+export type ChildrenProps = {
+  children: React.ReactNode | React.ReactNode[];
 };
