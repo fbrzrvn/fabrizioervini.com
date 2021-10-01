@@ -35,7 +35,7 @@
   "formMessageLabel": "Mensaje",
   "formMessagePlaceholder": "¿Como le puedo ayudar?",
   "formMessageError": "Por favor asegúrese de enviarme un mensaje",
-  "formSubmitBtnLabel": "SEND",
+  "formSubmitBtnLabel": "ENVIAR",
   "formSubmitMessageSuccess": "¡Su mensaje fue enviado con éxito!",
   "error404TopLine": "¡Ooops! Error 404",
   "error404HeadLine": "Estás en el medio de la nada",
