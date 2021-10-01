@@ -7,19 +7,19 @@ export const languages: LanguageProps[] = [
   {
     id: 11,
     value: 'en',
-    label: 'English',
+    label: 'english',
     img: american,
   },
   {
     id: 12,
     value: 'es',
-    label: 'Spanish',
+    label: 'spanish',
     img: spanish,
   },
   {
     id: 13,
     value: 'it',
-    label: 'Italian',
+    label: 'italian',
     img: italian,
   },
 ];

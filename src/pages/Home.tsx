@@ -17,13 +17,13 @@ const Home = () => {
 
   return (
     <>
-      <Sidebar isOpen={isOpen as boolean} toggleNavbar={toggleNavbar} />
-      <Navbar isOpen={false} toggleNavbar={toggleNavbar} />
+      <Sidebar t={t} isOpen={isOpen as boolean} toggleNavbar={toggleNavbar} />
+      <Navbar t={t} isOpen={false} toggleNavbar={toggleNavbar} />
       <Hero t={t} />
-      <Section {...aboutSection} />
-      <Work />
-      <Section {...blogSection} />
-      <Contact />
+      <Section t={t} {...aboutSection} />
+      <Work t={t} />
+      <Section t={t} {...blogSection} />
+      <Contact t={t} />
       <Footer />
     </>
   );

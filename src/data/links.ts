@@ -3,22 +3,22 @@ import { LinkProps } from '../models/props';
 export const links: LinkProps[] = [
   {
     id: 11,
-    label: 'About',
+    label: 'aboutLink',
     url: 'about',
   },
   {
     id: 12,
-    label: 'Work',
+    label: 'workLink',
     url: 'work',
   },
   {
     id: 13,
-    label: 'Blog',
+    label: 'blogLink',
     url: 'blog',
   },
   {
     id: 14,
-    label: 'Contact',
+    label: 'contactLink',
     url: 'contact',
   },
 ];

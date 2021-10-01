@@ -3,9 +3,9 @@ import { SectionProps } from '../components/Section/sectionProps';
 
 export const blogSection: SectionProps = {
   id: 'blog',
-  topLine: '⚠️ still on production...',
-  headLine: 'Check out my latest post',
-  description: 'The Blog: Thoughts on life, work and everything in between.',
+  topLine: '⚠️ blogTopLine',
+  headLine: 'blogHeadLine',
+  description: 'blogDescription',
   hasLink: false,
   imgStart: true,
   img: Blog,

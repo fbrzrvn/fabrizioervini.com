@@ -32,7 +32,7 @@ const Hero = ({ t }: TranslateProps) => {
             spy
             offset={-80}
           >
-            {t('HeroBtnLabel')} {hover ? <ArrowForward /> : <ArrowRight />}
+            {t('heroBtnLabel')} {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtn>
       </HeroContent>
