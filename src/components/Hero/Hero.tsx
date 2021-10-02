@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useToggle from '../../hooks/useToggle';
 import { TranslateProps } from '../../models/props';
 import {
   ArrowForward,
@@ -12,11 +13,7 @@ import {
 } from './styles';
 
 const Hero = ({ t }: TranslateProps) => {
-  const [hover, setHover] = useState(false);
-
-  const onHover = () => {
-    setHover(!hover);
-  };
+  const [hoverBtn, setHoverBtn] = useToggle();
 
   return (
     <HeroContainer id="home">
@@ -26,13 +23,13 @@ const Hero = ({ t }: TranslateProps) => {
         <HeroBtn>
           <Button
             to="work"
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
+            onMouseEnter={setHoverBtn}
+            onMouseLeave={setHoverBtn}
             smooth
             spy
             offset={-80}
           >
-            {t('heroBtnLabel')} {hover ? <ArrowForward /> : <ArrowRight />}
+            {t('heroBtnLabel')} {hoverBtn ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtn>
       </HeroContent>

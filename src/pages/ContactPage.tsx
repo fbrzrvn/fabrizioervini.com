@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from '../components/Form';
+import useTranslation from '../hooks/useTranslation';
 import CustomLayout from '../layout/CustomLayout';
-import useTranslation from '../utils/useTranslation';
 
 const ContactPage = () => {
   const { t } = useTranslation();

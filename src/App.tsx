@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import TranslationsProvider from './context/translationsProvider';
+import useTheme from './hooks/useTheme';
 import ContactPage from './pages/ContactPage';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import ROUTES from './routes';
 import { darkTheme, GlobalStyles, lightTheme } from './styles/globals';
-import useTheme from './utils/useTheme';
 
 function App() {
   const [theme] = useTheme();

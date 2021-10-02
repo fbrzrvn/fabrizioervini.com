@@ -4,7 +4,7 @@ const useScrolling = () => {
   const [scroll, setScroll] = useState(false);
 
   const handleScroll = () => {
-    window.scrollY >= 80 ? setScroll(true) : setScroll(false);
+    window.scrollY >= 80 && setScroll(true);
   };
 
   useEffect(() => {

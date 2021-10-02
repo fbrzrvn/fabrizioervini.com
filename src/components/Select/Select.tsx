@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { TranslationsContext } from '../../context/translationsContext';
 import { languages } from '../../data/languages';
+import { useClickOutside, useScroll } from '../../hooks';
 import { TranslateProps } from '../../models/props';
-import useClickOutside from '../../utils/useClickOutside';
-import useScroll from '../../utils/useScroll';
 import {
   LanguageArrowBtn,
   LanguageArrowIcon,
