@@ -1,24 +1,18 @@
 import { useEffect, useState } from 'react';
 
-const useScroll = () => {
-  const [scrollNav, setScrollNav] = useState(false);
+const useScrolling = () => {
+  const [scroll, setScroll] = useState(false);
 
-  const changeNavBg = () => {
-    if (window.scrollY >= 80) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
+  const handleScroll = () => {
+    window.scrollY >= 80 ? setScroll(true) : setScroll(false);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', changeNavBg);
-    return () => {
-      window.removeEventListener('scroll', changeNavBg);
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return scrollNav;
+  return scroll;
 };
 
-export default useScroll;
+export default useScrolling;

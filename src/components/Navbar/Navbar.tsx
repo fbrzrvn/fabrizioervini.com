@@ -17,14 +17,14 @@ import {
 } from './styles';
 
 const Navbar = ({ toggleNavbar, t }: NavProps & TranslateProps) => {
-  const scrollNav = useScroll();
+  const isScrolled = useScroll();
 
   const toggleHome = () => {
     scroll.scrollToTop();
   };
 
   return (
-    <Nav scrollNav={scrollNav}>
+    <Nav scrollNav={isScrolled}>
       <NavContainer>
         <MobileIcon onClick={() => toggleNavbar()}>
           <AiOutlineMenu />
