@@ -10,7 +10,7 @@ export const FormWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 190px);
+  padding-top: 80px;
   background: ${({ theme }) => theme.body};
 `;
 

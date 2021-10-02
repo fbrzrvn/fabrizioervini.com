@@ -1,18 +1,20 @@
 import React from 'react';
 import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Navbar from '../components/Navbar';
+import useTraslation from '../hooks/useTranslation';
+import { ChildrenProps } from '../models/props';
 import ScrollToTop from '../utils/ScrollToTop';
 
 type Props = {
-  children: React.ReactNode | React.ReactNode[];
   hasFooter?: boolean;
 };
 
-const CustomLayout: React.FC<Props> = ({ children, hasFooter }) => {
+const CustomLayout = ({ children, hasFooter }: ChildrenProps & Props) => {
+  const { t } = useTraslation();
   return (
     <>
       <ScrollToTop />
-      <Header />
+      <Navbar t={t} />
       {children}
       {hasFooter && <Footer />}
     </>

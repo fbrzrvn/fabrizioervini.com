@@ -13,10 +13,10 @@ export const Nav = styled.nav<NavbarProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${({ scrollNav, theme }) =>
-    scrollNav ? theme.navbarBg : 'transparent'};
   height: 80px;
   margin-top: -80px;
+  background: ${({ scrollNav, theme }) =>
+    scrollNav ? theme.navbarBg : 'transparent'};
   font-size: 1rem;
   z-index: 10;
   @media screen and (max-width: 968px) {
@@ -29,20 +29,20 @@ export const NavContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  padding: 0 2rem;
   width: 100%;
   max-width: 1100px;
+  padding: 0 2rem;
 `;
 
 export const NavLogo = styled(LinkRouter)`
-  color: ${({ theme }) => theme.text};
   display: flex;
-  justify-self: flex-start;
   align-items: center;
+  justify-self: flex-start;
+  margin-left: 24px;
+  color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
-  margin-left: 24px;
   cursor: pointer;
 `;
 
@@ -57,11 +57,11 @@ export const MobileIcon = styled.div`
 `;
 
 export const NavMenu = styled.ul`
-  list-style: none;
   display: flex;
   align-items: center;
-  text-align: center;
   margin-right: 24px;
+  list-style: none;
+  text-align: center;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -72,12 +72,12 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled(LinkScroll)`
-  color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
   height: 100%;
+  padding: 0 1rem;
+  color: ${({ theme }) => theme.text};
+  text-decoration: none;
   cursor: pointer;
   &:hover {
     color: ${({ theme }) => theme.navbarLink};
