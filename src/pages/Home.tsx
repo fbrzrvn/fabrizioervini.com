@@ -9,19 +9,21 @@ import Work from '../components/Work';
 import { aboutSection } from '../data/aboutSection';
 import { blogSection } from '../data/blogSection';
 import useNavbar from '../utils/useNavbar';
+import useTranslation from '../utils/useTranslation';
 
 const Home = () => {
   const [isOpen, toggleNavbar] = useNavbar();
+  const { t } = useTranslation();
 
   return (
     <>
-      <Sidebar isOpen={isOpen as boolean} toggleNavbar={toggleNavbar} />
-      <Navbar toggleNavbar={toggleNavbar} />
-      <Hero />
-      <Section {...aboutSection} />
-      <Work />
-      <Section {...blogSection} />
-      <Contact />
+      <Sidebar t={t} isOpen={isOpen as boolean} toggleNavbar={toggleNavbar} />
+      <Navbar t={t} isOpen={false} toggleNavbar={toggleNavbar} />
+      <Hero t={t} />
+      <Section t={t} {...aboutSection} />
+      <Work t={t} />
+      <Section t={t} {...blogSection} />
+      <Contact t={t} />
       <Footer />
     </>
   );

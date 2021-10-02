@@ -1,4 +1,5 @@
 import React from 'react';
+import { TranslateProps } from '../../models/props';
 import ROUTES from '../../routes';
 import BtnLinkRouter from '../BtnLinkRouter';
 import { SectionProps } from './sectionProps';
@@ -28,19 +29,20 @@ const Section = ({
   img,
   altImg,
   isCircular,
-}: SectionProps) => {
+  t,
+}: SectionProps & TranslateProps) => {
   return (
     <SectionContainer id={id}>
       <SectionWrapper>
         <SectionRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>{topLine}</TopLine>
-              <Heading>{headLine}</Heading>
-              <Subtitle>{description}</Subtitle>
+              <TopLine>{t(topLine)}</TopLine>
+              <Heading>{t(headLine)}</Heading>
+              <Subtitle>{t(description)}</Subtitle>
               {hasLink && (
                 <BtnLinkRouter to={linkUrl ?? ROUTES.HOME}>
-                  {linkLabel}
+                  {t(linkLabel ?? '')}
                 </BtnLinkRouter>
               )}
             </TextWrapper>

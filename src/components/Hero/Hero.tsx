@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TranslateProps } from '../../models/props';
 import {
   ArrowForward,
   ArrowRight,
@@ -10,24 +11,18 @@ import {
   HeroP,
 } from './styles';
 
-const Hero = () => {
+const Hero = ({ t }: TranslateProps) => {
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
     setHover(!hover);
   };
+
   return (
     <HeroContainer id="home">
       <HeroContent>
-        <HeroH1>Hi! I&apos;m faber.</HeroH1>
-        <HeroP>
-          Born and raised in Italy, after travel around the world I finally
-          settled in the sunny Barcelona, Spain.
-        </HeroP>
-        <HeroP>
-          Well organized person, problem solver, with high attention to details.
-          Looking forward to work in ambitious projects with positive people.
-        </HeroP>
+        <HeroH1>{t('heroGreating')}</HeroH1>
+        <HeroP>{t('heroText')}</HeroP>
         <HeroBtn>
           <Button
             to="work"
@@ -37,7 +32,7 @@ const Hero = () => {
             spy
             offset={-80}
           >
-            View my Works {hover ? <ArrowForward /> : <ArrowRight />}
+            {t('heroBtnLabel')} {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtn>
       </HeroContent>

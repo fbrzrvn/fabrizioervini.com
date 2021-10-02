@@ -3,12 +3,11 @@ import { SectionProps } from '../components/Section/sectionProps';
 
 export const pageNotFound: SectionProps = {
   id: '404',
-  topLine: 'Ooops! Error 404',
-  headLine: 'You are in the middle of nowhere',
-  description:
-    'It’s embarrassing... This page does not seem to exist! This might be because you have typed the web address incorrectly, please check the spelling.',
+  topLine: 'error404TopLine',
+  headLine: 'error404HeadLine',
+  description: 'error404Description',
   hasLink: true,
-  linkLabel: 'Go to Home',
+  linkLabel: 'goHome',
   linkUrl: '/',
   imgStart: true,
   img: NotFound,

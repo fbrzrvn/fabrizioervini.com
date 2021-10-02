@@ -8,7 +8,7 @@ type SidebarProps = {
 
 export const SidebarContainer = styled.aside<SidebarProps>`
   position: fixed;
-  right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
   top: 0;
   z-index: 100;
   display: grid;
@@ -26,8 +26,8 @@ export const CloseIcon = styled(AiOutlineClose)`
 
 export const Icon = styled.div`
   position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
+  top: 1.35rem;
+  left: 1.85rem;
   background: transparent;
   font-size: 2rem;
   outline: none;

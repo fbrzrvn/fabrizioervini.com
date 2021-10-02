@@ -1,4 +1,5 @@
 import React from 'react';
+import { TranslateProps } from '../../models/props';
 import ROUTES from '../../routes';
 import BtnLinkRouter from '../BtnLinkRouter';
 import {
@@ -9,17 +10,16 @@ import {
   ContactP,
 } from './styles';
 
-const Contact = () => {
+const Contact = ({ t }: TranslateProps) => {
   return (
     <ContactContainer id="contact">
       <ContactContent>
-        <ContactH1>Have a project in mind?</ContactH1>
-        <ContactP>
-          I&apos;m currently available for freelance work. If you have a project
-          that you want to get started or just fancy saying hey, get in touch.
-        </ContactP>
+        <ContactH1>{t('contactTitle')}</ContactH1>
+        <ContactP>{t('contactText')}</ContactP>
         <ContactBtn>
-          <BtnLinkRouter to={ROUTES.CONTACT}>Contact Me</BtnLinkRouter>
+          <BtnLinkRouter to={ROUTES.CONTACT}>
+            {t('contactBtnLabel')}
+          </BtnLinkRouter>
         </ContactBtn>
       </ContactContent>
     </ContactContainer>

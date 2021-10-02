@@ -4,19 +4,19 @@ const validateForm = (values: IFormValues) => {
   const errors: IFormErrors = {} as IFormErrors;
 
   if (!values.name.trim()) {
-    errors.name = 'Please enter your name.';
+    errors.name = 'formNameErrorEmpty';
   } else if (!/^[A-Za-z\s]{3,15}$/.test(values.name)) {
-    errors.name = 'Please enter a valid name.';
+    errors.name = 'formNameErrorWrong';
   }
 
   if (!values.email.trim()) {
-    errors.email = 'Please enter your email.';
+    errors.email = 'formEmailErrorEmpty';
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-    errors.email = 'Please enter a valid email address.';
+    errors.email = 'formEmailErrorWrong';
   }
 
   if (!values.message.trim()) {
-    errors.message = 'Please be sure to drop me a message.';
+    errors.message = 'formMessageError';
   }
 
   return errors;
