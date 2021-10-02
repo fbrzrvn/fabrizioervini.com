@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
 const BtnLinkRouter = styled(LinkRouter)`
+  display: grid;
+  place-items: center;
   width: 160px;
   padding: 12px 30px;
   border-radius: 50px;

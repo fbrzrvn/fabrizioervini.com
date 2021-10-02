@@ -21,7 +21,7 @@ function App() {
           <Switch>
             <Route path={ROUTES.HOME} component={Home} exact />
             <Route path={ROUTES.CONTACT} component={ContactPage} exact />
-            <Route component={ErrorPage} />
+            <Route path="*" component={ErrorPage} />
           </Switch>
         </Router>
       </TranslationsProvider>
