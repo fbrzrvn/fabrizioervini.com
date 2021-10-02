@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
+import { ChildrenProps } from '../../models/props';
 import {
   ArrowIconLeft,
   ArrowIconRight,
@@ -9,11 +10,7 @@ import {
   DotsWrapper,
 } from './styles';
 
-type Props = {
-  children: React.ReactNode | React.ReactNode[];
-};
-
-const Carousel: React.FC<Props> = ({ children }) => {
+const Carousel = ({ children }: ChildrenProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const length = React.Children.count(children);
 

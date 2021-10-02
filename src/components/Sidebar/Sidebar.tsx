@@ -1,6 +1,6 @@
 import React from 'react';
 import { links } from '../../data/links';
-import { NavProps, TranslateProps } from '../../models/props';
+import { SidebarProps, TranslateProps } from '../../models/props';
 import {
   CloseIcon,
   Icon,
@@ -10,9 +10,13 @@ import {
   SidebarWrapper,
 } from './styles';
 
-const Sidebar = ({ toggleNavbar, isOpen, t }: NavProps & TranslateProps) => {
+const Sidebar = ({
+  toggleNavbar,
+  isOpen,
+  t,
+}: SidebarProps & TranslateProps) => {
   return (
-    <SidebarContainer isOpen={isOpen} onClick={() => toggleNavbar()}>
+    <SidebarContainer isOpen={isOpen} onClick={toggleNavbar}>
       <Icon onClick={() => toggleNavbar()}>
         <CloseIcon />
       </Icon>

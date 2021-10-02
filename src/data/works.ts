@@ -1,18 +1,11 @@
-import ApollofyImg from '../../assets/apollofy.png';
-import MemoriesImg from '../../assets/memories.png';
-import PunkApiImg from '../../assets/punkApi.png';
-import TodoImg from '../../assets/todo.png';
-import TrackerImg from '../../assets/tracker.png';
+import ApollofyImg from '../assets/apollofy.png';
+import MemoriesImg from '../assets/memories.png';
+import PunkApiImg from '../assets/punkApi.png';
+import TodoImg from '../assets/todo.png';
+import TrackerImg from '../assets/tracker.png';
+import { WorkProps } from '../models/props';
 
-interface IWorkData {
-  id: number;
-  title: string;
-  description: string;
-  img: string;
-  link: string;
-}
-
-export const works: IWorkData[] = [
+export const works: WorkProps[] = [
   {
     id: 5,
     title: 'Memories',

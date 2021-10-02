@@ -1,5 +1,5 @@
 import NotFound from '../assets/page_not_found.svg';
-import { SectionProps } from '../components/Section/sectionProps';
+import { SectionProps } from '../models/props';
 
 export const pageNotFound: SectionProps = {
   id: '404',

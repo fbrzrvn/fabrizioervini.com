@@ -8,17 +8,16 @@ import Sidebar from '../components/Sidebar';
 import Work from '../components/Work';
 import { aboutSection } from '../data/aboutSection';
 import { blogSection } from '../data/blogSection';
-import useNavbar from '../utils/useNavbar';
-import useTranslation from '../utils/useTranslation';
+import { useToggle, useTranslation } from '../hooks';
 
 const Home = () => {
-  const [isOpen, toggleNavbar] = useNavbar();
+  const [isOpen, setIsOpen] = useToggle();
   const { t } = useTranslation();
 
   return (
     <>
-      <Sidebar t={t} isOpen={isOpen as boolean} toggleNavbar={toggleNavbar} />
-      <Navbar t={t} isOpen={false} toggleNavbar={toggleNavbar} />
+      <Sidebar t={t} isOpen={isOpen as boolean} toggleNavbar={setIsOpen} />
+      <Navbar t={t} hasLink toggleNavbar={setIsOpen} />
       <Hero t={t} />
       <Section t={t} {...aboutSection} />
       <Work t={t} />
