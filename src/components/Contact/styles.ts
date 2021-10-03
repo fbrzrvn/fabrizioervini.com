@@ -5,9 +5,12 @@ export const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 30px;
   background: ${({ theme }) => theme.navbarBg};
+  @media screen and (min-width: 768px) {
+    min-height: calc(100vh - 184px);
+  }
 `;
 
 export const ContactContent = styled.div`
