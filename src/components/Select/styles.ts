@@ -15,9 +15,9 @@ export const SelectWrapper = styled.div`
 export const LanguageImg = styled.img`
   height: 18px;
   width: 18px;
-  margin-right: 4px;
 `;
 export const LanguageLabel = styled.span`
+  width: 20px;
   margin: 0 6px;
   font-size: inherit;
   text-transform: uppercase;
@@ -39,7 +39,7 @@ export const LanguageArrowBtn = styled(CustomBtn)`
 `;
 export const LanguageArrowIcon = styled(AiOutlineDown)<ArrowProps>`
   transform: rotate(${({ isOpen }) => (isOpen ? '180deg' : '0deg')});
-  transition: transform 300ms ease-in-out;
+  transition: transform 200ms ease-in-out;
 `;
 export const LanguagesOptionBox = styled.div<{ isOpen: boolean }>`
   position: absolute;
@@ -63,5 +63,6 @@ export const LanguagesOptionLabel = styled.span`
   margin: 0 6px;
 `;
 export const LanguageOptionChecked = styled(AiOutlineCheck)`
+  margin-left: 16px;
   color: ${COLOR.success500};
 `;

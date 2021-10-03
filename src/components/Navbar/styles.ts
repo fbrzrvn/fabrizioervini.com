@@ -111,3 +111,8 @@ export const NavLinkRouter = styled(LinkRouter)`
     border-bottom: 3px solid ${({ theme }) => theme.navbarLink};
   }
 `;
+
+export const NavBtns = styled.div`
+  display: flex;
+  align-items: center;
+`;

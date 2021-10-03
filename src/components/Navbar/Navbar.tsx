@@ -6,9 +6,11 @@ import useScroll from '../../hooks/useScroll';
 import { NavProps, TranslateProps } from '../../models/props';
 import ROUTES from '../../routes';
 import Select from '../Select';
+import ToggleBtn from '../ToggleBtn';
 import {
   MobileIcon,
   Nav,
+  NavBtns,
   NavContainer,
   NavItem,
   NavLink,
@@ -45,7 +47,10 @@ const Navbar = ({ toggleNavbar, hasLink, t }: NavProps & TranslateProps) => {
             ))}
           </NavMenu>
         )}
-        <Select t={t} />
+        <NavBtns>
+          <Select t={t} />
+          <ToggleBtn />
+        </NavBtns>
       </NavContainer>
     </Nav>
   );

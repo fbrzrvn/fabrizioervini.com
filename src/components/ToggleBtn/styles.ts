@@ -1,45 +1,55 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+import darkIcon from '../../assets/dark.svg';
+import lightIcon from '../../assets/light.svg';
+
+type ToggleThemeBtnProps = {
+  isAnimated: boolean;
+  isDark: boolean;
+};
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-opacity: opacity(0);
+    -moz-opacity: opacity(0);
+  }
+  50% {
+    opacity: 0.5;
+    -webkit-opacity: opacity(0.5);
+    -moz-opacity: opacity(0.5);
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-opacity: opacity(1);
+    -moz-opacity: opacity(1);
+  }
+`;
 
 export const ToggleThemeWrap = styled.div`
-  position: relative;
-`;
-export const ToggleThemeLabel = styled.label`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 26px;
-  border-radius: 15px;
-  background: #bdbdbd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  &::after {
-    content: '';
-    display: block;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    margin: 3px;
-    background: #eee;
-    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-  }
 `;
-export const ToggleSwitch = styled.input`
-  opacity: 0;
-  z-index: 1;
-  border-radius: 15px;
-  width: 42px;
-  height: 26px;
-  &:checked + ${ToggleThemeLabel} {
-    background: #bdbdbd;
-    &::after {
-      content: '';
-      display: block;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      margin-left: 21px;
-      transition: 0.2s;
-    }
-  }
+
+export const ToggleThemeBtn = styled.button<ToggleThemeBtnProps>`
+  height: 24px;
+  width: 24px;
+  border: none;
+  background-color: transparent;
+  background-image: url(${({ isDark }) => (isDark ? lightIcon : darkIcon)});
+  background-position: center;
+  background-size: 32px;
+  cursor: pointer;
+  animation: ${({ isAnimated }) =>
+    isAnimated &&
+    css`
+      ${spin} 500ms ease-in-out alternate
+    `};
 `;
