@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { DEFAULT_THEME } from '../constants';
+import { ThemeType } from '../models/enums';
 import { ChildrenProps } from '../models/props';
 import { getDataFromStorage, saveDataToStorage } from '../services/storage';
+import { darkTheme, GlobalStyles, lightTheme } from '../styles/globals';
 import { ThemeContext } from './themeContext';
 
-const ThemeProvider = ({ children }: ChildrenProps) => {
+const ThemeContextProvider = ({ children }: ChildrenProps) => {
   const initialState = getDataFromStorage('theme') || DEFAULT_THEME;
   const [theme, setTheme] = useState(initialState);
+  const currentTheme = theme === ThemeType.LIGHT ? lightTheme : darkTheme;
 
   const changeTheme = (theme: any) => {
     setTheme(theme);
@@ -15,9 +19,12 @@ const ThemeProvider = ({ children }: ChildrenProps) => {
 
   return (
     <ThemeContext.Provider value={{ theme, changeTheme }}>
-      {children}
+      <ThemeProvider theme={currentTheme}>
+        <GlobalStyles />
+        {children}
+      </ThemeProvider>
     </ThemeContext.Provider>
   );
 };
 
-export default ThemeProvider;
+export default ThemeContextProvider;
