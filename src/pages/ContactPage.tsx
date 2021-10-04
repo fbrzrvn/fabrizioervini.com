@@ -1,15 +1,18 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import Form from '../components/Form';
+import Navbar from '../components/Navbar';
 import useTranslation from '../hooks/useTranslation';
-import CustomLayout from '../layout/CustomLayout';
 
 const ContactPage = () => {
   const { t } = useTranslation();
 
   return (
-    <CustomLayout hasFooter>
+    <>
+      <Navbar t={t} />
       <Form t={t} />
-    </CustomLayout>
+      <Footer />
+    </>
   );
 };
 
