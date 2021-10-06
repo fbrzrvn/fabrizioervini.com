@@ -18,14 +18,11 @@ export type TranslateProps = {
   t: (key: string) => string;
 };
 
-export interface NavProps {
-  toggleNavbar?: boolean | any;
+export type NavProps = {
+  isOpen?: boolean | any;
+  setIsOpen?: boolean | any;
   hasLink?: boolean;
-}
-
-export interface SidebarProps extends NavProps {
-  isOpen: boolean;
-}
+};
 
 export type ChildrenProps = {
   children: React.ReactNode | React.ReactNode[];

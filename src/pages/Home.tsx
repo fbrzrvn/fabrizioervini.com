@@ -16,8 +16,8 @@ const Home = () => {
 
   return (
     <>
-      <Sidebar t={t} isOpen={isOpen as boolean} toggleNavbar={setIsOpen} />
-      <Navbar t={t} hasLink toggleNavbar={setIsOpen} />
+      <Sidebar t={t} isOpen={isOpen as boolean} setIsOpen={setIsOpen} />
+      <Navbar t={t} isOpen={isOpen} setIsOpen={setIsOpen} hasLink />
       <Hero t={t} />
       <Section t={t} {...aboutSection} />
       <Work t={t} />

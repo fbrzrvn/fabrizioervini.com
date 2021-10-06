@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { animateScroll as scroll } from 'react-scroll';
 import { links } from '../../data/links';
 import useScroll from '../../hooks/useScroll';
@@ -18,7 +18,12 @@ import {
   NavMenu,
 } from './styles';
 
-const Navbar = ({ toggleNavbar, hasLink, t }: NavProps & TranslateProps) => {
+const Navbar = ({
+  isOpen,
+  setIsOpen,
+  hasLink,
+  t,
+}: NavProps & TranslateProps) => {
   const isScrolled = useScroll();
 
   const toggleHome = () => {
@@ -29,8 +34,8 @@ const Navbar = ({ toggleNavbar, hasLink, t }: NavProps & TranslateProps) => {
     <Nav scrollNav={isScrolled}>
       <NavContainer>
         {hasLink && (
-          <MobileIcon onClick={toggleNavbar}>
-            <AiOutlineMenu />
+          <MobileIcon onClick={setIsOpen}>
+            {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
           </MobileIcon>
         )}
         <NavLogo to={ROUTES.HOME} onClick={toggleHome}>

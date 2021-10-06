@@ -1,4 +1,3 @@
-import { AiOutlineClose } from 'react-icons/ai';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
 
@@ -9,7 +8,7 @@ type SidebarProps = {
 export const SidebarContainer = styled.aside<SidebarProps>`
   position: fixed;
   left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
-  top: 0;
+  top: 80px;
   z-index: 100;
   display: grid;
   align-items: center;
@@ -19,25 +18,9 @@ export const SidebarContainer = styled.aside<SidebarProps>`
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transition: all 500ms ease-in-out;
 `;
-
-export const CloseIcon = styled(AiOutlineClose)`
-  color: ${({ theme }) => theme.text};
-`;
-
-export const Icon = styled.div`
-  position: absolute;
-  top: 1.35rem;
-  left: 1.85rem;
-  background: transparent;
-  font-size: 2rem;
-  outline: none;
-  cursor: pointer;
-`;
-
 export const SidebarWrapper = styled.div`
   color: ${({ theme }) => theme.text};
 `;
-
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
@@ -47,7 +30,6 @@ export const SidebarMenu = styled.ul`
     grid-template-rows: repeat(5, 80px);
   }
 `;
-
 export const SidebarLink = styled(LinkScroll)`
   display: flex;
   align-items: center;
