@@ -1,8 +1,7 @@
 import React from 'react';
-import { TranslateProps } from '../../models/props';
+import { SectionProps, TranslateProps } from '../../models/props';
 import ROUTES from '../../routes';
 import BtnLinkRouter from '../BtnLinkRouter';
-import { SectionProps } from './sectionProps';
 import {
   Column1,
   Column2,

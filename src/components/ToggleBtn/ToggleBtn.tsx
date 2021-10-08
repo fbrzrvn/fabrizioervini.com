@@ -1,19 +1,32 @@
-import React from 'react';
-import { ToggleSwitch, ToggleThemeLabel, ToggleThemeWrap } from './styles';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../context/themeContext';
+import { useToggle } from '../../hooks';
+import { ThemeType } from '../../models/enums';
+import { ToggleThemeBtn, ToggleThemeWrap } from './styles';
 
-type toogleBtnProps = {
-  toggleTheme: (boolean: boolean) => string;
-};
+const ToggleBtn = () => {
+  const { theme, changeTheme } = useContext(ThemeContext);
+  const [isAnimated, setIsAnimated] = useToggle();
+  const { DARK, LIGHT } = ThemeType;
+  const newTheme = theme === DARK ? LIGHT : DARK;
+  const isDark = theme === DARK ? true : false;
 
-const ToggleBtn = ({ toggleTheme }: toogleBtnProps) => {
+  const handleClick = () => {
+    setIsAnimated(true);
+    setTimeout(() => {
+      changeTheme(newTheme);
+      setIsAnimated(false);
+    }, 500);
+  };
+
   return (
     <ToggleThemeWrap>
-      <ToggleSwitch
-        id="toggleSwitch"
-        type="checkbox"
-        onClick={() => toggleTheme}
+      <ToggleThemeBtn
+        type="button"
+        isAnimated={isAnimated}
+        isDark={isDark}
+        onClick={handleClick}
       />
-      <ToggleThemeLabel htmlFor="toggleSwitch" />
     </ToggleThemeWrap>
   );
 };

@@ -4,54 +4,31 @@ import styled from 'styled-components';
 export const FooterContainer = styled.div`
   background: ${({ theme }) => theme.footer};
 `;
-
 export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px;
-  @media screen and (min-width: 768px) {
-    padding: 40px 24px;
-  }
-`;
-
-export const FooterLinks = styled.section`
-  width: 100%;
-  max-width: 1100px;
-`;
-
-export const FooterLinksWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin: auto;
   max-width: 1100px;
+  margin: auto;
+  padding: 24px;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
+    padding: 40px 24px;
   }
 `;
-
 export const FooterLogo = styled(LinkRouter)`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   margin-bottom: 16px;
   color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
   font-weight: 700;
   cursor: pointer;
-  & span {
-    width: 168px;
-    text-align: center;
-  }
   @media screen and (min-width: 768px) {
+    margin-left: 24px;
     margin-bottom: 0;
-    & span {
-      text-align: left;
-    }
   }
 `;
 

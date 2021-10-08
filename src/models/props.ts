@@ -1,10 +1,11 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import React from 'react';
 
-export type LinkProps = {
+export interface LinkProps {
   id: number;
   label: string;
   url: string;
-};
+}
 
 export type LanguageProps = {
   id: number;
@@ -18,10 +19,38 @@ export type TranslateProps = {
 };
 
 export type NavProps = {
-  toggleNavbar: boolean | any;
-  isOpen: boolean;
+  isOpen?: boolean | any;
+  setIsOpen?: boolean | any;
+  hasLink?: boolean;
 };
 
 export type ChildrenProps = {
   children: React.ReactNode | React.ReactNode[];
 };
+
+export type SectionProps = {
+  id: string;
+  topLine: string;
+  headLine: string;
+  description: string;
+  hasLink?: boolean;
+  linkLabel?: string;
+  linkUrl?: string;
+  imgStart: boolean;
+  img: string;
+  altImg: string;
+  isCircular: boolean;
+} & Omit<React.HTMLAttributes<HTMLDivElement>, 'imgStart'> &
+  Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'alt'>;
+
+export type WorkProps = {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+  link: string;
+};
+
+export interface FooterLinkProp extends LinkProps {
+  icon: IconProp;
+}

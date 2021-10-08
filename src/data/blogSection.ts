@@ -1,5 +1,5 @@
 import Blog from '../assets/blog.svg';
-import { SectionProps } from '../components/Section/sectionProps';
+import { SectionProps } from '../models/props';
 
 export const blogSection: SectionProps = {
   id: 'blog',

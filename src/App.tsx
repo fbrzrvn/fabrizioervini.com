@@ -1,31 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import ThemeProvider from './context/themeProvider';
 import TranslationsProvider from './context/translationsProvider';
 import ContactPage from './pages/ContactPage';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import ROUTES from './routes';
-import { darkTheme, GlobalStyles, lightTheme } from './styles/globals';
-import useTheme from './utils/useTheme';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
-  const [theme] = useTheme();
-  const themeMode = theme === 'dark' ? darkTheme : lightTheme;
-
   return (
-    <ThemeProvider theme={themeMode}>
-      <GlobalStyles />
-      <TranslationsProvider>
+    <TranslationsProvider>
+      <ThemeProvider>
         <Router>
+          <ScrollToTop />
           <Switch>
             <Route path={ROUTES.HOME} component={Home} exact />
             <Route path={ROUTES.CONTACT} component={ContactPage} exact />
             <Route path="*" component={ErrorPage} />
           </Switch>
         </Router>
-      </TranslationsProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </TranslationsProvider>
   );
 }
 

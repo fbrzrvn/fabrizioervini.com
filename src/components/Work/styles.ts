@@ -11,7 +11,6 @@ export const WorkContainer = styled.div`
   padding: 100px 24px;
   background: ${({ theme }) => theme.navbarBg};
 `;
-
 export const WorkH1 = styled.h1`
   margin-bottom: 64px;
   background: ${COLOR.linearGradient};
@@ -61,17 +60,11 @@ export const ArrowIconLeft = styled(AiOutlineLeft)`
   ${ArrowIcon};
   left: 0;
   padding: 6px 6px 6px 4px;
-  /* @media screen and (min-width: 600px) {
-    left: 8px;
-  } */
 `;
 export const ArrowIconRight = styled(AiOutlineRight)`
   ${ArrowIcon};
   right: 0;
   padding: 6px 4px 6px 6px;
-  /* @media screen and (min-width: 600px) {
-    right: 8px;
-  } */
 `;
 export const CarouselWrapper = styled.div`
   display: flex;
@@ -110,7 +103,6 @@ export const WorkCard = styled.div`
     justify-content: center;
   }
 `;
-
 export const WorkImg = styled.img`
   margin: auto;
   width: 100%;
@@ -128,7 +120,6 @@ export const WorkImg = styled.img`
     border-radius: 10px 0 0 10px;
   }
 `;
-
 export const WorkInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -148,7 +139,6 @@ export const WorkInfo = styled.div`
     border-radius: 0 10px 10px 0;
   }
 `;
-
 export const WorkH2 = styled.h2`
   margin-bottom: 10px;
   font-size: 1.5rem;
@@ -157,17 +147,15 @@ export const WorkH2 = styled.h2`
     width: 80%;
   }
 `;
-
 export const WorkP = styled.p`
   margin-bottom: 10px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({ theme }) => theme.navbarBg};
+  color: ${COLOR.btnPrimaryColor};
   @media screen and (min-width: 1024px) {
     width: 80%;
   }
 `;
-
 export const BtnWrap = styled.div`
   display: flex;
   margin: 8px 0;
@@ -175,7 +163,6 @@ export const BtnWrap = styled.div`
     width: 80%;
   }
 `;
-
 export const BtnLink = styled.a`
   padding: 12px 30px;
   white-space: nowrap;

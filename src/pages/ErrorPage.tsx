@@ -1,16 +1,17 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 import Section from '../components/Section';
 import { pageNotFound } from '../data/pageNotFound';
-import CustomLayout from '../layout/CustomLayout';
-import useTranslation from '../utils/useTranslation';
+import useTranslation from '../hooks/useTranslation';
 
 const ErrorPage = () => {
   const { t } = useTranslation();
 
   return (
-    <CustomLayout>
+    <>
+      <Navbar t={t} />
       <Section t={t} {...pageNotFound} />
-    </CustomLayout>
+    </>
   );
 };
 

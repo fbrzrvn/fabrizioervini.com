@@ -1,5 +1,5 @@
 import ProfileImg from '../assets/profile.jpeg';
-import { SectionProps } from '../components/Section/sectionProps';
+import { SectionProps } from '../models/props';
 
 export const aboutSection: SectionProps = {
   id: 'about',
