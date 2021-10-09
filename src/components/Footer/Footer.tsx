@@ -13,14 +13,14 @@ import {
 } from './styles';
 
 const Footer = () => {
-  const toggleHome = () => {
+  const backToTop = () => {
     scroll.scrollToTop();
   };
 
   return (
     <FooterContainer>
       <FooterWrapper>
-        <FooterLogo to={ROUTES.HOME} onClick={toggleHome}>
+        <FooterLogo to={ROUTES.HOME} onClick={backToTop}>
           faber
         </FooterLogo>
         <FooterCopy>© faber 2021 All rights are reserved.</FooterCopy>

@@ -26,19 +26,19 @@ const Navbar = ({
 }: NavProps & TranslateProps) => {
   const isScrolled = useScroll();
 
-  const toggleHome = () => {
+  const backToTop = () => {
     scroll.scrollToTop();
   };
 
   return (
-    <Nav scrollNav={isScrolled}>
+    <Nav scrollNav={isScrolled} isOpen={isOpen}>
       <NavContainer>
         {hasLink && (
           <MobileIcon onClick={setIsOpen}>
             {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
           </MobileIcon>
         )}
-        <NavLogo to={ROUTES.HOME} onClick={toggleHome}>
+        <NavLogo to={ROUTES.HOME} onClick={backToTop}>
           faber
         </NavLogo>
         {hasLink && (
