@@ -35,9 +35,9 @@ const Select = ({ t }: TranslateProps) => {
       <LanguageImg src={currentLanguage?.img} alt={currentLanguage?.value} />
       <LanguageLabel>{culture}</LanguageLabel>
       <LanguageArrowBtn type="button" onClick={handleClick}>
-        <LanguageArrowIcon isOpen={isOpen} />
+        <LanguageArrowIcon isopen={isOpen.toString()} />
       </LanguageArrowBtn>
-      <LanguagesOptionBox isOpen={isOpen}>
+      <LanguagesOptionBox isopen={isOpen}>
         {languages.map(lang => (
           <LanguagesOptionBtns
             key={lang.id}
