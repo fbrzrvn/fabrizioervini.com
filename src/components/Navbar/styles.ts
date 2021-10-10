@@ -5,6 +5,7 @@ import { COLOR } from '../../styles/colors';
 
 type NavbarProps = {
   scrollNav: Boolean;
+  isOpen: boolean;
 };
 
 export const Nav = styled.nav<NavbarProps>`
@@ -15,13 +16,11 @@ export const Nav = styled.nav<NavbarProps>`
   justify-content: center;
   height: 80px;
   margin-top: -80px;
-  background: ${({ scrollNav, theme }) =>
-    scrollNav ? theme.navbarBg : 'transparent'};
+  background: ${({ isOpen, scrollNav, theme }) =>
+    isOpen ? theme.body : scrollNav ? theme.navbarBg : 'transparent'};
   font-size: 1rem;
   z-index: 10;
-  @media screen and (max-width: 968px) {
-    transition: all 800ms ease;
-  }
+  transition: ${({ isOpen }) => isOpen && 'all 1s ease-in-out'};
 `;
 
 export const NavContainer = styled.div`

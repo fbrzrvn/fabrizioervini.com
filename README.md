@@ -2,10 +2,16 @@
 
 ## Built with
 
-- React
+- React with TypeScript
 - styled-components for styling
 - ESLint & Prettier for linting
 - Hosted on Netlify
+
+## Features
+
+- i18n: English, Spanish and Italian
+- Switch theme (dark/light)
+- Responsive
 
 ## License
 

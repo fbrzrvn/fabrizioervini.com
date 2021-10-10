@@ -2,10 +2,6 @@ import { AiOutlineCheck, AiOutlineDown } from 'react-icons/ai';
 import styled from 'styled-components';
 import { COLOR } from '../../styles/colors';
 
-type ArrowProps = {
-  isOpen: boolean;
-};
-
 export const SelectWrapper = styled.div`
   position: relative;
   display: flex;
@@ -37,15 +33,15 @@ export const LanguageArrowBtn = styled(CustomBtn)`
   height: 24px;
   width: 24px;
 `;
-export const LanguageArrowIcon = styled(AiOutlineDown)<ArrowProps>`
-  transform: rotate(${({ isOpen }) => (isOpen ? '180deg' : '0deg')});
+export const LanguageArrowIcon = styled(AiOutlineDown)<{ isopen: string }>`
+  transform: rotate(${({ isopen }) => (isopen === 'true' ? '180deg' : '0deg')});
   transition: transform 200ms ease-in-out;
 `;
-export const LanguagesOptionBox = styled.div<{ isOpen: boolean }>`
+export const LanguagesOptionBox = styled.div<{ isopen: boolean }>`
   position: absolute;
   right: 0;
   top: 26px;
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  display: ${({ isopen }) => (isopen ? 'block' : 'none')};
   width: 150px;
   border-radius: 4px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);

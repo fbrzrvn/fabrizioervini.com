@@ -21,7 +21,12 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 18px;
     line-height: 1;
     transition: all 1s ease;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
