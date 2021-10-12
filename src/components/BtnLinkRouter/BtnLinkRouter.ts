@@ -8,10 +8,11 @@ const BtnLinkRouter = styled(Link)`
   width: 160px;
   padding: 12px 30px;
   border-radius: 50px;
-  background-image: ${COLOR.btnPrimary};
+  background: ${COLOR.btnPrimary};
   color: ${COLOR.btnPrimaryColor};
-  font-size: 16px;
+  font-family: inherit;
   font-weight: 500;
+  font-size: 18px;
   text-decoration: none;
   white-space: nowrap;
   outline: none;

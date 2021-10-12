@@ -50,3 +50,24 @@ export const ContactBtn = styled.div`
   align-items: center;
   margin-top: 32px;
 `;
+
+export const ContactBtnLink = styled.button`
+  display: grid;
+  place-items: center;
+  width: 160px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  background: ${COLOR.btnPrimary};
+  color: ${COLOR.btnPrimaryColor};
+  font-family: inherit;
+  font-size: 18px;
+  white-space: nowrap;
+  outline: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    background-image: ${COLOR.btnPrimaryHover};
+    transition: all 200ms ease-in-out;
+  }
+`;

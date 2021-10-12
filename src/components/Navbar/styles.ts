@@ -17,7 +17,6 @@ export const Nav = styled.nav<NavbarProps>`
   margin-top: -80px;
   background: ${({ isOpen, scrollNav, theme }) =>
     isOpen ? theme.body : scrollNav ? theme.navbarBg : 'transparent'};
-  font-size: 1rem;
   z-index: 10;
   transition: ${({ isOpen }) => isOpen && 'all 1s ease-in-out'};
 `;

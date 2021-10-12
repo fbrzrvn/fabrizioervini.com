@@ -58,7 +58,6 @@ export const Button = styled(LinkScroll)`
   border-radius: 50px;
   background: ${COLOR.btnPrimary};
   color: ${COLOR.btnPrimaryColor};
-  font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   white-space: nowrap;

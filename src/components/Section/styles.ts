@@ -98,6 +98,27 @@ export const BtnWrap = styled.div`
   justify-content: flex-start;
 `;
 
+export const BtnLink = styled.button`
+  display: grid;
+  place-items: center;
+  width: 160px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  background: ${COLOR.btnPrimary};
+  color: ${COLOR.btnPrimaryColor};
+  font-family: inherit;
+  font-size: 18px;
+  white-space: nowrap;
+  outline: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    background-image: ${COLOR.btnPrimaryHover};
+    transition: all 200ms ease-in-out;
+  }
+`;
+
 export const ImgWrap = styled.div`
   height: 100%;
   max-width: 555px;

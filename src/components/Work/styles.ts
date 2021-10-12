@@ -39,7 +39,7 @@ const ArrowIcon = css`
   top: 50%;
   transform: translateY(-50%);
   display: none;
-  width: 44px;
+  width: 44px !important;
   height: 44px;
   padding: 6px 6px 6px 4px;
   border: none;
@@ -170,7 +170,8 @@ export const BtnLink = styled.a`
   color: ${COLOR.btnPrimaryColor};
   background: ${COLOR.btnPrimary};
   border-radius: 50px;
-  font-weight: 500;
+  font-family: inherit;
+  font-size: 18px;
   text-decoration: none;
   outline: none;
   cursor: pointer;
