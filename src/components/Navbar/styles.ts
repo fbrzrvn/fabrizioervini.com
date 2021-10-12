@@ -1,7 +1,6 @@
-import { Link as LinkRouter } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
-import { COLOR } from '../../styles/colors';
+import { COLOR } from 'styles/colors';
 
 type NavbarProps = {
   scrollNav: Boolean;
@@ -33,7 +32,7 @@ export const NavContainer = styled.div`
   padding: 0 2rem;
 `;
 
-export const NavLogo = styled(LinkRouter)`
+export const NavLogo = styled.p`
   display: flex;
   align-items: center;
   justify-self: flex-start;
@@ -49,6 +48,7 @@ export const MobileIcon = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
     display: block;
+    width: 28px;
     font-size: 1.8rem;
     color: ${({ theme }) => theme.text};
     cursor: pointer;
@@ -93,25 +93,9 @@ export const NavLink = styled(LinkScroll)`
   }
 `;
 
-export const NavLinkRouter = styled(LinkRouter)`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 1rem;
-  color: ${({ theme }) => theme.text};
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.navbarLink};
-    transition: all 300ms ease-in-out;
-  }
-  &.active {
-    border-bottom: 3px solid ${({ theme }) => theme.navbarLink};
-  }
-`;
-
 export const NavBtns = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  width: 100px;
 `;

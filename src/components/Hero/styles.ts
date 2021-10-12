@@ -1,7 +1,7 @@
-import { AiOutlineArrowRight, AiOutlineRight } from 'react-icons/ai';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
-import { COLOR } from '../../styles/colors';
+import { COLOR } from 'styles/colors';
 
 export const HeroContainer = styled.div`
   display: flex;
@@ -28,6 +28,7 @@ export const HeroH1 = styled.h1`
   -webkit-text-fill-color: transparent;
   font-size: 32px;
   text-align: center;
+  white-space: nowrap;
   @media screen and (min-width: 480px) {
     font-size: 48px;
   }
@@ -58,23 +59,18 @@ export const Button = styled(LinkScroll)`
   background: ${COLOR.btnPrimary};
   color: ${COLOR.btnPrimaryColor};
   font-size: 1rem;
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
   outline: none;
   cursor: pointer;
   transition: all 300ms ease-in-out;
   &:hover {
-    background: ${COLOR.btnPrimaryHover};
     transition: all 300ms ease-in-out;
   }
 `;
 
-export const ArrowForward = styled(AiOutlineArrowRight)`
-  margin-left: 8px;
-  font-size: 20px;
-`;
-
-export const ArrowRight = styled(AiOutlineRight)`
+export const ArrowIcon = styled(FontAwesomeIcon)`
   margin-left: 8px;
   font-size: 20px;
 `;

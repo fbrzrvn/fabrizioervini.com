@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLOR } from '../../styles/colors';
+import { COLOR } from 'styles/colors';
 
 type FormProps = {
   error: boolean | string;
@@ -101,6 +101,7 @@ export const FormBtn = styled.button`
   color: ${COLOR.btnSecondaryColor};
   font-family: inherit;
   font-size: 18px;
+  font-weight: 500;
   line-height: 20px;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   text-transform: uppercase;

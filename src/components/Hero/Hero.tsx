@@ -1,9 +1,9 @@
+import { faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useToggle } from 'hooks';
+import { TranslateProps } from 'models/props';
 import React from 'react';
-import useToggle from '../../hooks/useToggle';
-import { TranslateProps } from '../../models/props';
 import {
-  ArrowForward,
-  ArrowRight,
+  ArrowIcon,
   Button,
   HeroBtn,
   HeroContainer,
@@ -29,7 +29,8 @@ const Hero = ({ t }: TranslateProps) => {
             spy
             offset={-80}
           >
-            {t('heroBtnLabel')} {hoverBtn ? <ArrowForward /> : <ArrowRight />}
+            {t('heroBtnLabel')}{' '}
+            <ArrowIcon icon={hoverBtn ? faArrowRight : faAngleRight} />
           </Button>
         </HeroBtn>
       </HeroContent>

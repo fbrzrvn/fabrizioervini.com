@@ -1,6 +1,6 @@
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { css } from 'styled-components';
-import { COLOR } from '../../styles/colors';
+import { COLOR } from 'styles/colors';
 
 export const WorkContainer = styled.div`
   display: flex;
@@ -56,12 +56,12 @@ const ArrowIcon = css`
     display: block;
   }
 `;
-export const ArrowIconLeft = styled(AiOutlineLeft)`
+export const ArrowIconLeft = styled(FontAwesomeIcon)`
   ${ArrowIcon};
   left: 0;
   padding: 6px 6px 6px 4px;
 `;
-export const ArrowIconRight = styled(AiOutlineRight)`
+export const ArrowIconRight = styled(FontAwesomeIcon)`
   ${ArrowIcon};
   right: 0;
   padding: 6px 4px 6px 6px;
@@ -105,6 +105,7 @@ export const WorkCard = styled.div`
 `;
 export const WorkImg = styled.img`
   margin: auto;
+  height: 100%;
   width: 100%;
   aspect-ratio: 16/9;
   border-radius: 10px 10px 0 0;
@@ -169,6 +170,7 @@ export const BtnLink = styled.a`
   color: ${COLOR.btnPrimaryColor};
   background: ${COLOR.btnPrimary};
   border-radius: 50px;
+  font-weight: 500;
   text-decoration: none;
   outline: none;
   cursor: pointer;

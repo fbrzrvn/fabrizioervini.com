@@ -3,8 +3,8 @@ import {
   faLinkedin,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { FooterLinkProp, LinkProps } from '../models/props';
-import ROUTES from '../routes';
+import { RoutesType } from 'models/enums';
+import { FooterLinkProp, LinkProps } from 'models/props';
 
 export const links: LinkProps[] = [
   { id: 11, label: 'aboutLink', url: 'about' },
@@ -14,7 +14,7 @@ export const links: LinkProps[] = [
 ];
 
 export const footerLinks: FooterLinkProp[] = [
-  { id: 11, label: 'GitHub', url: ROUTES.GITHUB, icon: faGithub },
-  { id: 12, label: 'LinkedIn', url: ROUTES.LINKEDIN, icon: faLinkedin },
-  { id: 13, label: 'Twitter', url: ROUTES.TWITTER, icon: faTwitter },
+  { id: 11, label: 'GitHub', url: RoutesType.GITHUB, icon: faGithub },
+  { id: 12, label: 'LinkedIn', url: RoutesType.LINKEDIN, icon: faLinkedin },
+  { id: 13, label: 'Twitter', url: RoutesType.TWITTER, icon: faTwitter },
 ];

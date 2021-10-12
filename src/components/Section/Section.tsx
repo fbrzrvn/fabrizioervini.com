@@ -1,6 +1,6 @@
+import { RoutesType } from 'models/enums';
+import { SectionProps, TranslateProps } from 'models/props';
 import React from 'react';
-import { SectionProps, TranslateProps } from '../../models/props';
-import ROUTES from '../../routes';
 import BtnLinkRouter from '../BtnLinkRouter';
 import {
   Column1,
@@ -40,7 +40,7 @@ const Section = ({
               <Heading>{t(headLine)}</Heading>
               <Subtitle>{t(description)}</Subtitle>
               {hasLink && (
-                <BtnLinkRouter to={linkUrl ?? ROUTES.HOME}>
+                <BtnLinkRouter href={linkUrl ?? RoutesType.HOME}>
                   {t(linkLabel ?? '')}
                 </BtnLinkRouter>
               )}

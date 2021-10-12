@@ -1,8 +1,8 @@
-import { Link as LinkRouter } from 'react-router-dom';
+import Link from 'next/link';
 import styled from 'styled-components';
-import { COLOR } from '../../styles/colors';
+import { COLOR } from 'styles/colors';
 
-const BtnLinkRouter = styled(LinkRouter)`
+const BtnLinkRouter = styled(Link)`
   display: grid;
   place-items: center;
   width: 160px;
@@ -11,6 +11,7 @@ const BtnLinkRouter = styled(LinkRouter)`
   background-image: ${COLOR.btnPrimary};
   color: ${COLOR.btnPrimaryColor};
   font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
   outline: none;

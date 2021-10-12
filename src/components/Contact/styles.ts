@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLOR } from '../../styles/colors';
+import { COLOR } from 'styles/colors';
 
 export const ContactContainer = styled.div`
   display: flex;

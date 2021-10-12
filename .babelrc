@@ -1,11 +1,4 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": "defaults"
-      }
-    ],
-    "@babel/preset-react"
-  ]
+  "presets": ["next/babel"],
+  "plugins": [["styled-components", { "ssr": true }]]
 }

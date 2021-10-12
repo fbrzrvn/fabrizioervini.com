@@ -1,5 +1,5 @@
+import { TranslateProps } from 'models/props';
 import React from 'react';
-import { TranslateProps } from '../../models/props';
 import {
   ErrorMsg,
   FormBtn,

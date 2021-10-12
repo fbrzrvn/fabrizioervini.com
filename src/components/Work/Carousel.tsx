@@ -1,6 +1,10 @@
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
+import { ChildrenProps } from 'models/props';
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { ChildrenProps } from '../../models/props';
 import {
   ArrowIconLeft,
   ArrowIconRight,
@@ -44,8 +48,8 @@ const Carousel = ({ children }: ChildrenProps) => {
   return (
     <React.Fragment>
       <CarouselContainer {...handlers}>
-        <ArrowIconLeft onClick={handlePrev} />
-        <ArrowIconRight onClick={handleNext} />
+        <ArrowIconLeft icon={faChevronLeft} onClick={handlePrev} />
+        <ArrowIconRight icon={faChevronRight} onClick={handleNext} />
         <CarouselWrapper {...slideProps}>{children}</CarouselWrapper>
       </CarouselContainer>
       <DotsWrapper>

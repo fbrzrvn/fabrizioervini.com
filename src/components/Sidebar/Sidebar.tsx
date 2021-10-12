@@ -1,6 +1,6 @@
+import { links } from 'data/links';
+import { NavProps, TranslateProps } from 'models/props';
 import React from 'react';
-import { links } from '../../data/links';
-import { NavProps, TranslateProps } from '../../models/props';
 import {
   SidebarContainer,
   SidebarLink,
@@ -13,7 +13,7 @@ const Sidebar = ({ setIsOpen, isOpen, t }: NavProps & TranslateProps) => {
     <SidebarContainer isOpen={isOpen} onClick={setIsOpen}>
       <SidebarWrapper>
         <SidebarMenu>
-          {links.map(link => (
+          {links.map((link) => (
             <SidebarLink key={link.id} to={link.url} onClick={setIsOpen}>
               {t(link.label)}
             </SidebarLink>

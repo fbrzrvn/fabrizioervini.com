@@ -23,9 +23,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
+      - run: npm install -g yarn
+      - run: yarn ci
+      - run: yarn run build --if-present
+      - run: yarn test
 
   cypress-run:
     runs-on: ubuntu-latest
@@ -37,5 +38,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
-          start: npm start
+          build: yarn  run build
+          start: yarn start

@@ -1,6 +1,6 @@
+import { works } from 'data/works';
+import { TranslateProps } from 'models/props';
 import React from 'react';
-import { works } from '../../data/works';
-import { TranslateProps } from '../../models/props';
 import Carousel from './Carousel';
 import {
   BtnLink,
@@ -19,7 +19,7 @@ const Work = ({ t }: TranslateProps) => {
     <WorkContainer id="work">
       <WorkH1>{t('workTitle')}</WorkH1>
       <Carousel>
-        {works.map(work => (
+        {works.map((work) => (
           <WorkCard key={work.id}>
             <WorkImg src={work.img} alt={work.title} />
             <WorkInfo>

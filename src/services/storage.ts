@@ -1,8 +1,12 @@
 export const getDataFromStorage = (key: string): string => {
-  const data = JSON.parse(localStorage.getItem(key) || 'null');
-  return data;
+  if (typeof window !== 'undefined') {
+    JSON.parse(localStorage.getItem(key) || 'null');
+  }
+  return '';
 };
 
 export const saveDataToStorage = (key: string, data: any): void => {
-  localStorage.setItem(key, JSON.stringify(data));
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(key, JSON.stringify(data));
+  }
 };

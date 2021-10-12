@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
 const useClickOutside = (onClickOutside: any) => {
-  const nodeEl = useRef<HTMLDivElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (event: MouseEvent) => {
-      if (!nodeEl.current?.contains(event.target as Node)) {
+      if (!elementRef.current?.contains(event.target as Node)) {
         onClickOutside();
       }
     };
@@ -14,7 +14,7 @@ const useClickOutside = (onClickOutside: any) => {
       document.removeEventListener('mousedown', handler);
     };
   });
-  return nodeEl;
+  return elementRef;
 };
 
 export default useClickOutside;

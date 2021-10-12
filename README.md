@@ -2,7 +2,7 @@
 
 ## Built with
 
-- React with TypeScript
+- Nextjs • React • TypeScript
 - styled-components for styling
 - ESLint & Prettier for linting
 - Hosted on Netlify

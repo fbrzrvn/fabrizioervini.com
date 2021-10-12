@@ -1,6 +1,6 @@
 import emailjs from 'emailjs-com';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { IFormErrors, IFormValues } from './types';
 
 const useForm = (validateForm: (values: IFormValues) => any) => {
@@ -16,7 +16,7 @@ const useForm = (validateForm: (values: IFormValues) => any) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const history = useHistory();
+  const router = useRouter();
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement> &
@@ -57,13 +57,13 @@ const useForm = (validateForm: (values: IFormValues) => any) => {
         'contact_service',
         'contact_form',
         event.currentTarget,
-        process.env.REACT_APP_EMAILJS_KEY,
+        process.env.NEXT_PUBLIC_EMAILJS_KEY,
       )
       .then(
         () => {
           setIsSubmitting(true);
         },
-        error => {
+        (error) => {
           setErrors({ ...errors, onSubmit: error.text });
         },
       );
@@ -73,21 +73,21 @@ const useForm = (validateForm: (values: IFormValues) => any) => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       setIsSubmitted(true);
     }
-  }, [errors, isSubmitting, isSubmitted, history]);
+  }, [errors, isSubmitting, isSubmitted, router]);
 
   useEffect(() => {
     isSubmitted &&
       setTimeout(() => {
-        history.push('/');
+        router.push('/');
       }, 4000);
     return () => {
       clearTimeout(
         setTimeout(() => {
-          history.push('/');
+          router.push('/');
         }, 4000),
       );
     };
-  }, [isSubmitted, history]);
+  }, [isSubmitted, router]);
 
   return {
     handleChange,

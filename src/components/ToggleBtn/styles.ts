@@ -1,11 +1,12 @@
 import styled, { css, keyframes } from 'styled-components';
-import darkIcon from '../../assets/dark.svg';
-import lightIcon from '../../assets/light.svg';
 
 type ToggleThemeBtnProps = {
   isAnimated: boolean;
   isDark: boolean;
 };
+
+const darkIcon = 'svg/moon.svg';
+const lightIcon = 'svg/sun.svg';
 
 const spin = keyframes`
   0% {
@@ -45,7 +46,7 @@ export const ToggleThemeBtn = styled.button<ToggleThemeBtnProps>`
   background-color: transparent;
   background-image: url(${({ isDark }) => (isDark ? lightIcon : darkIcon)});
   background-position: center;
-  background-size: 32px;
+  background-size: 24px;
   cursor: pointer;
   animation: ${({ isAnimated }) =>
     isAnimated &&

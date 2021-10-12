@@ -8,3 +8,11 @@ export enum CultureType {
   ES = 'es',
   IT = 'it',
 }
+
+export enum RoutesType {
+  HOME = '/',
+  CONTACT = '/contact',
+  GITHUB = 'https://github.com/fab-rvn',
+  LINKEDIN = 'https://www.linkedin.com/in/fabrizioervini',
+  TWITTER = 'https://twitter.com/faber_dev',
+}

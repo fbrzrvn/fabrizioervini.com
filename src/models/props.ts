@@ -1,5 +1,4 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import React from 'react';
 
 export interface LinkProps {
   id: number;
@@ -7,7 +6,11 @@ export interface LinkProps {
   url: string;
 }
 
-export type LanguageProps = {
+export interface FooterLinkProp extends LinkProps {
+  icon: IconProp;
+}
+
+export type CultureProps = {
   id: number;
   value: string;
   label: string;
@@ -51,6 +54,7 @@ export type WorkProps = {
   link: string;
 };
 
-export interface FooterLinkProp extends LinkProps {
-  icon: IconProp;
-}
+export type ContextProps = {
+  state: string;
+  updateState(state: string): void;
+};
