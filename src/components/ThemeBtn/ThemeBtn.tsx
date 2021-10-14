@@ -2,9 +2,9 @@ import { ThemeContext } from 'context/Theme';
 import { useToggle } from 'hooks';
 import { ThemeType } from 'models/enums';
 import React, { useContext } from 'react';
-import { ToggleThemeBtn, ToggleThemeWrap } from './styles';
+import { BtnIcon } from './styles';
 
-const ToggleBtn = () => {
+const ThemeBtn = () => {
   const { state, updateState } = useContext(ThemeContext);
   const [isAnimated, setIsAnimated] = useToggle();
   const { DARK, LIGHT } = ThemeType;
@@ -20,15 +20,13 @@ const ToggleBtn = () => {
   };
 
   return (
-    <ToggleThemeWrap>
-      <ToggleThemeBtn
-        type="button"
-        isAnimated={isAnimated}
-        isDark={isDark}
-        onClick={handleClick}
-      />
-    </ToggleThemeWrap>
+    <BtnIcon
+      role="button"
+      isAnimated={isAnimated}
+      isDark={isDark}
+      onClick={handleClick}
+    />
   );
 };
 
-export default ToggleBtn;
+export default ThemeBtn;

@@ -32,14 +32,7 @@ const spin = keyframes`
   }
 `;
 
-export const ToggleThemeWrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-
-export const ToggleThemeBtn = styled.button<ToggleThemeBtnProps>`
+export const BtnIcon = styled.button<ToggleThemeBtnProps>`
   height: 24px;
   width: 24px;
   border: none;

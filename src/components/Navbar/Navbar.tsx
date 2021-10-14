@@ -8,7 +8,7 @@ import Link from 'next/link';
 import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 import Culture from '../Culture';
-import ToggleBtn from '../ToggleBtn';
+import ThemeBtn from '../ThemeBtn';
 import {
   MobileIcon,
   Nav,
@@ -55,7 +55,7 @@ const Navbar = ({
           </NavMenu>
         )}
         <NavBtns>
-          <ToggleBtn />
+          <ThemeBtn />
           <Culture t={t} />
         </NavBtns>
       </NavContainer>
