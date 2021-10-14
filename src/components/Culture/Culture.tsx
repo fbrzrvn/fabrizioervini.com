@@ -2,7 +2,7 @@ import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { LocaleContext } from 'context/Locale';
 import { cultures } from 'data/culture';
 import { useClickOutside, useScroll } from 'hooks';
-import { TranslateProps } from 'models/props';
+import { CultureProps, TranslateProps } from 'models/props';
 import React, { useContext, useEffect, useState } from 'react';
 import {
   CultureArrowBtn,
@@ -16,11 +16,16 @@ import {
 } from './styles';
 
 const Culture = ({ t }: TranslateProps) => {
-  const [isOpen, setIsOpen] = useState(false);
   const { state, updateState } = useContext(LocaleContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const [culture, setCulture] = useState<CultureProps | undefined>();
   const isScrolled = useScroll();
   const elementRef = useClickOutside(() => setIsOpen(false));
-  const currentLanguage = cultures.find((c) => c.value === state);
+  const currentCulture = cultures.find((c) => c.value === state);
+
+  useEffect(() => {
+    setCulture(currentCulture);
+  });
 
   useEffect(() => {
     isScrolled && setIsOpen(false);
@@ -33,12 +38,11 @@ const Culture = ({ t }: TranslateProps) => {
   return (
     <CultureWrapper ref={elementRef} onClick={handleClick}>
       <CultureImg
-        src={currentLanguage?.img}
-        alt={currentLanguage?.value}
+        src={culture?.img}
+        alt={culture?.value}
         width="18"
         height="18"
       />
-      {/* <CultureLabel>{state}</CultureLabel> */}
       <CultureArrowBtn type="button" onClick={handleClick}>
         <CultureArrowIcon icon={faCaretDown} isopen={isOpen.toString()} />
       </CultureArrowBtn>

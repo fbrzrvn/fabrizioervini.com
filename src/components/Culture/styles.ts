@@ -32,7 +32,6 @@ const CustomBtn = styled.button`
 export const CultureArrowBtn = styled(CustomBtn)`
   height: 24px;
   margin-left: 8px;
-  /* width: 24px; */
 `;
 export const CultureArrowIcon = styled(FontAwesomeIcon)<{ isopen: string }>`
   transform: rotate(${({ isopen }) => (isopen === 'true' ? '180deg' : '0deg')});
