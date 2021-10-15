@@ -1,7 +1,7 @@
 import { works } from 'data/works';
 import { TranslateProps } from 'models/props';
 import React from 'react';
-import Carousel from './Carousel';
+import Carousel from '../Carousel';
 import {
   BtnLink,
   BtnWrap,
