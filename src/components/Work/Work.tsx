@@ -1,9 +1,9 @@
 import { works } from 'data/works';
 import { TranslateProps } from 'models/props';
 import React from 'react';
+import Button from '../Button';
 import Carousel from '../Carousel';
 import {
-  BtnLink,
   BtnWrap,
   WorkCard,
   WorkContainer,
@@ -26,13 +26,14 @@ const Work = ({ t }: TranslateProps) => {
               <WorkH2>{work.title}</WorkH2>
               <WorkP>{t(work.description)}</WorkP>
               <BtnWrap>
-                <BtnLink
+                <Button
                   href={work.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  primary
                 >
                   {t('visitWebsite')}
-                </BtnLink>
+                </Button>
               </BtnWrap>
             </WorkInfo>
           </WorkCard>

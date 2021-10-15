@@ -58,3 +58,13 @@ export type ContextProps = {
   state: string;
   updateState(state: string): void;
 };
+
+export type BtnProps = {
+  primary?: boolean;
+  secondary?: boolean;
+  href?: string;
+  target?: string;
+  rel?: string;
+  isBig?: boolean | false;
+  ref: any;
+};

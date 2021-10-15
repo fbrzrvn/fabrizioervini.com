@@ -1,8 +1,8 @@
 import { TranslateProps } from 'models/props';
 import React from 'react';
+import Button from '../Button';
 import {
   ErrorMsg,
-  FormBtn,
   FormH1,
   FormInput,
   FormLabel,
@@ -66,7 +66,9 @@ const Form = ({ t }: TranslateProps) => {
           <ErrorMsg className="last">{t(errors.message)}</ErrorMsg>
         )}
         {errors.onSubmit && <ErrorMsg>{errors.onSubmit}</ErrorMsg>}
-        <FormBtn>{t('formSubmitBtnLabel')}</FormBtn>
+        <Button secondary isBig>
+          {t('formSubmitBtnLabel')}
+        </Button>
       </FormWrap>
     </FormWrapper>
   );
