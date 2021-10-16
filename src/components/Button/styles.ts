@@ -10,8 +10,8 @@ const Button = css<BtnProps>`
   padding: 12px 30px;
   border: none;
   border-radius: ${({ isBig }) => (isBig ? '8px' : '50px')};
-  background: ${({ primary }) => primary && COLOR.btnPrimary};
-  background: ${({ secondary }) => secondary && COLOR.btnSecondary};
+  background-image: ${({ primary }) => primary && COLOR.btnPrimary};
+  background-image: ${({ secondary }) => secondary && COLOR.btnSecondary};
   color: ${({ primary }) => primary && COLOR.btnPrimaryColor};
   color: ${({ secondary }) => secondary && COLOR.btnSecondaryColor};
   font-family: inherit;

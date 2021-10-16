@@ -1,7 +1,6 @@
 export const getDataFromStorage = (key: string): string => {
-  let data;
   if (typeof window !== 'undefined') {
-    data = JSON.parse(localStorage.getItem(key) || 'null');
+    var data = JSON.parse(localStorage.getItem(key) || 'null');
   }
   return data;
 };

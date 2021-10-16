@@ -6,7 +6,7 @@ import { DEFAULT_CULTURE } from '../../constants';
 
 const LocaleProvider = ({ children }: ChildrenProps) => {
   const initialState = getDataFromStorage('culture') || DEFAULT_CULTURE;
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState<string>(initialState);
 
   const updateState = (newCulture: string): void => {
     setState(newCulture);

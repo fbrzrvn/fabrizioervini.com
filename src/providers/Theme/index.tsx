@@ -9,10 +9,10 @@ import { DEFAULT_THEME } from '../../constants';
 
 const ThemeContextProvider = ({ children }: ChildrenProps) => {
   const initialState = getDataFromStorage('theme') || DEFAULT_THEME;
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState<string>(initialState);
   const currentTheme = state === ThemeType.LIGHT ? lightTheme : darkTheme;
 
-  const updateState = (theme: string) => {
+  const updateState = (theme: string): void => {
     setState(theme);
     saveDataToStorage('theme', theme);
   };
