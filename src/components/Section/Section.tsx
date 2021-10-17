@@ -2,11 +2,11 @@ import { RoutesType } from 'models/enums';
 import { SectionProps, TranslateProps } from 'models/props';
 import Link from 'next/link';
 import React from 'react';
+import Button from '../Button';
 import {
-  BtnLink,
   Column1,
   Column2,
-  Heading,
+  HeadLine,
   Img,
   ImgWrap,
   SectionContainer,
@@ -38,11 +38,11 @@ const Section = ({
           <Column1>
             <TextWrapper>
               <TopLine>{t(topLine)}</TopLine>
-              <Heading>{t(headLine)}</Heading>
+              <HeadLine>{t(headLine)}</HeadLine>
               <Subtitle>{t(description)}</Subtitle>
               {hasLink && (
                 <Link href={linkUrl ?? RoutesType.HOME}>
-                  <BtnLink>{t(linkLabel ?? '')}</BtnLink>
+                  <Button primary>{t(linkLabel ?? '')}</Button>
                 </Link>
               )}
             </TextWrapper>

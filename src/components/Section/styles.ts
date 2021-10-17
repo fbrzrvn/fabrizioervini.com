@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLOR } from 'styles/colors';
+import { Heading } from 'styles/globals';
 
 type GridProps = {
   imgStart: boolean;
@@ -20,12 +20,13 @@ export const SectionContainer = styled.div`
 export const SectionWrapper = styled.div`
   display: grid;
   align-items: center;
-  justify-content: center;
   min-height: calc(100vh - 80px);
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  @media screen and (min-width: 768px) {
+    padding: 0 24px;
+  }
 `;
 
 export const SectionRow = styled.div<GridProps>`
@@ -71,26 +72,13 @@ export const TopLine = styled.p`
   text-transform: uppercase;
 `;
 
-export const Heading = styled.h1`
-  margin-bottom: 24px;
-  background: ${COLOR.linearGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 1.1;
-  @media screen and (min-width: 480px) {
-    font-size: 48px;
-  }
+export const HeadLine = styled.h1`
+  ${Heading}
 `;
 
 export const Subtitle = styled.p`
   max-width: 440px;
-  margin-bottom: 35px;
   color: ${({ theme }) => theme.textSecondary};
-  font-size: 18px;
-  line-height: 24px;
 `;
 
 export const BtnWrap = styled.div`
@@ -98,37 +86,15 @@ export const BtnWrap = styled.div`
   justify-content: flex-start;
 `;
 
-export const BtnLink = styled.button`
-  display: grid;
-  place-items: center;
-  width: 160px;
-  padding: 12px 30px;
-  border-radius: 50px;
-  border: none;
-  background: ${COLOR.btnPrimary};
-  color: ${COLOR.btnPrimaryColor};
-  font-family: inherit;
-  font-size: 18px;
-  white-space: nowrap;
-  outline: none;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  &:hover {
-    background-image: ${COLOR.btnPrimaryHover};
-    transition: all 200ms ease-in-out;
-  }
-`;
-
 export const ImgWrap = styled.div`
   height: 100%;
-  max-width: 555px;
+  max-width: 450px;
 `;
 
 export const Img = styled.img<ImgProps>`
   display: block;
   width: 60%;
   margin: auto;
-  padding-right: 0;
   border-radius: ${({ isCircular }) => (isCircular ? '50%' : '')};
   filter: grayscale(25%);
   @media screen and (min-width: 768px) {

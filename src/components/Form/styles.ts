@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
+import { Heading } from 'styles/globals';
 
 type FormProps = {
   error: boolean | string;
+  value: string;
 };
 
 export const FormWrapper = styled.div`
@@ -15,27 +17,16 @@ export const FormWrapper = styled.div`
 `;
 
 export const FormH1 = styled.h1`
-  margin: 60px auto 0;
-  background: ${COLOR.linearGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  font-size: 32px;
-  text-align: center;
-  @media screen and (min-width: 480px) {
-    font-size: 48px;
-  }
+  ${Heading}
 `;
 
 export const FormP = styled.p`
   max-width: 400px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 16px;
   color: ${({ theme }) => theme.textSecondary};
   font-size: 20px;
-  text-align: center;
-  line-height: 24px;
+  text-align: left;
 `;
 
 export const FormWrap = styled.form`
@@ -44,7 +35,7 @@ export const FormWrap = styled.form`
   width: 100%;
   max-width: 400px;
   margin: 0 auto 78px;
-  padding: 32px;
+  padding: 16px;
 `;
 
 export const FormLabel = styled.label`
@@ -59,7 +50,10 @@ export const FormInput = styled.input<FormProps>`
   margin-bottom: 24px;
   border: none;
   border-radius: 8px;
-  border: ${({ error }) => error && `2px solid ${COLOR.danger700}`};
+  border: ${({ error, value }) =>
+    error
+      ? `2px solid ${COLOR.danger700}`
+      : !error && value !== '' && `2px solid ${COLOR.success700}`};
   font-family: inherit;
   font-size: 16px;
   outline: none;
@@ -78,7 +72,10 @@ export const FormTextarea = styled.textarea<FormProps>`
   margin-bottom: 32px;
   border: none;
   border-radius: 8px;
-  border: ${({ error }) => error && `2px solid ${COLOR.danger700}`};
+  border: ${({ error, value }) =>
+    error
+      ? `2px solid ${COLOR.danger700}`
+      : !error && value !== '' && `2px solid ${COLOR.success700}`};
   font-family: inherit;
   font-size: 16px;
   outline: none;
@@ -89,29 +86,6 @@ export const FormTextarea = styled.textarea<FormProps>`
     border-image-slice: 1;
     border-width: 3px;
     border-image-source: ${COLOR.linearGradient};
-  }
-`;
-
-export const FormBtn = styled.button`
-  height: 56px;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  background: ${COLOR.btnSecondary};
-  color: ${COLOR.btnSecondaryColor};
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 20px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  text-transform: uppercase;
-  white-space: nowrap;
-  outline: none;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-  &:hover {
-    background: ${COLOR.btnSecondaryHover};
-    transition: all 300ms ease-in-out;
   }
 `;
 export const ErrorMsg = styled.p`

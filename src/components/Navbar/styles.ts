@@ -35,12 +35,14 @@ export const NavLogo = styled.p`
   display: flex;
   align-items: center;
   justify-self: flex-start;
-  margin-left: 24px;
   color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+    margin-left: 24px;
+  }
 `;
 
 export const MobileIcon = styled.div`

@@ -1,4 +1,4 @@
-import { createGlobalStyle, DefaultTheme } from 'styled-components';
+import { createGlobalStyle, css, DefaultTheme } from 'styled-components';
 import { COLOR } from './colors';
 
 export const GlobalStyles = createGlobalStyle`
@@ -35,6 +35,20 @@ export const GlobalStyles = createGlobalStyle`
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+`;
+
+export const Heading = css`
+  margin-bottom: 24px;
+  background: ${COLOR.linearGradient};
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+  @media screen and (min-width: 480px) {
+    font-size: 48px;
   }
 `;
 

@@ -1,45 +1,37 @@
 import styled from 'styled-components';
-import { COLOR } from 'styles/colors';
+import { Heading } from 'styles/globals';
 
 export const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 30px;
+  padding: 0 16px;
   background: ${({ theme }) => theme.navbarBg};
+  text-align: left;
   @media screen and (min-width: 768px) {
     min-height: calc(100vh - 184px);
+    padding: 0 30px;
   }
 `;
 
 export const ContactContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-width: 1200px;
-  padding: 8px 24px;
+  @media screen and (min-width: 768px) {
+    padding: 8px 24px;
+  }
 `;
 
 export const ContactH1 = styled.h1`
-  margin-bottom: 24px;
-  background: ${COLOR.linearGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 32px;
-  text-align: center;
-  @media screen and (min-width: 480px) {
-    font-size: 48px;
-  }
+  ${Heading}
 `;
 
 export const ContactP = styled.p`
   max-width: 600px;
   color: ${({ theme }) => theme.textSecondary};
-  font-size: 18px;
-  text-align: center;
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 768px) {
     font-size: 24px;
   }
 `;
@@ -49,25 +41,4 @@ export const ContactBtn = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 32px;
-`;
-
-export const ContactBtnLink = styled.button`
-  display: grid;
-  place-items: center;
-  width: 160px;
-  padding: 12px 30px;
-  border-radius: 50px;
-  border: none;
-  background: ${COLOR.btnPrimary};
-  color: ${COLOR.btnPrimaryColor};
-  font-family: inherit;
-  font-size: 18px;
-  white-space: nowrap;
-  outline: none;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  &:hover {
-    background-image: ${COLOR.btnPrimaryHover};
-    transition: all 200ms ease-in-out;
-  }
 `;

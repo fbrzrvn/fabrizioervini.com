@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
+import { Heading } from 'styles/globals';
 
 export const WorkContainer = styled.div`
   display: flex;
@@ -11,16 +12,7 @@ export const WorkContainer = styled.div`
   background: ${({ theme }) => theme.navbarBg};
 `;
 export const WorkH1 = styled.h1`
-  margin-bottom: 64px;
-  background: ${COLOR.linearGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 2rem;
-  text-align: center;
-  @media screen and (min-width: 480px) {
-    font-size: 2.5rem;
-  }
+  ${Heading}
 `;
 export const WorkCard = styled.div`
   display: flex;
