@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Heading } from 'styles/globals';
+import { Heading, Text } from 'styles/mixins';
 
 type GridProps = {
   imgStart: boolean;
@@ -31,7 +31,6 @@ export const SectionWrapper = styled.div`
 
 export const SectionRow = styled.div<GridProps>`
   display: grid;
-  align-items: center;
   grid-auto-columns: minmax(auto, 1fr);
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `"col1" "col2"` : `"col1 col1" "col2 col2"`};
@@ -43,13 +42,13 @@ export const SectionRow = styled.div<GridProps>`
 
 export const Column1 = styled.div`
   grid-area: col1;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
   padding: 0 15px;
 `;
 
 export const Column2 = styled.div`
   grid-area: col2;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
   padding: 0 15px;
 `;
 
@@ -62,12 +61,12 @@ export const TextWrapper = styled.div`
   }
 `;
 
-export const TopLine = styled.p`
+export const TopLine = styled.h6`
   margin-bottom: 16px;
   color: ${({ theme }) => theme.primary};
-  font-size: 18px;
   font-weight: 700;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 1.1;
   letter-spacing: 1.4px;
   text-transform: uppercase;
 `;
@@ -77,6 +76,7 @@ export const HeadLine = styled.h1`
 `;
 
 export const Subtitle = styled.p`
+  ${Text}
   max-width: 440px;
   color: ${({ theme }) => theme.textSecondary};
 `;

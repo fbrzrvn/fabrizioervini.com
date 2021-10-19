@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Heading } from 'styles/globals';
+import { Heading, TextSmall } from 'styles/mixins';
 
 export const WorkContainer = styled.div`
   display: flex;
@@ -72,9 +72,8 @@ export const WorkH2 = styled.h2`
   }
 `;
 export const WorkP = styled.p`
+  ${TextSmall}
   margin-bottom: 10px;
-  font-size: 18px;
-  line-height: 24px;
   color: ${COLOR.btnPrimaryColor};
   @media screen and (min-width: 1024px) {
     width: 80%;
@@ -85,22 +84,5 @@ export const BtnWrap = styled.div`
   margin: 8px 0;
   @media screen and (min-width: 1024px) {
     width: 80%;
-  }
-`;
-export const BtnLink = styled.a`
-  padding: 12px 30px;
-  white-space: nowrap;
-  color: ${COLOR.btnPrimaryColor};
-  background: ${COLOR.btnPrimary};
-  border-radius: 50px;
-  font-family: inherit;
-  font-size: 18px;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  &:hover {
-    background: ${COLOR.btnPrimaryHover};
-    transition: all 200ms ease-in-out;
   }
 `;

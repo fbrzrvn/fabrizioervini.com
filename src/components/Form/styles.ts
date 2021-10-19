@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Heading } from 'styles/globals';
+import { Heading } from 'styles/mixins';
 
 type FormProps = {
   error: boolean | string;

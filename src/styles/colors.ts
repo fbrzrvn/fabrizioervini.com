@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 export const COLOR = {
   linearGradient: `linear-gradient(
     271deg,
@@ -39,4 +41,24 @@ export const COLOR = {
   lightText: '#1C1E21',
   lightTextSecondary: '#606770',
   lightFooter: '#F8F9FA',
+};
+
+export const lightTheme: DefaultTheme = {
+  body: COLOR.lightBackground,
+  text: COLOR.lightText,
+  textSecondary: COLOR.lightTextSecondary,
+  primary: COLOR.lightPrimary,
+  navbarBg: COLOR.lightNavbar,
+  navbarLink: COLOR.lightNavbarLink,
+  footer: COLOR.lightFooter,
+};
+
+export const darkTheme: DefaultTheme = {
+  body: COLOR.darkBackground,
+  text: COLOR.darkText,
+  textSecondary: COLOR.darkTextSecondary,
+  primary: COLOR.darkPrimary,
+  navbarBg: COLOR.darkNavbar,
+  navbarLink: COLOR.darkNavbarLink,
+  footer: COLOR.darkFooter,
 };

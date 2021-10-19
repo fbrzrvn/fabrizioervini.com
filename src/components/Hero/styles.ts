@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Heading } from 'styles/globals';
+import { Heading, Text } from 'styles/mixins';
 
 export const HeroContainer = styled.div`
   display: flex;
@@ -31,17 +31,15 @@ export const HeroH1 = styled.h1`
 `;
 
 export const HeroP = styled.p`
+  ${Text};
   max-width: 600px;
   color: ${({ theme }) => theme.text};
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-  }
 `;
 
 export const HeroBtn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 32px;
 `;
 
@@ -50,15 +48,17 @@ export const Button = styled(LinkScroll)`
   align-items: center;
   padding: 12px 30px;
   border-radius: 50px;
-  background: ${COLOR.btnPrimary};
+  background-image: ${COLOR.btnPrimary};
   color: ${COLOR.btnPrimaryColor};
   font-weight: 500;
+  font-size: 18px;
   text-decoration: none;
   white-space: nowrap;
   outline: none;
   cursor: pointer;
   transition: all 300ms ease-in-out;
   &:hover {
+    background-image: ${COLOR.btnPrimaryHover};
     transition: all 300ms ease-in-out;
   }
 `;

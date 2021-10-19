@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Heading } from 'styles/globals';
+import { Heading, Text } from 'styles/mixins';
 
 export const ContactContainer = styled.div`
   display: flex;
@@ -29,16 +29,13 @@ export const ContactH1 = styled.h1`
 `;
 
 export const ContactP = styled.p`
+  ${Text}
   max-width: 600px;
   color: ${({ theme }) => theme.textSecondary};
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-  }
 `;
 
 export const ContactBtn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 32px;
 `;

@@ -4,7 +4,8 @@ import { ChildrenProps } from 'models/props';
 import React, { useState } from 'react';
 import { getDataFromStorage, saveDataToStorage } from 'services/storage';
 import { ThemeProvider } from 'styled-components';
-import { darkTheme, GlobalStyles, lightTheme } from 'styles/globals';
+import { darkTheme, lightTheme } from 'styles/colors';
+import { GlobalStyles } from 'styles/globals';
 import { DEFAULT_THEME } from '../../constants';
 
 const ThemeContextProvider = ({ children }: ChildrenProps) => {
