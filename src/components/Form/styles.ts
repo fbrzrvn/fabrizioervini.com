@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Heading } from 'styles/mixins';
+import { Heading, TextSmall } from 'styles/mixins';
 
 type FormProps = {
   error: boolean | string;
@@ -21,12 +21,11 @@ export const FormH1 = styled.h1`
 `;
 
 export const FormP = styled.p`
+  ${TextSmall};
+  width: 90%;
   max-width: 400px;
   margin: 0 auto;
-  padding: 16px;
   color: ${({ theme }) => theme.textSecondary};
-  font-size: 20px;
-  text-align: left;
 `;
 
 export const FormWrap = styled.form`
@@ -35,13 +34,14 @@ export const FormWrap = styled.form`
   width: 100%;
   max-width: 400px;
   margin: 0 auto 78px;
-  padding: 16px;
+  padding: 32px 16px;
 `;
 
 export const FormLabel = styled.label`
   margin-bottom: 8px;
   color: ${({ theme }) => theme.text};
   font-size: 14px;
+  font-weight: 500;
 `;
 
 export const FormInput = styled.input<FormProps>`

@@ -77,6 +77,7 @@ export const NavLink = styled(LinkScroll)`
   height: 100%;
   padding: 0 1rem;
   color: ${({ theme }) => theme.text};
+  font-size: 18px;
   text-decoration: none;
   cursor: pointer;
   &:hover {

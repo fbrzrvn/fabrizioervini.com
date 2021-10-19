@@ -19,8 +19,6 @@ export const FooterWrapper = styled.div`
   }
 `;
 export const FooterLogo = styled(LinkRouter)`
-  /* display: grid;
-  place-items: center; */
   margin-bottom: 16px;
   color: ${({ theme }) => theme.text};
   font-size: 1.5rem;

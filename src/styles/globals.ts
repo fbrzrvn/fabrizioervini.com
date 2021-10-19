@@ -8,11 +8,24 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  @font-face {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-display: fallback;
+    src: url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+  }
+  @font-face {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-display: fallback;
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+  }
+
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -24,6 +37,9 @@ export const GlobalStyles = createGlobalStyle`
  }
   ::-webkit-scrollbar {
     display: none;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: Lato, sans-serif;
   }
   @media (prefers-reduced-motion: reduce) {
     *,
