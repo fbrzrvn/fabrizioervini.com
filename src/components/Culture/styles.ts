@@ -24,9 +24,6 @@ const CustomBtn = styled.button`
   justify-content: flex-start;
   border: none;
   background-color: transparent;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
   cursor: pointer;
 `;
 export const CultureArrowBtn = styled(CustomBtn)`
@@ -52,7 +49,8 @@ export const CultureOptionsBtn = styled(CustomBtn)`
   width: 100%;
   padding: 0 1rem;
   &:hover {
-    background-color: ${({ theme }) => theme.primary};
+    background-color: ${COLOR.gris300};
+    transition: all 200ms ease-in-out;
   }
 `;
 export const CultureOptionsLabel = styled.span`

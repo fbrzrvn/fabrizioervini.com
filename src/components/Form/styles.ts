@@ -49,6 +49,7 @@ export const FormInput = styled.input<FormProps>`
     error
       ? `2px solid ${COLOR.danger700}`
       : !error && value !== '' && `2px solid ${COLOR.success700}`};
+  color: ${COLOR.gris900};
   font-family: inherit;
   font-size: 1rem;
   outline: none;
@@ -70,6 +71,7 @@ export const FormTextarea = styled.textarea<FormProps>`
     error
       ? `2px solid ${COLOR.danger700}`
       : !error && value !== '' && `2px solid ${COLOR.success700}`};
+  color: ${COLOR.gris900};
   font-family: inherit;
   font-size: 1rem;
   outline: none;

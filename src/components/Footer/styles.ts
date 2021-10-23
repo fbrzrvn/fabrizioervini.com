@@ -1,5 +1,6 @@
 import { Link as LinkRouter } from 'react-scroll';
 import styled from 'styled-components';
+import { COLOR } from 'styles/colors';
 
 export const FooterContainer = styled.div`
   background: ${({ theme }) => theme.footer};
@@ -15,7 +16,7 @@ export const FooterWrapper = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    padding: 3.5rem 2rem;
+    padding: 2.5rem 2rem;
   }
 `;
 export const FooterLogo = styled(LinkRouter)`
@@ -32,7 +33,7 @@ export const FooterLogo = styled(LinkRouter)`
 `;
 export const FooterCopy = styled.small`
   order: 3;
-  color: ${({ theme }) => theme.textSecondary};
+  color: ${COLOR.gris500};
   text-align: center;
   @media screen and (min-width: 768px) {
     order: initial;
