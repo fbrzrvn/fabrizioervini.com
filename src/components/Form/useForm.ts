@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { IFormErrors, IFormValues } from './types';
 
-const useForm = (validateForm: (values: IFormValues) => any) => {
+const useForm = (validateForm: (values: IFormValues) => IFormErrors) => {
   const initialValues: IFormValues = {
     name: '',
     email: '',

@@ -7,8 +7,8 @@ export const Heading = css`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
   font-size: 32px;
+  font-weight: 400;
   line-height: 1.1;
   @media screen and (min-width: 480px) {
     font-size: 48px;

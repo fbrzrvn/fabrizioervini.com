@@ -9,18 +9,12 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   @font-face {
-    font-family: Lato, sans-serif;
-    font-style: normal;
-    font-display: fallback;
-    src: url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
-  }
-  @font-face {
+    font-family: 'Lato', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-display: fallback;
-    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+    src: url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;500&display=swap');
   }
-
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
@@ -40,6 +34,13 @@ export const GlobalStyles = createGlobalStyle`
   }
   h1,h2,h3,h4,h5,h6 {
     font-family: Lato, sans-serif;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
   }
   @media (prefers-reduced-motion: reduce) {
     *,
