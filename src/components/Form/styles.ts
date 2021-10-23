@@ -15,11 +15,9 @@ export const FormWrapper = styled.div`
   padding-top: 80px;
   background: ${({ theme }) => theme.body};
 `;
-
 export const FormH1 = styled.h1`
   ${Heading}
 `;
-
 export const FormP = styled.p`
   ${TextSmall};
   width: 90%;
@@ -27,27 +25,24 @@ export const FormP = styled.p`
   margin: 0 auto;
   color: ${({ theme }) => theme.textSecondary};
 `;
-
 export const FormWrap = styled.form`
   display: grid;
   height: auto;
   width: 100%;
   max-width: 400px;
   margin: 0 auto 78px;
-  padding: 32px 16px;
+  padding: 2rem 1rem;
 `;
-
 export const FormLabel = styled.label`
   margin-bottom: 8px;
   color: ${({ theme }) => theme.text};
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 `;
-
 export const FormInput = styled.input<FormProps>`
   height: 48px;
-  padding: 10px;
-  margin-bottom: 24px;
+  padding: 0.625rem;
+  margin-bottom: 1.5rem;
   border: none;
   border-radius: 8px;
   border: ${({ error, value }) =>
@@ -55,7 +50,7 @@ export const FormInput = styled.input<FormProps>`
       ? `2px solid ${COLOR.danger700}`
       : !error && value !== '' && `2px solid ${COLOR.success700}`};
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   outline: none;
   &:active,
   &:focus {
@@ -66,10 +61,9 @@ export const FormInput = styled.input<FormProps>`
     border-image-source: ${COLOR.linearGradient};
   }
 `;
-
 export const FormTextarea = styled.textarea<FormProps>`
-  padding: 10px;
-  margin-bottom: 32px;
+  padding: 0.625rem;
+  margin-bottom: 2rem;
   border: none;
   border-radius: 8px;
   border: ${({ error, value }) =>
@@ -77,7 +71,7 @@ export const FormTextarea = styled.textarea<FormProps>`
       ? `2px solid ${COLOR.danger700}`
       : !error && value !== '' && `2px solid ${COLOR.success700}`};
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   outline: none;
   &:active,
   &:focus {
@@ -89,22 +83,22 @@ export const FormTextarea = styled.textarea<FormProps>`
   }
 `;
 export const ErrorMsg = styled.p`
-  margin-top: -16px;
-  margin-bottom: 24px;
-  padding: 16px;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
   border-radius: 8px;
   background: ${COLOR.danger100};
   color: ${COLOR.danger900};
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   &.last {
-    margin-top: -24px;
-    margin-bottom: 32px;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
   }
 `;
 export const SuccessMsg = styled.p`
   width: 100%;
-  padding: 16px;
+  padding: 1rem;
   background: ${COLOR.success100};
   color: ${COLOR.success900};
   font-size: 1.2rem;

@@ -15,12 +15,13 @@ export const Nav = styled.nav<NavbarProps>`
   justify-content: center;
   height: 80px;
   margin-top: -80px;
+  box-shadow: ${({ scrollNav }) =>
+    scrollNav ? '0 0 10px 0 rgba(0, 0, 0, 0.3)' : 'none'};
   background: ${({ isOpen, scrollNav, theme }) =>
     isOpen ? theme.body : scrollNav ? theme.navbarBg : 'transparent'};
   z-index: 10;
   transition: ${({ isOpen }) => isOpen && 'all 1s ease-in-out'};
 `;
-
 export const NavContainer = styled.div`
   display: flex;
   align-items: center;
@@ -28,23 +29,25 @@ export const NavContainer = styled.div`
   height: 80px;
   width: 100%;
   max-width: 1100px;
-  padding: 0 2rem;
+  padding: 1rem;
+  @media screen and (min-width: 768px) {
+    padding: 0 2rem;
+  }
 `;
-
 export const NavLogo = styled.p`
   display: flex;
   align-items: center;
   justify-self: flex-start;
   color: ${({ theme }) => theme.text};
-  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
+  font-size: 1.5rem;
   text-decoration: none;
   cursor: pointer;
   @media screen and (min-width: 768px) {
-    margin-left: 24px;
+    margin-left: 1rem;
   }
 `;
-
 export const MobileIcon = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
@@ -55,29 +58,26 @@ export const MobileIcon = styled.div`
     cursor: pointer;
   }
 `;
-
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-right: 1.5rem;
   list-style: none;
   text-align: center;
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
-
 export const NavItem = styled.li`
   height: 80px;
 `;
-
 export const NavLink = styled(LinkScroll)`
   display: flex;
   align-items: center;
   height: 100%;
   padding: 0 1rem;
   color: ${({ theme }) => theme.text};
-  font-size: 18px;
+  font-size: 1.125rem;
   text-decoration: none;
   cursor: pointer;
   &:hover {
@@ -94,7 +94,6 @@ export const NavLink = styled(LinkScroll)`
     -webkit-background-clip: border-box;
   }
 `;
-
 export const NavBtns = styled.div`
   display: flex;
   align-items: center;

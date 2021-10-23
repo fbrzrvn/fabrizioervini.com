@@ -16,7 +16,6 @@ export const SectionContainer = styled.div`
     padding: initial;
   }
 `;
-
 export const SectionWrapper = styled.div`
   display: grid;
   align-items: center;
@@ -25,10 +24,9 @@ export const SectionWrapper = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   @media screen and (min-width: 768px) {
-    padding: 0 24px;
+    padding: 0 1.5rem;
   }
 `;
-
 export const SectionRow = styled.div<GridProps>`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
@@ -39,19 +37,16 @@ export const SectionRow = styled.div<GridProps>`
       imgStart ? `"col2 col1"` : `"col1 col2"`};
   }
 `;
-
 export const Column1 = styled.div`
   grid-area: col1;
-  margin: 0 auto 15px;
-  padding: 0 15px;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
 `;
-
 export const Column2 = styled.div`
   grid-area: col2;
-  margin: 0 auto 15px;
-  padding: 0 15px;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
 `;
-
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
@@ -60,37 +55,31 @@ export const TextWrapper = styled.div`
     padding-bottom: 0;
   }
 `;
-
 export const TopLine = styled.h6`
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   color: ${({ theme }) => theme.primary};
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.1;
   letter-spacing: 1.4px;
   text-transform: uppercase;
 `;
-
 export const HeadLine = styled.h1`
   ${Heading}
 `;
-
 export const Subtitle = styled.p`
   ${Text}
   max-width: 440px;
   color: ${({ theme }) => theme.textSecondary};
 `;
-
 export const BtnWrap = styled.div`
   display: flex;
   justify-content: flex-start;
 `;
-
 export const ImgWrap = styled.div`
   height: 100%;
   max-width: 450px;
 `;
-
 export const Img = styled.img<ImgProps>`
   display: block;
   width: 60%;

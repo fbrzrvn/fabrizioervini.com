@@ -2,21 +2,22 @@ import { BtnProps } from 'models/props';
 import styled, { css } from 'styled-components';
 import { COLOR } from 'styles/colors';
 
-const Button = css<BtnProps>`
+export const Button = css<BtnProps>`
   display: grid;
   place-items: center;
   height: ${({ isBig }) => isBig && '56px'};
-  width: ${({ isBig }) => (isBig ? '100%' : '160px')};
-  padding: 12px 30px;
+  padding: 0.75rem 2rem;
   border: none;
   border-radius: ${({ isBig }) => (isBig ? '8px' : '50px')};
   background-image: ${({ primary }) => primary && COLOR.btnPrimary};
   background-image: ${({ secondary }) => secondary && COLOR.btnSecondary};
   color: ${({ primary }) => primary && COLOR.btnPrimaryColor};
   color: ${({ secondary }) => secondary && COLOR.btnSecondaryColor};
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  font-weight: ${({ isBig }) => (isBig ? '700' : '500')};
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: ${({ isBig }) => isBig && '0.5px'};
   text-decoration: none;
   text-transform: ${({ isBig }) => isBig && 'uppercase'};
   text-shadow: ${({ secondary }) =>

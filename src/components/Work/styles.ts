@@ -8,11 +8,12 @@ export const WorkContainer = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 100px 24px;
+  padding: 100px 1.5rem;
   background: ${({ theme }) => theme.navbarBg};
 `;
 export const WorkH1 = styled.h1`
   ${Heading}
+  margin-bottom: 2rem;
 `;
 export const WorkCard = styled.div`
   display: flex;
@@ -47,7 +48,7 @@ export const WorkImg = styled.img`
 export const WorkInfo = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 24px 24px 32px;
+  padding: 1.5rem 1.5rem 2rem;
   background-color: #fff;
   border-radius: 0 0 10px 10px;
   @media screen and (min-width: 768px) {
@@ -73,7 +74,7 @@ export const WorkH2 = styled.h2`
 `;
 export const WorkP = styled.p`
   ${TextSmall}
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: ${COLOR.btnPrimaryColor};
   @media screen and (min-width: 1024px) {
     width: 80%;

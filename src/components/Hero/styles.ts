@@ -9,49 +9,43 @@ export const HeroContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  padding: 0 16px;
+  padding: 0 1rem;
   background: ${({ theme }) => theme.footer};
   text-align: left;
   @media screen and (min-width: 768px) {
-    padding: 0 30px;
+    padding: 0 2rem;
   }
 `;
-
 export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  @media screen and (min-width: 768px) {
-    padding: 8px 24px;
-  }
 `;
-
 export const HeroH1 = styled.h1`
   ${Heading}
 `;
-
 export const HeroP = styled.p`
   ${Text};
   max-width: 600px;
   color: ${({ theme }) => theme.text};
 `;
-
 export const HeroBtn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 32px;
+  margin-top: 2rem;
 `;
-
 export const Button = styled(LinkScroll)`
   display: flex;
   align-items: center;
-  padding: 12px 30px;
+  padding: 0.75rem 2rem;
   border-radius: 50px;
   background-image: ${COLOR.btnPrimary};
   color: ${COLOR.btnPrimaryColor};
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   text-decoration: none;
   white-space: nowrap;
   outline: none;
@@ -62,7 +56,6 @@ export const Button = styled(LinkScroll)`
     transition: all 300ms ease-in-out;
   }
 `;
-
 export const ArrowIcon = styled(FontAwesomeIcon)`
   margin-left: 8px;
   font-size: 20px;
