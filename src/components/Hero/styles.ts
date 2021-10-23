@@ -2,24 +2,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Heading, Text } from 'styles/mixins';
+import { Container, Content, Heading, Text } from 'styles/mixins';
 
 export const HeroContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 0 1rem;
+  ${Container}
+  min-height: calc(100vh - 80px);
   background: ${({ theme }) => theme.footer};
-  text-align: left;
-  @media screen and (min-width: 768px) {
-    padding: 0 2rem;
-  }
 `;
 export const HeroContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
+  ${Content}
 `;
 export const HeroH1 = styled.h1`
   ${Heading}

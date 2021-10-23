@@ -14,7 +14,6 @@ export const Nav = styled.nav<NavbarProps>`
   align-items: center;
   justify-content: center;
   height: 80px;
-  margin-top: -80px;
   box-shadow: ${({ scrollNav }) =>
     scrollNav ? '0 0 10px 0 rgba(0, 0, 0, 0.3)' : 'none'};
   background: ${({ isOpen, scrollNav, theme }) =>

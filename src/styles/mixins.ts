@@ -1,6 +1,23 @@
 import { css } from 'styled-components';
 import { COLOR } from './colors';
 
+export const Container = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  text-align: left;
+  @media screen and (min-width: 768px) {
+    padding: 0 2rem;
+  }
+`;
+
+export const Content = css`
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+`;
+
 export const Heading = css`
   margin-bottom: 24px;
   background: ${COLOR.linearGradient};
