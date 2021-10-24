@@ -1,5 +1,4 @@
-import { createGlobalStyle, DefaultTheme } from 'styled-components';
-import { COLOR } from './colors';
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -9,23 +8,39 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  @font-face {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-display: fallback;
+    src: url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;500&display=swap');
+  }
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 18px;
-    line-height: 1;
+    font-size: 16px;
+    line-height: 1.5;
     transition: all 1s ease;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
  }
   ::-webkit-scrollbar {
     display: none;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: Lato, sans-serif;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
   }
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -38,23 +53,3 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 `;
-
-export const lightTheme: DefaultTheme = {
-  body: COLOR.lightBackground,
-  text: COLOR.lightText,
-  textSecondary: COLOR.lightTextSecondary,
-  primary: COLOR.lightPrimary,
-  navbarBg: COLOR.lightNavbar,
-  navbarLink: COLOR.lightNavbarLink,
-  footer: COLOR.lightFooter,
-};
-
-export const darkTheme: DefaultTheme = {
-  body: COLOR.darkBackground,
-  text: COLOR.darkText,
-  textSecondary: COLOR.darkTextSecondary,
-  primary: COLOR.darkPrimary,
-  navbarBg: COLOR.darkNavbar,
-  navbarLink: COLOR.darkNavbarLink,
-  footer: COLOR.darkFooter,
-};

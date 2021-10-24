@@ -9,9 +9,9 @@ export const SidebarContainer = styled.aside<SidebarProps>`
   position: fixed;
   left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
   top: 80px;
-  z-index: 100;
+  z-index: 1;
   display: grid;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
   width: 100%;
   background: ${({ theme }) => theme.body};
@@ -26,9 +26,7 @@ export const SidebarMenu = styled.ul`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 60px);
   text-align: center;
-  @media screen and(min-width: 480px) {
-    grid-template-rows: repeat(5, 80px);
-  }
+  padding-top: 60px;
 `;
 export const SidebarLink = styled(LinkScroll)`
   display: flex;

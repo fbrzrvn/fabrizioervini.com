@@ -1,44 +1,39 @@
-import ApollofyImg from '../assets/apollofy.png';
-import MemoriesImg from '../assets/memories.png';
-import PunkApiImg from '../assets/punkApi.png';
-import TodoImg from '../assets/todo.png';
-import TrackerImg from '../assets/tracker.png';
 import { WorkProps } from '../models/props';
 
 export const works: WorkProps[] = [
   {
-    id: 5,
+    id: 15,
     title: 'Memories',
     description: 'memoriesDescription',
-    img: MemoriesImg,
+    img: 'images/memories.png',
     link: 'https://mern-app-memory.netlify.app',
   },
   {
-    id: 4,
+    id: 14,
     title: 'Apollofy',
     description: 'apollofyDescription',
-    img: ApollofyImg,
+    img: 'images/apollofy.png',
     link: 'https://apollofy-music.netlify.app/',
   },
   {
-    id: 3,
+    id: 13,
     title: 'Transaction Tracker',
     description: 'trackerDescription',
-    img: TrackerImg,
+    img: 'images/tracker.png',
     link: 'https://transactions-tracker.netlify.app/',
   },
   {
-    id: 2,
+    id: 12,
     title: 'Frontend Mentor Todo',
     description: 'todoDescription',
-    img: TodoImg,
+    img: 'images/todo.png',
     link: 'https://frontendmentor-todo-app.netlify.app/',
   },
   {
-    id: 1,
+    id: 11,
     title: 'Punk API',
     description: 'punkApiDescription',
-    img: PunkApiImg,
+    img: 'images/punkApi.png',
     link: 'https://punk-api.netlify.app',
   },
 ];

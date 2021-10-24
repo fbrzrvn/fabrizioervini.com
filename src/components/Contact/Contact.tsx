@@ -1,7 +1,8 @@
+import { RoutesType } from 'models/enums';
+import { TranslateProps } from 'models/props';
+import Link from 'next/link';
 import React from 'react';
-import { TranslateProps } from '../../models/props';
-import ROUTES from '../../routes';
-import BtnLinkRouter from '../BtnLinkRouter';
+import Button from '../Button';
 import {
   ContactBtn,
   ContactContainer,
@@ -17,9 +18,9 @@ const Contact = ({ t }: TranslateProps) => {
         <ContactH1>{t('contactTitle')}</ContactH1>
         <ContactP>{t('contactText')}</ContactP>
         <ContactBtn>
-          <BtnLinkRouter to={ROUTES.CONTACT}>
-            {t('contactBtnLabel')}
-          </BtnLinkRouter>
+          <Link href={RoutesType.CONTACT} passHref>
+            <Button primary>{t('contactBtnLabel')}</Button>
+          </Link>
         </ContactBtn>
       </ContactContent>
     </ContactContainer>

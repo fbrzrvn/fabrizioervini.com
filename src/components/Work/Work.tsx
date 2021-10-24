@@ -1,9 +1,9 @@
+import { works } from 'data/works';
+import { TranslateProps } from 'models/props';
 import React from 'react';
-import { works } from '../../data/works';
-import { TranslateProps } from '../../models/props';
-import Carousel from './Carousel';
+import Button from '../Button';
+import Carousel from '../Carousel';
 import {
-  BtnLink,
   BtnWrap,
   WorkCard,
   WorkContainer,
@@ -12,32 +12,36 @@ import {
   WorkImg,
   WorkInfo,
   WorkP,
+  WorkWrapper,
 } from './styles';
 
 const Work = ({ t }: TranslateProps) => {
   return (
     <WorkContainer id="work">
       <WorkH1>{t('workTitle')}</WorkH1>
-      <Carousel>
-        {works.map(work => (
-          <WorkCard key={work.id}>
-            <WorkImg src={work.img} alt={work.title} />
-            <WorkInfo>
-              <WorkH2>{work.title}</WorkH2>
-              <WorkP>{t(work.description)}</WorkP>
-              <BtnWrap>
-                <BtnLink
-                  href={work.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('visitWebsite')}
-                </BtnLink>
-              </BtnWrap>
-            </WorkInfo>
-          </WorkCard>
-        ))}
-      </Carousel>
+      <WorkWrapper>
+        <Carousel>
+          {works.map((work) => (
+            <WorkCard key={work.id}>
+              <WorkImg src={work.img} alt={work.title} />
+              <WorkInfo>
+                <WorkH2>{work.title}</WorkH2>
+                <WorkP>{t(work.description)}</WorkP>
+                <BtnWrap>
+                  <Button
+                    href={work.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    primary
+                  >
+                    {t('visitWebsite')}
+                  </Button>
+                </BtnWrap>
+              </WorkInfo>
+            </WorkCard>
+          ))}
+        </Carousel>
+      </WorkWrapper>
     </WorkContainer>
   );
 };

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-const useScrolling = () => {
+const useScroll = () => {
   const [scroll, setScroll] = useState(false);
 
   const handleScroll = () => {
-    window.scrollY >= 80 ? setScroll(true) : setScroll(false);
+    window.scrollY > 0 ? setScroll(true) : setScroll(false);
   };
 
   useEffect(() => {
@@ -15,4 +15,4 @@ const useScrolling = () => {
   return scroll;
 };
 
-export default useScrolling;
+export default useScroll;

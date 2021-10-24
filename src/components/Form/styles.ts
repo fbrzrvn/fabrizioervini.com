@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import { COLOR } from '../../styles/colors';
+import { COLOR } from 'styles/colors';
+import { Heading, TextSmall } from 'styles/mixins';
 
 type FormProps = {
   error: boolean | string;
+  value: string;
 };
 
 export const FormWrapper = styled.div`
@@ -13,55 +15,43 @@ export const FormWrapper = styled.div`
   padding-top: 80px;
   background: ${({ theme }) => theme.body};
 `;
-
 export const FormH1 = styled.h1`
-  margin: 60px auto 0;
-  background: ${COLOR.linearGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  font-size: 32px;
-  text-align: center;
-  @media screen and (min-width: 480px) {
-    font-size: 48px;
-  }
+  ${Heading}
 `;
-
 export const FormP = styled.p`
+  ${TextSmall};
+  width: 90%;
   max-width: 400px;
   margin: 0 auto;
-  padding: 32px;
   color: ${({ theme }) => theme.textSecondary};
-  font-size: 20px;
-  text-align: center;
-  line-height: 24px;
 `;
-
 export const FormWrap = styled.form`
   display: grid;
   height: auto;
   width: 100%;
   max-width: 400px;
   margin: 0 auto 78px;
-  padding: 32px;
+  padding: 2rem 1rem;
 `;
-
 export const FormLabel = styled.label`
   margin-bottom: 8px;
   color: ${({ theme }) => theme.text};
-  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
 `;
-
 export const FormInput = styled.input<FormProps>`
   height: 48px;
-  padding: 10px;
-  margin-bottom: 24px;
+  padding: 0.625rem;
+  margin-bottom: 1.5rem;
   border: none;
   border-radius: 8px;
-  border: ${({ error }) => error && `2px solid ${COLOR.danger700}`};
+  border: ${({ error, value }) =>
+    error
+      ? `2px solid ${COLOR.danger700}`
+      : !error && value !== '' && `2px solid ${COLOR.success700}`};
+  color: ${COLOR.gris900};
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   outline: none;
   &:active,
   &:focus {
@@ -72,15 +62,18 @@ export const FormInput = styled.input<FormProps>`
     border-image-source: ${COLOR.linearGradient};
   }
 `;
-
 export const FormTextarea = styled.textarea<FormProps>`
-  padding: 10px;
-  margin-bottom: 32px;
+  padding: 0.625rem;
+  margin-bottom: 2rem;
   border: none;
   border-radius: 8px;
-  border: ${({ error }) => error && `2px solid ${COLOR.danger700}`};
+  border: ${({ error, value }) =>
+    error
+      ? `2px solid ${COLOR.danger700}`
+      : !error && value !== '' && `2px solid ${COLOR.success700}`};
+  color: ${COLOR.gris900};
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   outline: none;
   &:active,
   &:focus {
@@ -89,47 +82,25 @@ export const FormTextarea = styled.textarea<FormProps>`
     border-image-slice: 1;
     border-width: 3px;
     border-image-source: ${COLOR.linearGradient};
-  }
-`;
-
-export const FormBtn = styled.button`
-  height: 56px;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  background: ${COLOR.btnSecondary};
-  color: ${COLOR.btnSecondaryColor};
-  font-family: inherit;
-  font-size: 18px;
-  line-height: 20px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  text-transform: uppercase;
-  white-space: nowrap;
-  outline: none;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-  &:hover {
-    background: ${COLOR.btnSecondaryHover};
-    transition: all 300ms ease-in-out;
   }
 `;
 export const ErrorMsg = styled.p`
-  margin-top: -16px;
-  margin-bottom: 24px;
-  padding: 16px;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
   border-radius: 8px;
   background: ${COLOR.danger100};
   color: ${COLOR.danger900};
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   &.last {
-    margin-top: -24px;
-    margin-bottom: 32px;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
   }
 `;
 export const SuccessMsg = styled.p`
   width: 100%;
-  padding: 16px;
+  padding: 1rem;
   background: ${COLOR.success100};
   color: ${COLOR.success900};
   font-size: 1.2rem;

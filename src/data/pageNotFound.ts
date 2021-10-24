@@ -1,4 +1,3 @@
-import NotFound from '../assets/page_not_found.svg';
 import { SectionProps } from '../models/props';
 
 export const pageNotFound: SectionProps = {
@@ -10,7 +9,7 @@ export const pageNotFound: SectionProps = {
   linkLabel: 'goHome',
   linkUrl: '/',
   imgStart: true,
-  img: NotFound,
+  img: 'svg/notFound.svg',
   altImg: 'Not found',
   isCircular: false,
 };

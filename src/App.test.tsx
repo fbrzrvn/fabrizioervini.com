@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import App from './App';
+import Home from './pages/index';
 
 describe('Home', () => {
   it('should render the home without crashing', () => {
-    render(<App />);
+    render(<Home />);
   });
 });

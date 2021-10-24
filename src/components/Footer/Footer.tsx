@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { footerLinks } from 'data/links';
+import { RoutesType } from 'models/enums';
 import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
-import { footerLinks } from '../../data/links';
-import ROUTES from '../../routes';
 import {
   FooterContainer,
   FooterCopy,
@@ -20,12 +20,12 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <FooterLogo to={ROUTES.HOME} onClick={backToTop}>
+        <FooterLogo to={RoutesType.HOME} onClick={backToTop}>
           faber
         </FooterLogo>
         <FooterCopy>© faber 2021 All rights are reserved.</FooterCopy>
         <FooterIcons>
-          {footerLinks.map(link => (
+          {footerLinks.map((link) => (
             <FooterIconLink
               key={link.id}
               href={link.url}

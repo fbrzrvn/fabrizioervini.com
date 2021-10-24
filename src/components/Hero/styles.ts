@@ -1,80 +1,53 @@
-import { AiOutlineArrowRight, AiOutlineRight } from 'react-icons/ai';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
-import { COLOR } from '../../styles/colors';
+import { COLOR } from 'styles/colors';
+import { Container, Content, Heading, Text } from 'styles/mixins';
 
 export const HeroContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 0 30px;
+  ${Container}
+  min-height: calc(100vh - 80px);
   background: ${({ theme }) => theme.footer};
 `;
-
 export const HeroContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1200px;
-  padding: 8px 24px;
+  ${Content}
 `;
-
 export const HeroH1 = styled.h1`
-  margin-bottom: 24px;
-  background: ${COLOR.linearGradient};
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 32px;
-  text-align: center;
-  @media screen and (min-width: 480px) {
-    font-size: 48px;
-  }
+  ${Heading}
 `;
-
 export const HeroP = styled.p`
+  ${Text};
   max-width: 600px;
   color: ${({ theme }) => theme.text};
-  font-size: 16px;
-  text-align: center;
-  @media screen and (min-width: 480px) {
-    font-size: 24px;
-  }
 `;
-
 export const HeroBtn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 32px;
+  align-items: flex-start;
+  margin-top: 2rem;
 `;
-
 export const Button = styled(LinkScroll)`
   display: flex;
   align-items: center;
-  padding: 12px 30px;
+  padding: 0.75rem 2rem;
   border-radius: 50px;
-  background: ${COLOR.btnPrimary};
+  background-image: ${COLOR.btnPrimary};
   color: ${COLOR.btnPrimaryColor};
-  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   text-decoration: none;
   white-space: nowrap;
   outline: none;
   cursor: pointer;
   transition: all 300ms ease-in-out;
   &:hover {
-    background: ${COLOR.btnPrimaryHover};
+    background-image: ${COLOR.btnPrimaryHover};
     transition: all 300ms ease-in-out;
   }
 `;
-
-export const ArrowForward = styled(AiOutlineArrowRight)`
-  margin-left: 8px;
-  font-size: 20px;
-`;
-
-export const ArrowRight = styled(AiOutlineRight)`
+export const ArrowIcon = styled(FontAwesomeIcon)`
   margin-left: 8px;
   font-size: 20px;
 `;
