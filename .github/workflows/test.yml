@@ -27,18 +27,5 @@ jobs:
       - run: |
           yarn
           yarn run lint:format
-      - run: yarn run build --if-present
+      - run: yarn run build
       - run: yarn test
-
-  cypress-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          build: yarn  run build
-          start: yarn start
