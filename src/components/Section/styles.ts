@@ -82,11 +82,9 @@ export const ImgWrap = styled.div`
 `;
 export const Img = styled.img<ImgProps>`
   display: block;
-  width: 60%;
+  width: 100%;
+  height: initial;
   margin: auto;
   border-radius: ${({ isCircular }) => (isCircular ? '50%' : '')};
   filter: grayscale(25%);
-  @media screen and (min-width: 768px) {
-    width: 100%;
-  }
 `;
