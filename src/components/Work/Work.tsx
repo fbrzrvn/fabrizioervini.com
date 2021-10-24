@@ -12,33 +12,36 @@ import {
   WorkImg,
   WorkInfo,
   WorkP,
+  WorkWrapper,
 } from './styles';
 
 const Work = ({ t }: TranslateProps) => {
   return (
     <WorkContainer id="work">
       <WorkH1>{t('workTitle')}</WorkH1>
-      <Carousel>
-        {works.map((work) => (
-          <WorkCard key={work.id}>
-            <WorkImg src={work.img} alt={work.title} />
-            <WorkInfo>
-              <WorkH2>{work.title}</WorkH2>
-              <WorkP>{t(work.description)}</WorkP>
-              <BtnWrap>
-                <Button
-                  href={work.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  primary
-                >
-                  {t('visitWebsite')}
-                </Button>
-              </BtnWrap>
-            </WorkInfo>
-          </WorkCard>
-        ))}
-      </Carousel>
+      <WorkWrapper>
+        <Carousel>
+          {works.map((work) => (
+            <WorkCard key={work.id}>
+              <WorkImg src={work.img} alt={work.title} />
+              <WorkInfo>
+                <WorkH2>{work.title}</WorkH2>
+                <WorkP>{t(work.description)}</WorkP>
+                <BtnWrap>
+                  <Button
+                    href={work.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    primary
+                  >
+                    {t('visitWebsite')}
+                  </Button>
+                </BtnWrap>
+              </WorkInfo>
+            </WorkCard>
+          ))}
+        </Carousel>
+      </WorkWrapper>
     </WorkContainer>
   );
 };

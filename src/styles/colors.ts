@@ -15,7 +15,7 @@ export const COLOR = {
   btnPrimaryHover: 'linear-gradient(271deg, #aa71ea, #a9ebff)',
   btnSecondary: 'linear-gradient(271deg, #f093b0, #edca85)',
   btnSecondaryHover: 'linear-gradient(271deg, #f19db7, #eecf91)',
-
+  white: '#ffffff',
   gris100: '#f5f5f5',
   gris300: '#e0e0e0',
   gris500: '#9e9e9e',

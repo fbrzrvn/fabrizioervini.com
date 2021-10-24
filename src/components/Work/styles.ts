@@ -11,6 +11,13 @@ export const WorkContainer = styled.div`
   padding: 100px 1.5rem;
   background: ${({ theme }) => theme.navbarBg};
 `;
+export const WorkWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 44px;
+`;
 export const WorkH1 = styled.h1`
   ${Heading}
   margin-bottom: 2rem;
@@ -18,51 +25,25 @@ export const WorkH1 = styled.h1`
 export const WorkCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  min-width: 100%;
-  width: 100%;
+  min-width: calc(100% - 32px);
+  margin: 0 1rem;
   border-radius: 10px;
-  @media screen and (min-width: 1024px) {
-    flex-direction: row;
-    justify-content: center;
+  border: 1px solid ${COLOR.gris300};
+  @media screen and (min-width: 768px) {
+    min-width: calc(50% - 32px);
   }
 `;
 export const WorkImg = styled.img`
-  margin: auto;
-  height: 100%;
+  height: 300px;
   width: 100%;
-  aspect-ratio: 16/9;
   border-radius: 10px 10px 0 0;
-  @media screen and (min-width: 768px) {
-    width: 80%;
-    height: 300px;
-  }
-  @media screen and (min-width: 1024px) {
-    max-width: 500px;
-    height: 400px;
-    margin-left: 60px;
-    margin-bottom: 0;
-    border-radius: 10px 0 0 10px;
-  }
+  aspect-ratio: 16/9;
 `;
 export const WorkInfo = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 1.5rem 2rem;
-  background-color: #fff;
-  border-radius: 0 0 10px 10px;
-  @media screen and (min-width: 768px) {
-    width: 80%;
-    margin: auto;
-  }
-  @media screen and (min-width: 1024px) {
-    align-items: center;
-    justify-content: center;
-    margin: initial;
-    margin-right: 60px;
-    padding: 0;
-    border-radius: 0 10px 10px 0;
-  }
+  padding: 1rem 1rem 1.5rem;
+  background-color: ${COLOR.white};
 `;
 export const WorkH2 = styled.h2`
   margin-bottom: 10px;

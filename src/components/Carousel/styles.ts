@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { css } from 'styled-components';
+import { COLOR } from 'styles/colors';
 
 export const CarouselContainer = styled.div`
-  position: relative;
   width: 100%;
   max-width: 1100px;
   overflow: hidden;
@@ -19,7 +19,7 @@ const ArrowIcon = css`
   border: none;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.3);
-  color: #fff;
+  color: ${COLOR.white};
   z-index: 5;
   cursor: pointer;
   transition: all 200ms ease-in-out;

@@ -5,10 +5,10 @@ export const Container = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 80px 1rem;
   text-align: left;
   @media screen and (min-width: 768px) {
-    padding: 0 2rem;
+    padding: 80px 2rem;
   }
 `;
 
