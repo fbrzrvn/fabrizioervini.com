@@ -32,6 +32,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
+              title={`Link to ${link.url}`}
             >
               <FontAwesomeIcon icon={link.icon} />
             </FooterIconLink>

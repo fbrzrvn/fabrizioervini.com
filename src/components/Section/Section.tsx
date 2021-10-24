@@ -49,7 +49,13 @@ const Section = ({
           </Column1>
           <Column2>
             <ImgWrap>
-              <Img src={img} alt={altImg} isCircular={isCircular} />
+              <Img
+                src={img}
+                alt={altImg}
+                isCircular={isCircular}
+                width={450}
+                height={449}
+              />
             </ImgWrap>
           </Column2>
         </SectionRow>

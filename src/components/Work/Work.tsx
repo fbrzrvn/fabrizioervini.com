@@ -23,7 +23,12 @@ const Work = ({ t }: TranslateProps) => {
         <Carousel>
           {works.map((work) => (
             <WorkCard key={work.id}>
-              <WorkImg src={work.img} alt={work.title} />
+              <WorkImg
+                src={work.img}
+                alt={work.title}
+                width={516}
+                height={300}
+              />
               <WorkInfo>
                 <WorkH2>{work.title}</WorkH2>
                 <WorkP>{t(work.description)}</WorkP>
@@ -33,6 +38,7 @@ const Work = ({ t }: TranslateProps) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     primary
+                    isSmall
                   >
                     {t('visitWebsite')}
                   </Button>
