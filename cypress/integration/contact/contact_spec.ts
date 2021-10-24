@@ -32,7 +32,7 @@ describe('The Contact Page', () => {
     });
   });
 
-  context('emial: validation error', () => {
+  context('email: validation error', () => {
     it('email: has the red border color and show error message when empty', () => {
       cy.get('input[name=email]')
         .focus()
