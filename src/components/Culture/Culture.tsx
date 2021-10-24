@@ -40,8 +40,8 @@ const Culture = ({ t }: TranslateProps) => {
       <CultureImg
         src={culture?.img}
         alt={culture?.value}
-        width="18"
-        height="18"
+        width={20}
+        height={20}
       />
       <CultureArrowBtn type="button" onClick={handleClick}>
         <CultureArrowIcon icon={faCaretDown} isopen={isOpen.toString()} />
@@ -56,7 +56,12 @@ const Culture = ({ t }: TranslateProps) => {
               setIsOpen(!isOpen);
             }}
           >
-            <CultureImg src={culture.img} alt={culture.label} />
+            <CultureImg
+              src={culture.img}
+              alt={culture.label}
+              width={20}
+              height={20}
+            />
             <CultureOptionsLabel>{t(culture.label)}</CultureOptionsLabel>
             {culture.value === state && <CultureChecked icon={faCheck} />}
           </CultureOptionsBtn>

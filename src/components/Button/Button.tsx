@@ -8,6 +8,7 @@ const Button = React.forwardRef(
       primary,
       secondary,
       isBig,
+      isSmall,
       href,
       target,
       rel,
@@ -18,16 +19,24 @@ const Button = React.forwardRef(
     return href ? (
       <BtnLink
         href={href}
-        primary={primary}
-        secondary={secondary}
         target={target}
         rel={rel}
         ref={ref}
+        primary={primary}
+        secondary={secondary}
+        isBig={isBig}
+        isSmall={isSmall}
       >
         {children}
       </BtnLink>
     ) : (
-      <Btn primary={primary} secondary={secondary} isBig={isBig} ref={ref}>
+      <Btn
+        ref={ref}
+        primary={primary}
+        secondary={secondary}
+        isBig={isBig}
+        isSmall={isSmall}
+      >
         {children}
       </Btn>
     );

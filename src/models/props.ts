@@ -66,5 +66,6 @@ export type BtnProps = {
   target?: string;
   rel?: string;
   isBig?: boolean | false;
+  isSmall?: boolean | false;
   ref: any;
 };

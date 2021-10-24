@@ -4,9 +4,13 @@ import { COLOR } from 'styles/colors';
 
 export const CarouselContainer = styled.div`
   width: 100%;
-  max-width: 1100px;
+
   overflow: hidden;
   scroll-behavior: smooth;
+  @media screen and (min-width: 580px) {
+    max-width: 90%;
+    margin: auto;
+  }
 `;
 const ArrowIcon = css`
   position: absolute;

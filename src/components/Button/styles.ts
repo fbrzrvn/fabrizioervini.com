@@ -6,7 +6,7 @@ export const Button = css<BtnProps>`
   display: grid;
   place-items: center;
   height: ${({ isBig }) => isBig && '56px'};
-  padding: 0.75rem 2rem;
+  padding: ${({ isSmall }) => (isSmall ? '0.25rem 1rem' : '0.75rem 2rem')};
   border: none;
   border-radius: ${({ isBig }) => (isBig ? '8px' : '50px')};
   background-image: ${({ primary }) => primary && COLOR.btnPrimary};
@@ -15,7 +15,7 @@ export const Button = css<BtnProps>`
   color: ${({ secondary }) => secondary && COLOR.btnSecondaryColor};
   font-family: 'Lato', sans-serif;
   font-weight: ${({ isBig }) => (isBig ? '700' : '500')};
-  font-size: 1.25rem;
+  font-size: ${({ isSmall }) => (isSmall ? '0.875rem' : '1.25rem')};
   line-height: 1.75rem;
   letter-spacing: ${({ isBig }) => isBig && '0.5px'};
   text-decoration: none;
@@ -31,6 +31,10 @@ export const Button = css<BtnProps>`
     background-image: ${({ secondary }) =>
       secondary && COLOR.btnSecondaryHover};
     transition: all 200ms ease-in-out;
+  }
+  @media screen and (min-width: 480px) {
+    padding: ${({ isSmall }) => isSmall && '0.75rem 2rem'};
+    font-size: ${({ isSmall }) => isSmall && '1.25rem'};
   }
 `;
 
