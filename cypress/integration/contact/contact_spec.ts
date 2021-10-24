@@ -78,3 +78,5 @@ describe('The Contact Page', () => {
     });
   });
 });
+
+export {};
