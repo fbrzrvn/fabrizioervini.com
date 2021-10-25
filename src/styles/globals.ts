@@ -35,6 +35,13 @@ export const GlobalStyles = createGlobalStyle`
   h1,h2,h3,h4,h5,h6 {
     font-family: Lato, sans-serif;
   }
+  img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
