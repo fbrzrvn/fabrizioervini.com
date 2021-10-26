@@ -76,14 +76,7 @@ export const BtnWrap = styled.div`
   display: flex;
   justify-content: flex-start;
 `;
-export const ImgWrap = styled.div`
-  height: 100%;
-  max-width: 450px;
-`;
 export const Img = styled.img<ImgProps>`
-  display: block;
-  width: 100%;
-  height: initial;
   margin: auto;
   border-radius: ${({ isCircular }) => (isCircular ? '50%' : '')};
   filter: grayscale(25%);

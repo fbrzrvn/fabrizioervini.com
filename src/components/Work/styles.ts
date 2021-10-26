@@ -42,13 +42,7 @@ export const WorkCard = styled.div`
   }
 `;
 export const WorkImg = styled.img`
-  height: 200px;
-  width: 100%;
   border-radius: 10px 10px 0 0;
-  aspect-ratio: 16/9;
-  @media screen and (min-width: 480px) {
-    height: 250px;
-  }
 `;
 export const WorkInfo = styled.div`
   display: flex;

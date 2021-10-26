@@ -9,8 +9,8 @@ export const CultureWrapper = styled.div`
   cursor: pointer;
 `;
 export const CultureImg = styled.img`
-  height: 20px;
-  width: 20px;
+  max-height: 20px;
+  max-width: 20px;
 `;
 export const CultureLabel = styled.span`
   width: 20px;
