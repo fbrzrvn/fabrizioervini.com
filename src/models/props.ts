@@ -24,7 +24,10 @@ export type TranslateProps = {
 export type NavProps = {
   isOpen?: boolean | any;
   setIsOpen?: boolean | any;
-  hasLink?: boolean;
+};
+
+export type NavLinksProps = {
+  isSidebar?: boolean;
 };
 
 export type ChildrenProps = {
