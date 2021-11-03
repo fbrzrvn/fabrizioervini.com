@@ -1,20 +1,19 @@
 import { DefaultTheme } from 'styled-components';
 
 export const COLOR = {
-  linearGradient: `linear-gradient(
+  headingGradient: `linear-gradient(
     271deg,
     #a0e9ff 30%,
     #a162e8 50%,
     #f093b0 70%,
     #edca85 94%
   )`,
-
-  btnPrimaryColor: '#212121',
-  btnSecondaryColor: '#f5f5f5',
-  btnPrimary: 'linear-gradient(271deg, #a162e8, #a0e9ff)',
-  btnPrimaryHover: 'linear-gradient(271deg, #aa71ea, #a9ebff)',
-  btnSecondary: 'linear-gradient(271deg, #f093b0, #edca85)',
-  btnSecondaryHover: 'linear-gradient(271deg, #f19db7, #eecf91)',
+  btnPrimary: 'linear-gradient(271deg, #b097f2, #a0e9ff)',
+  btnPrimaryHover: 'linear-gradient(271deg, #bda8fa, #a9ebff)',
+  btnSecondary: 'linear-gradient(271deg, #edca85, #f093b0)',
+  btnSecondaryHover: 'linear-gradient(271deg, #eecf91, #f19db7)',
+  iconGrandient: 'linear-gradient(180deg, #db85b4, #b097f2)',
+  pink: '#ffc4ff',
   white: '#ffffff',
   gris100: '#f5f5f5',
   gris300: '#e0e0e0',
@@ -29,7 +28,6 @@ export const COLOR = {
   danger500: '#f44336',
   danger700: '#d32f2f',
   danger900: '#b71c1c',
-
   // Dark Theme
   darkBackground: '#18191A',
   darkNavbar: '#242526',
@@ -57,7 +55,6 @@ export const lightTheme: DefaultTheme = {
   navbarLink: COLOR.lightNavbarLink,
   footer: COLOR.lightFooter,
 };
-
 export const darkTheme: DefaultTheme = {
   body: COLOR.darkBackground,
   text: COLOR.darkText,
