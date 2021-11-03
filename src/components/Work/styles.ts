@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
 import { Heading, TextSmall } from 'styles/mixins';
 
-export const WorkContainer = styled.div`
+export const WorkContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,28 +21,27 @@ export const WorkH1 = styled.h1`
     margin: 0 0 2rem;
   }
 `;
-export const WorkWrapper = styled.div`
+export const WorkWrapper = styled.div<{ isSmallMobileDevice: boolean }>`
   position: relative;
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  @media screen and (min-width: 768) {
-    padding: 0 44px;
-  }
+  padding: ${({ isSmallMobileDevice }) =>
+    isSmallMobileDevice ? '0' : '0 44px'};
 `;
 export const WorkCard = styled.div`
   display: flex;
   flex-direction: column;
   min-width: calc(100% - 32px);
   margin: 0 1rem;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid ${COLOR.gris300};
   @media screen and (min-width: 768px) {
     min-width: calc(50% - 32px);
   }
 `;
 export const WorkImg = styled.img`
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 0 0;
 `;
 export const WorkInfo = styled.div`
   display: flex;
@@ -54,7 +53,7 @@ export const WorkInfo = styled.div`
   }
 `;
 export const WorkH2 = styled.h2`
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: ${({ theme }) => theme.primary};
   font-size: 1.5rem;
   white-space: nowrap;
@@ -65,11 +64,7 @@ export const WorkH2 = styled.h2`
 export const WorkP = styled.p`
   ${TextSmall}
   margin-bottom: 0.625rem;
-  color: ${COLOR.btnPrimaryColor};
-  font-size: 14px;
-  @media screen and (min-width: 480px) {
-    font-size: 18px;
-  }
+  color: ${COLOR.gris900};
   @media screen and (min-width: 1024px) {
     width: 80%;
   }

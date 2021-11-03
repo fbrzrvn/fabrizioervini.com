@@ -4,7 +4,6 @@ import { COLOR } from 'styles/colors';
 
 export const CarouselContainer = styled.div`
   width: 100%;
-
   overflow: hidden;
   scroll-behavior: smooth;
   @media screen and (min-width: 580px) {
@@ -12,11 +11,12 @@ export const CarouselContainer = styled.div`
     margin: auto;
   }
 `;
-const ArrowIcon = css`
+const ArrowIcon = css<{ issmallmobiledevice: string }>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  display: none;
+  display: ${({ issmallmobiledevice }) =>
+    issmallmobiledevice === 'true' ? 'none' : 'block'};
   width: 44px !important;
   height: 44px;
   padding: 6px 6px 6px 4px;
@@ -29,9 +29,6 @@ const ArrowIcon = css`
   transition: all 200ms ease-in-out;
   &:hover {
     background: rgba(0, 0, 0, 0.5);
-  }
-  @media screen and (min-width: 768px) {
-    display: block;
   }
 `;
 export const ArrowIconLeft = styled(FontAwesomeIcon)`

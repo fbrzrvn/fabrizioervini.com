@@ -2,7 +2,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { useWindowSize } from 'hooks';
+import { useIsMobileDevice, useWindowSize } from 'hooks';
 import { ChildrenProps } from 'models/props';
 import React, { Children, useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
@@ -18,6 +18,7 @@ import {
 const Carousel = ({ children }: ChildrenProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [carouselElement, setCarouselElement] = useState(0);
+  const { isSmallMobileDevice } = useIsMobileDevice();
   const currentWidth = useWindowSize();
 
   const slides = Math.ceil(Children.count(children) / carouselElement);
@@ -60,8 +61,16 @@ const Carousel = ({ children }: ChildrenProps) => {
   return (
     <React.Fragment>
       <CarouselContainer {...handlers}>
-        <ArrowIconLeft icon={faChevronLeft} onClick={handlePrev} />
-        <ArrowIconRight icon={faChevronRight} onClick={handleNext} />
+        <ArrowIconLeft
+          icon={faChevronLeft}
+          onClick={handlePrev}
+          issmallmobiledevice={isSmallMobileDevice.toString()}
+        />
+        <ArrowIconRight
+          icon={faChevronRight}
+          onClick={handleNext}
+          issmallmobiledevice={isSmallMobileDevice.toString()}
+        />
         <CarouselWrapper {...slideProps}>{children}</CarouselWrapper>
       </CarouselContainer>
       <DotsWrapper>
