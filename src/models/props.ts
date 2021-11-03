@@ -73,3 +73,10 @@ export type BtnProps = {
   ref: any;
   onClick?: () => void;
 };
+
+export type FeaturesProps = {
+  id: number;
+  title: string;
+  description: string;
+  icon: IconProp;
+};
