@@ -71,4 +71,5 @@ export type BtnProps = {
   isBig?: boolean | false;
   isSmall?: boolean | false;
   ref: any;
+  onClick?: () => void;
 };

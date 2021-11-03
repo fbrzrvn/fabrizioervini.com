@@ -13,6 +13,7 @@ const Button = React.forwardRef(
       target,
       rel,
       children,
+      onClick,
     }: BtnProps & ChildrenProps,
     ref,
   ) => {
@@ -36,6 +37,7 @@ const Button = React.forwardRef(
         secondary={secondary}
         isBig={isBig}
         isSmall={isSmall}
+        onClick={onClick}
       >
         {children}
       </Btn>

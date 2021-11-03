@@ -1,8 +1,7 @@
-import { Link as LinkRouter } from 'react-scroll';
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled.footer`
   background: ${({ theme }) => theme.footer};
 `;
 export const FooterWrapper = styled.div`
@@ -19,7 +18,7 @@ export const FooterWrapper = styled.div`
     padding: 2.5rem 2rem;
   }
 `;
-export const FooterLogo = styled(LinkRouter)`
+export const FooterLogo = styled.p`
   margin-bottom: 1rem;
   color: ${({ theme }) => theme.text};
   font-family: 'Lato', sans-serif;

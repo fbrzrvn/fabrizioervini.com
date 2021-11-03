@@ -11,8 +11,8 @@ export const Button = css<BtnProps>`
   border-radius: ${({ isBig }) => (isBig ? '8px' : '50px')};
   background-image: ${({ primary }) => primary && COLOR.btnPrimary};
   background-image: ${({ secondary }) => secondary && COLOR.btnSecondary};
-  color: ${({ primary }) => primary && COLOR.btnPrimaryColor};
-  color: ${({ secondary }) => secondary && COLOR.btnSecondaryColor};
+  color: ${({ primary }) => primary && COLOR.gris900};
+  color: ${({ secondary }) => secondary && COLOR.gris100};
   font-family: 'Lato', sans-serif;
   font-weight: ${({ isBig }) => (isBig ? '700' : '500')};
   font-size: ${({ isSmall }) => (isSmall ? '0.875rem' : '1.25rem')};
@@ -37,11 +37,9 @@ export const Button = css<BtnProps>`
     font-size: ${({ isSmall }) => isSmall && '1.25rem'};
   }
 `;
-
 export const Btn = styled.button`
   ${Button}
 `;
-
 export const BtnLink = styled.a`
   ${Button}
 `;

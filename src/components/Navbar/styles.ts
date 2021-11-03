@@ -1,23 +1,28 @@
-import { Link as LinkScroll } from 'react-scroll';
 import styled from 'styled-components';
-import { COLOR } from 'styles/colors';
 
 type NavbarProps = {
-  scrollNav: Boolean;
+  scrollNav: boolean;
   isOpen: boolean;
+  isSmallMobileDevice: boolean;
 };
 
 export const Nav = styled.nav<NavbarProps>`
-  position: sticky;
-  top: 0;
+  position: ${({ isSmallMobileDevice }) => !isSmallMobileDevice && 'sticky;'};
+  top: ${({ isSmallMobileDevice }) => !isSmallMobileDevice && '0'};
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80px;
-  box-shadow: ${({ scrollNav }) =>
-    scrollNav ? '0 0 10px 0 rgba(0, 0, 0, 0.3)' : 'none'};
-  background: ${({ isOpen, scrollNav, theme }) =>
-    isOpen ? theme.body : scrollNav ? theme.navbarBg : 'transparent'};
+  box-shadow: ${({ scrollNav, isSmallMobileDevice }) =>
+    scrollNav && !isSmallMobileDevice
+      ? '0 0 10px 0 rgba(0, 0, 0, 0.3)'
+      : 'none'};
+  background: ${({ isOpen, scrollNav, theme, isSmallMobileDevice }) =>
+    isOpen
+      ? theme.body
+      : scrollNav && !isSmallMobileDevice
+      ? theme.navbarBg
+      : 'transparent'};
   z-index: 10;
   transition: ${({ isOpen }) => isOpen && 'all 1s ease-in-out'};
 `;
@@ -55,42 +60,6 @@ export const MobileIcon = styled.div`
     font-size: 1.8rem;
     color: ${({ theme }) => theme.text};
     cursor: pointer;
-  }
-`;
-export const NavMenu = styled.ul`
-  display: flex;
-  align-items: center;
-  margin-right: 1.5rem;
-  list-style: none;
-  text-align: center;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-export const NavItem = styled.li`
-  height: 80px;
-`;
-export const NavLink = styled(LinkScroll)`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 1rem;
-  color: ${({ theme }) => theme.text};
-  font-size: 1.125rem;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    color: ${({ theme }) => theme.navbarLink};
-  }
-  &.active {
-    border-bottom: 3px solid transparent;
-    background: ${COLOR.linearGradient};
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100% 3px;
-    background-clip: border-box;
-    background-origin: border-box;
-    -webkit-background-clip: border-box;
   }
 `;
 export const NavBtns = styled.div`
