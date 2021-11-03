@@ -7,7 +7,7 @@ export const aboutSection: SectionProps = {
   description: 'aboutDescription',
   hasLink: false,
   imgStart: false,
-  img: 'images/profile.jpeg',
+  img: '/images/profile.jpeg',
   altImg: 'Profile',
   isCircular: true,
 };

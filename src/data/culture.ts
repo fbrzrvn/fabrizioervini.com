@@ -6,18 +6,18 @@ export const cultures: CultureProps[] = [
     id: 11,
     value: CultureType.EN,
     label: 'english',
-    img: 'images/united-states.png',
+    img: '/images/united-states.png',
   },
   {
     id: 12,
     value: CultureType.ES,
     label: 'spanish',
-    img: 'images/spain.png',
+    img: '/images/spain.png',
   },
   {
     id: 13,
     value: CultureType.IT,
     label: 'italian',
-    img: 'images/italy.png',
+    img: '/images/italy.png',
   },
 ];

@@ -1,3 +1,4 @@
+import { RoutesType } from 'models/enums';
 import { SectionProps } from '../models/props';
 
 export const blogSection: SectionProps = {
@@ -5,9 +6,11 @@ export const blogSection: SectionProps = {
   topLine: '⚠️ blogTopLine',
   headLine: 'blogHeadLine',
   description: 'blogDescription',
-  hasLink: false,
+  hasLink: true,
+  linkLabel: 'Visit the Blog',
+  linkUrl: RoutesType.BLOG,
   imgStart: true,
-  img: 'svg/blog.svg',
+  img: '/svg/blog.svg',
   altImg: 'Blog',
   isCircular: false,
 };
