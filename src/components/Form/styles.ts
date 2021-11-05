@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Heading, TextSmall } from 'styles/mixins';
+import { Heading, TextMedium } from 'styles/mixins';
 
 type FormProps = {
   error: boolean | string;
   value: string;
 };
 
-export const FormWrapper = styled.div`
+export const FormWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 80px;
-  background: ${({ theme }) => theme.body};
+  background: ${({ theme }) => theme.navbarBg};
 `;
 export const FormH1 = styled.h1`
   ${Heading}
 `;
 export const FormP = styled.p`
-  ${TextSmall};
+  ${TextMedium};
   width: 90%;
   max-width: 400px;
   margin: 0 auto;
@@ -45,6 +45,7 @@ export const FormInput = styled.input<FormProps>`
   margin-bottom: 1.5rem;
   border: none;
   border-radius: 8px;
+  border: 1px solid ${COLOR.gris300};
   border: ${({ error, value }) =>
     error
       ? `2px solid ${COLOR.danger700}`
@@ -59,7 +60,7 @@ export const FormInput = styled.input<FormProps>`
     border: 3px solid;
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: ${COLOR.linearGradient};
+    border-image-source: ${COLOR.headingGradient};
   }
 `;
 export const FormTextarea = styled.textarea<FormProps>`
@@ -67,6 +68,7 @@ export const FormTextarea = styled.textarea<FormProps>`
   margin-bottom: 2rem;
   border: none;
   border-radius: 8px;
+  border: 1px solid ${COLOR.gris300};
   border: ${({ error, value }) =>
     error
       ? `2px solid ${COLOR.danger700}`
@@ -81,7 +83,7 @@ export const FormTextarea = styled.textarea<FormProps>`
     border-radius: 8px;
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: ${COLOR.linearGradient};
+    border-image-source: ${COLOR.headingGradient};
   }
 `;
 export const ErrorMsg = styled.p`
