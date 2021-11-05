@@ -80,3 +80,19 @@ export type FeaturesProps = {
   description: string;
   icon: IconProp;
 };
+
+export type PostProps = {
+  title: string;
+  date: string;
+  contentHtml: string;
+};
+
+type PostsProps = {
+  date: string;
+  title: string;
+  id: string;
+};
+
+export type PostsPageProps = {
+  posts: PostsProps[];
+};
