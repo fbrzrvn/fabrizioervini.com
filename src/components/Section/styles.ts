@@ -75,10 +75,13 @@ export const BtnWrap = styled.div`
   margin-top: 1.5rem;
 `;
 export const Img = styled.img<ImgProps>`
-  max-width: 320px;
-  margin: auto;
+  max-width: 100%;
   border-radius: ${({ isCircular }) => (isCircular ? '50%' : '')};
   filter: grayscale(25%);
+  @media screen and (min-width: 375px) {
+    max-width: 320px;
+    margin: auto;
+  }
   @media screen and (min-width: 768px) {
     max-width: 100%;
   }
