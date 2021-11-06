@@ -42,7 +42,7 @@ const LatestWorks = ({ t }: TranslateProps) => {
             <LatestWorksCardBody>
               <LatestWorksCardH2>{work.title}</LatestWorksCardH2>
               <LatestWorksCardP>{t(work.description)}</LatestWorksCardP>
-              <FLink t={t} url={work.link} />
+              <FLink text={'visitWebsite'} url={work.link} />
             </LatestWorksCardBody>
           </LatestWorksCard>
         ))}

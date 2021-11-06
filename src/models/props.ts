@@ -96,3 +96,9 @@ type PostsProps = {
 export type PostsPageProps = {
   posts: PostsProps[];
 };
+
+export type FLinkProps = {
+  text: string;
+  url: string;
+  noRel?: boolean;
+};

@@ -20,7 +20,7 @@ const Works = ({ t }: TranslateProps) => {
           <WorkInfo>
             <WorkInfoH2>{work.title}</WorkInfoH2>
             <WorkInfoP>{t(work.description)}</WorkInfoP>
-            <FLink t={t} url={work.link} />
+            <FLink text={'visitWebsite'} url={work.link} />
           </WorkInfo>
         </WorksWrapper>
       ))}
