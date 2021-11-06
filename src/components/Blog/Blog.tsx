@@ -1,5 +1,6 @@
+import FLink from 'components/shared/FLink';
+import { RoutesType } from 'models/enums';
 import { PostsPageProps } from 'models/props';
-import Link from 'next/link';
 import React from 'react';
 import {
   BlogContainer,
@@ -16,10 +17,13 @@ const Posts = ({ posts }: PostsPageProps) => {
       <ul>
         {posts.map(({ id, date, title }) => (
           <PostItem key={id}>
-            <Link href={`/blog/${id}`} passHref>
-              <PostLink>{title}</PostLink>
-            </Link>
             <PostDate>{date}</PostDate>
+            <PostLink>{title}</PostLink>
+            <FLink
+              text={'postLinkLabel'}
+              url={`${RoutesType.BLOG}/${id}`}
+              noRel
+            />
           </PostItem>
         ))}
       </ul>

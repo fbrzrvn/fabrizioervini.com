@@ -7,7 +7,7 @@ export const blogSection: SectionProps = {
   headLine: 'blogHeadLine',
   description: 'blogDescription',
   hasLink: true,
-  linkLabel: 'Visit the Blog',
+  linkLabel: 'blogLinkLabel',
   linkUrl: RoutesType.BLOG,
   imgStart: true,
   img: '/svg/blog.svg',

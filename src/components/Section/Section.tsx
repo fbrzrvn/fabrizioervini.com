@@ -41,7 +41,7 @@ const Section = ({
               {hasLink && linkUrl && linkLabel && (
                 <BtnWrap>
                   <Button href={linkUrl} primary>
-                    {linkLabel}
+                    {t(linkLabel)}
                   </Button>
                 </BtnWrap>
               )}
