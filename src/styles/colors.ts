@@ -28,6 +28,7 @@ export const COLOR = {
   danger500: '#f44336',
   danger700: '#d32f2f',
   danger900: '#b71c1c',
+  purple50: '#f5effc',
   // Dark Theme
   darkBackground: '#18191A',
   darkNavbar: '#242526',

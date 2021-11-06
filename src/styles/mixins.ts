@@ -66,3 +66,24 @@ export const TextSmall = css`
     line-height: 26px;
   }
 `;
+
+export const Link = css`
+  color: ${({ theme }) => theme.navbarLink};
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 300ms ease-in-out;
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+  }
+`;
+export const BtnLink = css`
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: ${COLOR.darkPrimary};
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    background: ${COLOR.purple50};
+  }
+`;

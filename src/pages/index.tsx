@@ -1,9 +1,9 @@
 import Contact from 'components/Contact';
 import Features from 'components/Feautures';
 import Hero from 'components/Hero';
+import LatestWorks from 'components/LatestWorks';
 import MainLayout from 'components/MainLayout';
 import Section from 'components/Section';
-import Work from 'components/Work';
 import { aboutSection } from 'data/about';
 import { blogSection } from 'data/blog';
 import { useToggle, useTranslation } from 'hooks';
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         <Hero t={t} />
         <Section t={t} {...aboutSection} />
         <Features />
-        <Work t={t} />
+        <LatestWorks t={t} />
         <Section t={t} {...blogSection} />
         <Contact t={t} />
       </MainLayout>
