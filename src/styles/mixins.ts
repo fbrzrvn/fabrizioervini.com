@@ -77,6 +77,7 @@ export const Link = css`
   }
 `;
 export const BtnLink = css`
+  width: fit-content;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   color: ${COLOR.darkPrimary};

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
 import {
-  BtnLink,
   Container,
   Content,
   Heading,
@@ -80,7 +79,4 @@ export const LatestWorksCardP = styled.p`
   max-width: 600px;
   margin-bottom: 1rem;
   color: ${COLOR.gris900};
-`;
-export const LatestWorksCardLinks = styled.a`
-  ${BtnLink}
 `;

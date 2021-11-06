@@ -1,16 +1,14 @@
-import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { works } from 'data/works';
 import { RoutesType } from 'models/enums';
 import { TranslateProps } from 'models/props';
 import Link from 'next/link';
 import React from 'react';
+import FLink from '../shared/FLink';
 import {
   LatestWorksCard,
   LatestWorksCardBody,
   LatestWorksCardH2,
   LatestWorksCardImg,
-  LatestWorksCardLinks,
   LatestWorksCardP,
   LatestWorksContainer,
   LatestWorksContent,
@@ -44,12 +42,7 @@ const LatestWorks = ({ t }: TranslateProps) => {
             <LatestWorksCardBody>
               <LatestWorksCardH2>{work.title}</LatestWorksCardH2>
               <LatestWorksCardP>{t(work.description)}</LatestWorksCardP>
-              <Link href={work.link} passHref>
-                <LatestWorksCardLinks target="_blank" rel="noopener noreferrer">
-                  {t('visitWebsite')}{' '}
-                  <FontAwesomeIcon icon={faLongArrowAltRight} />
-                </LatestWorksCardLinks>
-              </Link>
+              <FLink t={t} url={work.link} />
             </LatestWorksCardBody>
           </LatestWorksCard>
         ))}
