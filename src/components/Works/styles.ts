@@ -33,19 +33,19 @@ export const WorkImg = styled.img`
     max-width: 50%;
   }
 `;
-export const WorkInfo = styled.div`
+export const WorkInner = styled.div`
   margin: 2rem 1rem 1rem;
   @media screen and (min-width: 768px) {
     margin: 0;
     margin-left: 1rem;
   }
 `;
-export const WorkInfoH2 = styled.h2`
-  margin: 0.625rem 0;
+export const WorkTitle = styled.h2`
+  margin-bottom: 0.625rem;
   color: ${({ theme }) => theme.primary};
   font-size: 1.8rem;
 `;
-export const WorkInfoP = styled.p`
+export const WorkDescription = styled.div`
   ${TextSmall};
   max-width: 600px;
   margin-bottom: 1rem;

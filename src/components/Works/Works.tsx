@@ -3,12 +3,12 @@ import { TranslateProps } from 'models/props';
 import React from 'react';
 import FLink from '../shared/FLink';
 import {
+  WorkDescription,
   WorkImg,
-  WorkInfo,
-  WorkInfoH2,
-  WorkInfoP,
+  WorkInner,
   WorksContainer,
   WorksWrapper,
+  WorkTitle,
 } from './styles';
 
 const Works = ({ t }: TranslateProps) => {
@@ -17,11 +17,13 @@ const Works = ({ t }: TranslateProps) => {
       {works.map((work) => (
         <WorksWrapper key={work.id}>
           <WorkImg src={work.img} alt={work.title} width={516} height={300} />
-          <WorkInfo>
-            <WorkInfoH2>{work.title}</WorkInfoH2>
-            <WorkInfoP>{t(work.description)}</WorkInfoP>
+          <WorkInner>
+            <WorkTitle>{work.title}</WorkTitle>
+            <WorkDescription
+              dangerouslySetInnerHTML={{ __html: `${t(work.description)}` }}
+            />
             <FLink text={'visitWebsite'} url={work.link} />
-          </WorkInfo>
+          </WorkInner>
         </WorksWrapper>
       ))}
     </WorksContainer>

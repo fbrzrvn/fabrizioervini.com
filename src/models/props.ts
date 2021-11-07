@@ -52,6 +52,7 @@ export type SectionProps = {
 export type WorkProps = {
   id: number;
   title: string;
+  summary: string;
   description: string;
   img: string;
   link: string;

@@ -76,7 +76,7 @@ export const LatestWorksCardH2 = styled.h2`
 `;
 export const LatestWorksCardP = styled.p`
   ${TextSmall};
-  max-width: 600px;
+  width: 90%;
   margin-bottom: 1rem;
   color: ${COLOR.gris900};
 `;

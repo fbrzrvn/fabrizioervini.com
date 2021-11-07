@@ -41,7 +41,7 @@ const LatestWorks = ({ t }: TranslateProps) => {
             />
             <LatestWorksCardBody>
               <LatestWorksCardH2>{work.title}</LatestWorksCardH2>
-              <LatestWorksCardP>{t(work.description)}</LatestWorksCardP>
+              <LatestWorksCardP>{t(work.summary)}</LatestWorksCardP>
               <FLink text={'visitWebsite'} url={work.link} />
             </LatestWorksCardBody>
           </LatestWorksCard>
