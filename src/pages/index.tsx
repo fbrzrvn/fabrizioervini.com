@@ -6,12 +6,11 @@ import MainLayout from 'components/MainLayout';
 import Section from 'components/Section';
 import { aboutSection } from 'data/about';
 import { blogSection } from 'data/blog';
-import { useToggle, useTranslation } from 'hooks';
+import { useTranslation } from 'hooks';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
-  const [isOpen, setIsOpen] = useToggle();
   const { t } = useTranslation();
 
   return (
@@ -24,7 +23,7 @@ const Home: NextPage = () => {
       <MainLayout>
         <Hero t={t} />
         <Section t={t} {...aboutSection} />
-        <Features />
+        <Features t={t} />
         <LatestWorks t={t} />
         <Section t={t} {...blogSection} />
         <Contact t={t} />

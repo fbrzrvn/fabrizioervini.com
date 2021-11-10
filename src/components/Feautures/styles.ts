@@ -11,7 +11,7 @@ export const FeaturesContainer = styled.section`
 export const FeaturesWraper = styled.div`
   display: grid;
   grid-template-columns: minmax(auto, calc(100% - 48px));
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 1rem;
   max-width: 1100px;
@@ -24,7 +24,7 @@ export const FeaturesWraper = styled.div`
 export const FeaturesCard = styled.div`
   position: relative;
   max-width: 360px;
-  margin: auto;
+  margin: 0 auto;
   padding: 1rem 2rem 2rem;
   border-radius: 4px;
   border: 1px solid ${COLOR.gris300};
@@ -34,6 +34,7 @@ export const FeaturesCard = styled.div`
     margin-top: 5rem;
   }
   @media screen and (min-width: 768px) {
+    margin-top: unset;
     padding: 1rem 1rem 2rem;
     &:not(:first-of-type) {
       margin-top: unset;

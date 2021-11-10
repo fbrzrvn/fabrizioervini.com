@@ -1,4 +1,5 @@
 import { features } from 'data/features';
+import { TranslateProps } from 'models/props';
 import React from 'react';
 import {
   FeatureIcon,
@@ -10,7 +11,7 @@ import {
   FeaturesWraper,
 } from './styles';
 
-const Features = () => {
+const Features = ({ t }: TranslateProps) => {
   return (
     <FeaturesContainer>
       <FeaturesWraper>
@@ -21,7 +22,7 @@ const Features = () => {
             </FeatureIconWrapper>
             <FeaturesCardTitle>{feature.title}</FeaturesCardTitle>
             <FeaturesCardDescription>
-              {feature.description}
+              {t(feature.description)}
             </FeaturesCardDescription>
           </FeaturesCard>
         ))}

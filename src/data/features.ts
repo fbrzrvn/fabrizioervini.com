@@ -8,23 +8,20 @@ import { FeaturesProps } from 'models/props';
 export const features: FeaturesProps[] = [
   {
     id: 11,
-    title: 'UI Design',
-    description:
-      'I design detail-oriented, visual interfaces based on the latest design patterns and trends. Build prototypes to evaluate user interfaces and design solutions.',
+    title: 'UX/UI',
+    description: 'UX/UI',
     icon: faDraftingCompass,
   },
   {
     id: 12,
-    title: 'Web Developement',
-    description:
-      'I develop websites and apps using the latest techniques. I believe that all products should be built with a strong focus on accessibility, performance and user interaction.',
+    title: 'Front End',
+    description: 'Front',
     icon: faLaptopCode,
   },
   {
     id: 13,
-    title: 'Web Developement',
-    description:
-      'I develop websites and apps using the latest techniques. I believe that all products should be built with a strong focus on accessibility, performance and user interaction.',
+    title: 'Back End',
+    description: 'Back',
     icon: faServer,
   },
 ];
