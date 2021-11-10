@@ -4,10 +4,14 @@ import { COLOR } from './colors';
 export const Main = css`
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 196px);
+  min-height: calc(100vh - 235px);
   max-width: 1100px;
   margin: auto;
-  padding: 1.5rem 3rem;
+  padding: 50px 1rem;
+  @media screen and (min-width: 768px) {
+    min-height: calc(100vh - 196px);
+    padding: 50px 3rem;
+  }
 `;
 export const Container = css`
   display: flex;
