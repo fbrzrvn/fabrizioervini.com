@@ -36,7 +36,7 @@ export type ChildrenProps = {
 
 export type SectionProps = {
   id: string;
-  topLine: string;
+  topLine?: string;
   headLine: string;
   description: string;
   hasLink?: boolean;

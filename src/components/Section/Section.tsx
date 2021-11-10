@@ -35,7 +35,7 @@ const Section = ({
         <SectionRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>{t(topLine)}</TopLine>
+              {topLine && <TopLine>{t(topLine)}</TopLine>}
               <HeadLine>{t(headLine)}</HeadLine>
               <Subtitle>{t(description)}</Subtitle>
               {hasLink && linkUrl && linkLabel && (
