@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { TextSmall } from 'styles/mixins';
+import { Heading, Main, TextSmall } from 'styles/mixins';
 
 export const WorksContainer = styled.div`
-  display: flex;
+  ${Main}
   flex-wrap: wrap;
-  max-width: 1100px;
-  margin: auto;
-  padding: 50px 0;
-  @media screen and (min-width: 768px) {
-    padding: 50px 3rem;
-  }
+`;
+export const WorkHeading = styled.h1`
+  ${Heading}
 `;
 export const WorksWrapper = styled.div`
   display: flex;
