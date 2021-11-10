@@ -82,17 +82,16 @@ export type FeaturesProps = {
   icon: IconProp;
 };
 
-export type PostProps = {
-  title: string;
-  date: string;
-  contentHtml: string;
-};
-
-type PostsProps = {
-  date: string;
-  title: string;
+export interface PostsProps {
   id: string;
-};
+  date: string;
+  title: string;
+  tags?: string[];
+}
+
+export interface PostResponseProps extends Omit<PostsProps, 'id'> {
+  contentHtml: string;
+}
 
 export type PostsPageProps = {
   posts: PostsProps[];

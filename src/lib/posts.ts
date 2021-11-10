@@ -1,5 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
+import { PostResponseProps, PostsProps } from 'models/props';
 import path from 'path';
 import * as remark from 'remark';
 import html from 'remark-html';
@@ -7,7 +8,6 @@ import html from 'remark-html';
 const postsDirectory = path.join(process.cwd(), '/src/posts');
 
 export const getSortedPostsData = () => {
-  // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const posts = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
@@ -20,13 +20,12 @@ export const getSortedPostsData = () => {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
 
-    // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string }),
+      ...(matterResult.data as Omit<PostsProps, 'id'>),
     };
   });
-  // Sort posts by date
+
   const sortedPost = posts.sort((a, b) => (a.date < b.date ? 1 : -1));
   return sortedPost;
 };
@@ -56,10 +55,9 @@ export const getPostData = async (id: string) => {
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
-  // Combine the data with the id and contentHtml
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string; title: string }),
+    ...(matterResult.data as Omit<PostResponseProps, 'contentHtml'>),
   };
 };

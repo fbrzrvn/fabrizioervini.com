@@ -1,24 +1,24 @@
 import FLink from 'components/shared/FLink';
 import { RoutesType } from 'models/enums';
-import { PostsPageProps } from 'models/props';
+import { PostsPageProps, TranslateProps } from 'models/props';
 import React from 'react';
 import {
   BlogContainer,
   BlogTitle,
   PostDate,
   PostItem,
-  PostLink,
+  PostTitle,
 } from './styled';
 
-const Posts = ({ posts }: PostsPageProps) => {
+const Posts = ({ posts, t }: PostsPageProps & TranslateProps) => {
   return (
     <BlogContainer>
-      <BlogTitle>Blog</BlogTitle>
+      <BlogTitle>{t('blogTitle')}</BlogTitle>
       <ul>
         {posts.map(({ id, date, title }) => (
           <PostItem key={id}>
             <PostDate>{date}</PostDate>
-            <PostLink>{title}</PostLink>
+            <PostTitle>{title}</PostTitle>
             <FLink
               text={'postLinkLabel'}
               url={`${RoutesType.BLOG}/${id}`}

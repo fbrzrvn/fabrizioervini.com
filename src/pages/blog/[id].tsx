@@ -1,12 +1,12 @@
 import MainLayout from 'components/MainLayout';
 import Post from 'components/Post';
 import { getAllPostIds, getPostData } from 'lib/posts';
-import { PostProps } from 'models/props';
+import { PostResponseProps } from 'models/props';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
 
-const Article: NextPage<PostProps> = (post: PostProps) => {
+const Article: NextPage<PostResponseProps> = (post: PostResponseProps) => {
   return (
     <div>
       <Head>

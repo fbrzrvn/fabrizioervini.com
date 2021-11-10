@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Main } from 'styles/mixins';
+import { Heading, Main } from 'styles/mixins';
 
 export const BlogContainer = styled.main`
   ${Main}
 `;
 export const BlogTitle = styled.h2`
-  font-size: 40px;
-  margin-bottom: 24px;
+  ${Heading}
 `;
 export const PostItem = styled.li`
   display: flex;
@@ -16,11 +15,10 @@ export const PostItem = styled.li`
   padding: 1rem;
   border-bottom: 1px solid ${COLOR.gris300};
 `;
-export const PostLink = styled.a`
-  font-size: 1.2rem;
-  text-decoration: none;
+export const PostTitle = styled.h2`
   margin-bottom: 8px;
-  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 300;
 `;
 export const PostDate = styled.small`
   color: ${COLOR.gris700};

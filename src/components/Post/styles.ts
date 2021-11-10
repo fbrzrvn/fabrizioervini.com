@@ -15,4 +15,9 @@ export const PostTitle = styled.h1`
 export const PostDate = styled.small`
   color: ${COLOR.gris700};
 `;
-export const PostContent = styled.p``;
+export const PostContent = styled.div`
+  margin-bottom: 2rem;
+  & h2 {
+    margin: 1rem 0 0.5rem;
+  }
+`;
