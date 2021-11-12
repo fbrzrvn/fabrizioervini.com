@@ -69,8 +69,9 @@ export type BtnProps = {
   href?: string;
   target?: string;
   rel?: string;
-  isBig?: boolean | false;
-  isSmall?: boolean | false;
+  isBig?: boolean;
+  isSmall?: boolean;
+  disabled?: boolean;
   ref: any;
   onClick?: () => void;
 };

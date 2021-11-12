@@ -24,7 +24,8 @@ export const Button = css<BtnProps>`
     secondary && '0 -1px 0 rgba(0, 0, 0, 0.25)'};
   white-space: nowrap;
   outline: none;
-  cursor: pointer;
+  pointer-events: all;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   transition: all 200ms ease-in-out;
   &:hover {
     background-image: ${({ primary }) => primary && COLOR.btnPrimaryHover};

@@ -12,6 +12,7 @@ const Button = React.forwardRef(
       href,
       target,
       rel,
+      disabled,
       children,
       onClick,
     }: BtnProps & ChildrenProps,
@@ -37,6 +38,7 @@ const Button = React.forwardRef(
         secondary={secondary}
         isBig={isBig}
         isSmall={isSmall}
+        disabled={disabled}
         onClick={onClick}
       >
         {children}
