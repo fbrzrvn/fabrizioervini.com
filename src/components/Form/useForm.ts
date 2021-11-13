@@ -1,6 +1,8 @@
 import emailjs from 'emailjs-com';
+import { RoutesType } from 'models/enums';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { scrollToTop } from 'utils';
 import { IFormErrors, IFormValues } from './types';
 
 const useForm = (validateForm: (values: IFormValues) => IFormErrors) => {
@@ -9,6 +11,7 @@ const useForm = (validateForm: (values: IFormValues) => IFormErrors) => {
     email: '',
     message: '',
   };
+  const [isBlur, setIsBlur] = useState(false);
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState<IFormErrors>({
     ...initialValues,
@@ -18,15 +21,29 @@ const useForm = (validateForm: (values: IFormValues) => IFormErrors) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const router = useRouter();
 
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement> &
-      React.ChangeEvent<HTMLTextAreaElement>,
+  const inputRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  useEffect(() => {
+    inputRef?.current?.focus();
+  }, []);
+
+  const handleEvent = (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.FocusEvent<HTMLInputElement>,
   ) => {
     const { name, value } = event.target;
     setValues({
       ...values,
       [name]: value,
     });
+  };
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement> &
+      React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
+    handleEvent(event);
     setErrors(validateForm(values));
   };
 
@@ -34,11 +51,17 @@ const useForm = (validateForm: (values: IFormValues) => IFormErrors) => {
     event: React.FocusEvent<HTMLInputElement> &
       React.FocusEvent<HTMLTextAreaElement>,
   ) => {
-    const { name, value } = event.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
+    handleEvent(event);
+    setIsBlur(false);
+    setErrors(validateForm(values));
+  };
+
+  const handleBlur = (
+    event: React.FocusEvent<HTMLInputElement> &
+      React.FocusEvent<HTMLTextAreaElement>,
+  ) => {
+    handleEvent(event);
+    setIsBlur(true);
     setErrors(validateForm(values));
   };
 
@@ -76,26 +99,28 @@ const useForm = (validateForm: (values: IFormValues) => IFormErrors) => {
   }, [errors, isSubmitting, isSubmitted, router]);
 
   useEffect(() => {
-    isSubmitted &&
-      setTimeout(() => {
-        router.push('/');
-      }, 4000);
+    if (isSubmitted) {
+      scrollToTop();
+      var timeOut = setTimeout(() => {
+        router.push(RoutesType.HOME);
+      }, 3000);
+    }
+
     return () => {
-      clearTimeout(
-        setTimeout(() => {
-          router.push('/');
-        }, 4000),
-      );
+      clearTimeout(timeOut);
     };
   }, [isSubmitted, router]);
 
   return {
     handleChange,
-    handleSubmit,
     handleFocus,
+    handleBlur,
+    handleSubmit,
     values,
     errors,
+    isBlur,
     isSubmitted,
+    inputRef,
   };
 };
 

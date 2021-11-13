@@ -1,29 +1,42 @@
-import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled, { css } from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Heading, TextMedium } from 'styles/mixins';
+import { Heading, Main, TextMedium } from 'styles/mixins';
 
 type FormProps = {
-  error: boolean | string;
+  error: boolean;
   value: string;
 };
 
+type FormIconProps = {
+  error?: boolean;
+  isTextArea?: boolean;
+};
+
+const inputBorder = css`
+  border-radius: 8px;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  border-image-source: ${COLOR.headingGradient};
+`;
 export const FormWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
+  ${Main};
   align-items: center;
-  justify-content: center;
-  padding-top: 80px;
   background: ${({ theme }) => theme.navbarBg};
 `;
 export const FormH1 = styled.h1`
-  ${Heading}
+  ${Heading};
 `;
 export const FormP = styled.p`
   ${TextMedium};
-  width: 90%;
-  max-width: 400px;
   margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
   color: ${({ theme }) => theme.textSecondary};
+  @media screen and (min-width: 768px) {
+    width: 90%;
+  }
 `;
 export const FormWrap = styled.form`
   display: grid;
@@ -31,7 +44,12 @@ export const FormWrap = styled.form`
   width: 100%;
   max-width: 400px;
   margin: 0 auto 78px;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
+`;
+export const FormGroup = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 export const FormLabel = styled.label`
   margin-bottom: 8px;
@@ -41,7 +59,7 @@ export const FormLabel = styled.label`
 `;
 export const FormInput = styled.input<FormProps>`
   height: 48px;
-  padding: 0.625rem;
+  padding: 0.625rem 1.5rem 0.625rem 0.625rem;
   margin-bottom: 1.5rem;
   border: none;
   border-radius: 8px;
@@ -56,15 +74,11 @@ export const FormInput = styled.input<FormProps>`
   outline: none;
   &:active,
   &:focus {
-    border-radius: 8px;
-    border: 3px solid;
-    border-image-slice: 1;
-    border-width: 3px;
-    border-image-source: ${COLOR.headingGradient};
+    ${inputBorder};
   }
 `;
 export const FormTextarea = styled.textarea<FormProps>`
-  padding: 0.625rem;
+  padding: 0.625rem 1.5rem 0.625rem 0.625rem;
   margin-bottom: 2rem;
   border: none;
   border-radius: 8px;
@@ -79,11 +93,7 @@ export const FormTextarea = styled.textarea<FormProps>`
   outline: none;
   &:active,
   &:focus {
-    border: 3px solid;
-    border-radius: 8px;
-    border-image-slice: 1;
-    border-width: 3px;
-    border-image-source: ${COLOR.headingGradient};
+    ${inputBorder};
   }
 `;
 export const ErrorMsg = styled.p`
@@ -102,10 +112,20 @@ export const ErrorMsg = styled.p`
 `;
 export const SuccessMsg = styled.p`
   width: 100%;
+  margin: -25px 0 25px;
   padding: 1rem;
   background: ${COLOR.success100};
   color: ${COLOR.success900};
   font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
+`;
+
+export const FormIcon = styled(FontAwesomeIcon)<FormIconProps>`
+  position: absolute;
+  right: 5px;
+  top: ${({ isTextArea }) => (!isTextArea ? '53px' : '42px')};
+  transform: ${({ isTextArea }) => !isTextArea && 'translateY(-50%)'};
+  color: ${({ error }) => (error ? COLOR.danger700 : COLOR.success700)};
+  font-size: 18px;
 `;
