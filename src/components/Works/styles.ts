@@ -29,12 +29,18 @@ export const WorkImg = styled.img`
   @media screen and (min-width: 768px) {
     max-width: 50%;
   }
+  @media screen and (min-width: 1100px) {
+    max-width: 40%;
+  }
 `;
 export const WorkInner = styled.div`
   margin: 2rem 1rem 1rem;
   @media screen and (min-width: 768px) {
     margin: 0;
     margin-left: 1rem;
+  }
+  @media screen and (min-width: 1100px) {
+    padding: 0 1rem;
   }
 `;
 export const WorkTitle = styled.h2`
