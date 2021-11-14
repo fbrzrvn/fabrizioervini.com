@@ -1,7 +1,9 @@
 import {
+  faCheck,
   faCheckCircle,
   faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import Snackbar from 'components/shared/Snackbar';
 import { TranslateProps } from 'models/props';
 import React from 'react';
 import Button from '../Button';
@@ -16,7 +18,6 @@ import {
   FormTextarea,
   FormWrap,
   FormWrapper,
-  SuccessMsg,
 } from './styles';
 import useForm from './useForm';
 import validateForm from './validateForm';
@@ -36,7 +37,13 @@ const Form = ({ t }: TranslateProps) => {
 
   return (
     <FormWrapper>
-      {isSubmitted && <SuccessMsg>{t('formSubmitMessageSuccess')}</SuccessMsg>}
+      {isSubmitted && (
+        <Snackbar
+          type="success"
+          text={t('formSubmitMessageSuccess')}
+          icon={faCheck}
+        />
+      )}
       <FormH1>{t('formTitle')}</FormH1>
       <FormP>{t('formDescription')}</FormP>
       <FormWrap onSubmit={handleSubmit}>

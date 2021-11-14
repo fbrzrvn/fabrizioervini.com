@@ -1,5 +1,8 @@
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/Button';
 import CodeBlock from 'components/CodeBlock';
+import Snackbar from 'components/shared/Snackbar';
+import { useTranslation } from 'hooks';
 import { PostResponseProps } from 'models/props';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -21,9 +24,15 @@ const Post = ({
   markdown,
 }: PostResponseProps) => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   return (
     <PostContainer>
+      <Snackbar
+        type="warning"
+        text={t('blogSnackbarText')}
+        icon={faExclamationTriangle}
+      />
       <PostArticle>
         <PostDate>{date}</PostDate>
         <PostTitle>{title}</PostTitle>

@@ -110,17 +110,6 @@ export const ErrorMsg = styled.p`
     margin-bottom: 2rem;
   }
 `;
-export const SuccessMsg = styled.p`
-  width: 100%;
-  margin: -25px 0 25px;
-  padding: 1rem;
-  background: ${COLOR.success100};
-  color: ${COLOR.success900};
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-align: center;
-`;
-
 export const FormIcon = styled(FontAwesomeIcon)<FormIconProps>`
   position: absolute;
   right: 5px;
