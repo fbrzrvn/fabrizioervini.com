@@ -35,6 +35,7 @@
   "punkApiDescription": "<p>Sito Web che utilizza l'API Punk V2 per recuperare le birre di Brewdog e visualizzarle.</p> <p>L'applicazione consente agli utenti di vedere tutte le birre dell'API, leggere le informazioni su di essa e salvarla come preferita.</p> <p>Costruita utilizzando React, punk API V2, and Material UI.</p>",
   "visitWebsite": "Visita la web",
   "blogTitle": "Blog: Pensieri casuali sulla tecnologia",
+  "blogSnackbarText": "Post disponibili solo in inglese",
   "postLinkLabel": "Leggi di più",
   "formDescription": "Se desideri parlare di un progetto, compila il modulo sottostante e ti risponderò entro 1-2 giorni.",
   "formNameLabel": "Name",

@@ -35,6 +35,7 @@
   "punkApiDescription": "<p>Sitio web que utiliza Punk API V2 para buscar las cervezas de Brewdog y mostrarlas.</p> <p>La aplicación permite a los usuarios ver toda la cerveza en la API, leer la información sobre ella y guardarla como favorita.</p> <p>Construida usando React, punk API V2, and Material UI.</p>",
   "visitWebsite": "Visita la web",
   "blogTitle": "Blog: Pensamientos aleatorios sobre tecnología",
+  "blogSnackbarText": "Las publicaciones solo están en inglés",
   "postLinkLabel": "Lee más",
   "formDescription": "Si desea conversar sobre un proyecto, complete el formulario a continuación y le responderé dentro de uno o dos días.",
   "formNameLabel": "Nombre",

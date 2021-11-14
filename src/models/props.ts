@@ -105,3 +105,9 @@ export type FLinkProps = {
   url: string;
   noRel?: boolean;
 };
+
+export type SnackbarProps = {
+  type: string;
+  icon?: IconProp;
+  text: string;
+};
