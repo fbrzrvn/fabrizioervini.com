@@ -1,5 +1,5 @@
 import Form from 'components/Form';
-import Navbar from 'components/Navbar';
+import MainLayout from 'components/MainLayout';
 import { useTranslation } from 'hooks';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -14,8 +14,9 @@ const Contact: NextPage = () => {
         <meta name="description" content="Contact page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar t={t} />
-      <Form t={t} />
+      <MainLayout>
+        <Form t={t} />
+      </MainLayout>
     </div>
   );
 };

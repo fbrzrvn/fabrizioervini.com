@@ -8,13 +8,10 @@ type ImgProps = {
   isCircular: boolean;
 };
 
-export const SectionContainer = styled.div`
-  padding: 50px 0;
-  background: ${({ theme }) => theme.body};
+export const SectionContainer = styled.section`
+  padding: 100px 0;
+  background: ${({ theme }) => theme.footer};
   color: ${({ theme }) => theme.text};
-  @media screen and (min-width: 768px) {
-    padding: initial;
-  }
 `;
 export const SectionWrapper = styled.div`
   display: grid;
@@ -24,6 +21,7 @@ export const SectionWrapper = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   @media screen and (min-width: 768px) {
+    min-height: unset;
     padding: 0 1.5rem;
   }
 `;
@@ -74,10 +72,17 @@ export const Subtitle = styled.p`
 `;
 export const BtnWrap = styled.div`
   display: flex;
-  justify-content: flex-start;
+  margin-top: 1.5rem;
 `;
 export const Img = styled.img<ImgProps>`
-  margin: auto;
+  max-width: 100%;
   border-radius: ${({ isCircular }) => (isCircular ? '50%' : '')};
   filter: grayscale(25%);
+  @media screen and (min-width: 375px) {
+    max-width: 320px;
+    margin: auto;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 100%;
+  }
 `;

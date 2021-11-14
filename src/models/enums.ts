@@ -11,6 +11,8 @@ export enum CultureType {
 
 export enum RoutesType {
   HOME = '/',
+  PROJECTS = '/projects',
+  BLOG = '/blog',
   CONTACT = '/contact',
   GITHUB = 'https://github.com/fab-rvn',
   LINKEDIN = 'https://www.linkedin.com/in/fabrizioervini',

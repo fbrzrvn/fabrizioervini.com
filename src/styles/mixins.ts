@@ -1,6 +1,18 @@
 import { css } from 'styled-components';
 import { COLOR } from './colors';
 
+export const Main = css`
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 235px);
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 1rem;
+  @media screen and (min-width: 768px) {
+    min-height: calc(100vh - 196px);
+    padding: 50px 3rem;
+  }
+`;
 export const Container = css`
   display: flex;
   align-items: center;
@@ -11,7 +23,6 @@ export const Container = css`
     padding: 80px 2rem;
   }
 `;
-
 export const Content = css`
   display: flex;
   flex-direction: column;
@@ -20,7 +31,7 @@ export const Content = css`
 
 export const Heading = css`
   margin-bottom: 24px;
-  background: ${COLOR.linearGradient};
+  background: ${COLOR.headingGradient};
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -41,13 +52,43 @@ export const Text = css`
     line-height: 32px;
   }
 `;
-
-export const TextSmall = css`
+export const TextMedium = css`
   font-weight: 300;
   font-size: 18px;
   line-height: 26px;
   @media screen and (min-width: 480px) {
     font-size: 20px;
     line-height: 28px;
+  }
+`;
+export const TextSmall = css`
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  @media screen and (min-width: 480px) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+`;
+
+export const Link = css`
+  color: ${({ theme }) => theme.navbarLink};
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 300ms ease-in-out;
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+  }
+`;
+export const BtnLink = css`
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: ${COLOR.darkPrimary};
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    background: ${COLOR.purple50};
   }
 `;

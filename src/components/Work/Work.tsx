@@ -1,4 +1,5 @@
 import { works } from 'data/works';
+import { useIsMobileDevice } from 'hooks';
 import { TranslateProps } from 'models/props';
 import React from 'react';
 import Button from '../Button';
@@ -16,10 +17,12 @@ import {
 } from './styles';
 
 const Work = ({ t }: TranslateProps) => {
+  const { isSmallMobileDevice } = useIsMobileDevice();
+
   return (
     <WorkContainer id="work">
       <WorkH1>{t('workTitle')}</WorkH1>
-      <WorkWrapper>
+      <WorkWrapper isSmallMobileDevice={isSmallMobileDevice}>
         <Carousel>
           {works.map((work) => (
             <WorkCard key={work.id}>

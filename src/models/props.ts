@@ -24,7 +24,10 @@ export type TranslateProps = {
 export type NavProps = {
   isOpen?: boolean | any;
   setIsOpen?: boolean | any;
-  hasLink?: boolean;
+};
+
+export type NavLinksProps = {
+  isSidebar?: boolean;
 };
 
 export type ChildrenProps = {
@@ -33,7 +36,7 @@ export type ChildrenProps = {
 
 export type SectionProps = {
   id: string;
-  topLine: string;
+  topLine?: string;
   headLine: string;
   description: string;
   hasLink?: boolean;
@@ -49,6 +52,7 @@ export type SectionProps = {
 export type WorkProps = {
   id: number;
   title: string;
+  summary: string;
   description: string;
   img: string;
   link: string;
@@ -65,7 +69,39 @@ export type BtnProps = {
   href?: string;
   target?: string;
   rel?: string;
-  isBig?: boolean | false;
-  isSmall?: boolean | false;
+  isBig?: boolean;
+  isSmall?: boolean;
+  disabled?: boolean;
   ref: any;
+  onClick?: () => void;
+};
+
+export type FeaturesProps = {
+  id: number;
+  title: string;
+  description: string;
+  icon: IconProp;
+};
+
+export interface PostsProps {
+  id: string;
+  date: string;
+  title: string;
+  tags?: string[];
+  thumbnail?: string;
+}
+
+export interface PostResponseProps extends Omit<PostsProps, 'id'> {
+  contentHtml: string;
+  markdown: string;
+}
+
+export type PostsPageProps = {
+  posts: PostsProps[];
+};
+
+export type FLinkProps = {
+  text: string;
+  url: string;
+  noRel?: boolean;
 };

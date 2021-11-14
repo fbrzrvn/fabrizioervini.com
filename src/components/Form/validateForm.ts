@@ -16,7 +16,9 @@ const validateForm = (values: IFormValues) => {
   }
 
   if (!values.message.trim()) {
-    errors.message = 'formMessageError';
+    errors.message = 'formMessageErrorEmpty';
+  } else if (!/^[A-Za-z]+[\s\S]{5,500}$$/.test(values.message)) {
+    errors.message = 'formMessageErrorWrong';
   }
 
   return errors;

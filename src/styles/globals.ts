@@ -8,15 +8,13 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  @font-face {
-    font-family: 'Lato', sans-serif;
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-display: fallback;
-    src: url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;500&display=swap');
+  html {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
   }
   body {
-    background: ${({ theme }) => theme.body};
+    background: ${({ theme }) => theme.navbarBg};
     color: ${({ theme }) => theme.text};
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -26,14 +24,12 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     line-height: 1.5;
     transition: all 1s ease;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
- }
+  }
   ::-webkit-scrollbar {
     display: none;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family: Lato, sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   img {
     display: block;

@@ -1,4 +1,4 @@
-import Navbar from 'components/Navbar';
+import MainLayout from 'components/MainLayout';
 import Section from 'components/Section';
 import { pageNotFound } from 'data/pageNotFound';
 import { useTranslation } from 'hooks';
@@ -15,8 +15,9 @@ const NotFound: NextPage = () => {
         <meta name="description" content="404 error page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar t={t} />
-      <Section t={t} {...pageNotFound} />
+      <MainLayout>
+        <Section t={t} {...pageNotFound} />
+      </MainLayout>
     </div>
   );
 };

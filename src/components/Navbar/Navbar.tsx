@@ -1,57 +1,33 @@
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { links } from 'data/links';
-import { useScroll } from 'hooks';
+import NavLinks from 'components/NavLinks';
+import { useIsMobileDevice, useScroll } from 'hooks';
 import { RoutesType } from 'models/enums';
 import { NavProps, TranslateProps } from 'models/props';
 import Link from 'next/link';
 import React from 'react';
-import { animateScroll as scroll } from 'react-scroll';
+import { scrollToTop } from 'utils';
 import Culture from '../Culture';
-import {
-  MobileIcon,
-  Nav,
-  NavContainer,
-  NavItem,
-  NavLink,
-  NavLogo,
-  NavMenu,
-} from './styles';
+import { MobileIcon, Nav, NavContainer, NavLogo } from './styles';
 
-const Navbar = ({
-  isOpen,
-  setIsOpen,
-  hasLink,
-  t,
-}: NavProps & TranslateProps) => {
+const Navbar = ({ isOpen, setIsOpen, t }: NavProps & TranslateProps) => {
   const isScrolled = useScroll();
-
-  const backToTop = () => {
-    scroll.scrollToTop();
-  };
+  const { isSmallMobileDevice } = useIsMobileDevice();
 
   return (
-    <Nav scrollNav={isScrolled} isOpen={isOpen}>
+    <Nav
+      scrollNav={isScrolled}
+      isOpen={isOpen}
+      isSmallMobileDevice={isSmallMobileDevice}
+    >
       <NavContainer>
-        {hasLink && (
-          <MobileIcon onClick={setIsOpen}>
-            <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
-          </MobileIcon>
-        )}
+        <MobileIcon onClick={setIsOpen}>
+          <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+        </MobileIcon>
         <Link href={RoutesType.HOME}>
-          <NavLogo onClick={backToTop}>faber</NavLogo>
+          <NavLogo onClick={scrollToTop}>faber</NavLogo>
         </Link>
-        {hasLink && (
-          <NavMenu>
-            {links.map((link) => (
-              <NavItem key={link.id}>
-                <NavLink to={link.url} smooth duration={500} spy offset={-80}>
-                  {t(link.label)}
-                </NavLink>
-              </NavItem>
-            ))}
-          </NavMenu>
-        )}
+        <NavLinks t={t} />
         <Culture t={t} />
       </NavContainer>
     </Nav>

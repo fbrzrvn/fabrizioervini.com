@@ -9,7 +9,7 @@ export const pageNotFound: SectionProps = {
   linkLabel: 'goHome',
   linkUrl: '/',
   imgStart: true,
-  img: 'svg/notFound.svg',
+  img: '/svg/notFound.svg',
   altImg: 'Not found',
   isCircular: false,
 };
