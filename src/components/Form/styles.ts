@@ -9,8 +9,8 @@ type FormProps = {
 };
 
 type FormIconProps = {
-  error?: boolean;
-  isTextArea?: boolean;
+  error?: string;
+  istextarea?: string;
 };
 
 const inputBorder = css`
@@ -124,8 +124,8 @@ export const SuccessMsg = styled.p`
 export const FormIcon = styled(FontAwesomeIcon)<FormIconProps>`
   position: absolute;
   right: 5px;
-  top: ${({ isTextArea }) => (!isTextArea ? '53px' : '42px')};
-  transform: ${({ isTextArea }) => !isTextArea && 'translateY(-50%)'};
+  top: ${({ istextarea }) => (!istextarea ? '53px' : '42px')};
+  transform: ${({ istextarea }) => !istextarea && 'translateY(-50%)'};
   color: ${({ error }) => (error ? COLOR.danger700 : COLOR.success700)};
   font-size: 18px;
 `;

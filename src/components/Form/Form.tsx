@@ -57,7 +57,7 @@ const Form = ({ t }: TranslateProps) => {
           )}
           {errors.name && isBlur && (
             <React.Fragment>
-              <FormIcon icon={faExclamationCircle} error />
+              <FormIcon icon={faExclamationCircle} error="true" />
               <ErrorMsg>{t(errors.name)}</ErrorMsg>
             </React.Fragment>
           )}
@@ -78,7 +78,7 @@ const Form = ({ t }: TranslateProps) => {
           )}
           {errors.email && isBlur && (
             <React.Fragment>
-              <FormIcon icon={faExclamationCircle} error />
+              <FormIcon icon={faExclamationCircle} error="true" />
               <ErrorMsg>{t(errors.email)}</ErrorMsg>
             </React.Fragment>
           )}
@@ -97,11 +97,15 @@ const Form = ({ t }: TranslateProps) => {
             error={!!errors.message && isBlur}
           />
           {values.message !== '' && !errors.message && (
-            <FormIcon icon={faCheckCircle} isTextArea />
+            <FormIcon icon={faCheckCircle} istextarea="true" />
           )}
           {errors.message && isBlur && (
             <React.Fragment>
-              <FormIcon icon={faExclamationCircle} error isTextArea />
+              <FormIcon
+                icon={faExclamationCircle}
+                error="true"
+                istextarea="true"
+              />
               <ErrorMsg className="last">{t(errors.message)}</ErrorMsg>
             </React.Fragment>
           )}
@@ -110,7 +114,13 @@ const Form = ({ t }: TranslateProps) => {
         <Button
           secondary
           isBig
-          disabled={!values.name || !values.email || !values.message}
+          disabled={
+            !!(
+              (values.name && !errors.name) ||
+              (values.email && !errors.email) ||
+              (values.message && !errors.message)
+            )
+          }
         >
           {t('formSubmitBtnLabel')}
         </Button>
