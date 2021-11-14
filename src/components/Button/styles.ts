@@ -6,13 +6,14 @@ export const Button = css<BtnProps>`
   display: grid;
   place-items: center;
   height: ${({ isBig }) => isBig && '56px'};
+  width: ${({ isBig }) => (isBig ? 'unset' : 'fit-content')};
   padding: ${({ isSmall }) => (isSmall ? '0.25rem 1rem' : '0.75rem 2rem')};
   border: none;
   border-radius: ${({ isBig }) => (isBig ? '8px' : '50px')};
-  background-image: ${({ primary }) => primary && COLOR.btnPrimary};
-  background-image: ${({ secondary }) => secondary && COLOR.btnSecondary};
-  color: ${({ primary }) => primary && COLOR.gris900};
-  color: ${({ secondary }) => secondary && COLOR.gris100};
+  background-image: ${({ primary, secondary }) =>
+    primary ? COLOR.btnPrimary : secondary && COLOR.btnSecondary};
+  color: ${({ primary, secondary }) =>
+    primary ? COLOR.gris900 : secondary && COLOR.gris100};
   font-family: 'Lato', sans-serif;
   font-weight: ${({ isBig }) => (isBig ? '700' : '500')};
   font-size: ${({ isSmall }) => (isSmall ? '0.875rem' : '1.25rem')};
@@ -28,9 +29,8 @@ export const Button = css<BtnProps>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   transition: all 200ms ease-in-out;
   &:hover {
-    background-image: ${({ primary }) => primary && COLOR.btnPrimaryHover};
-    background-image: ${({ secondary }) =>
-      secondary && COLOR.btnSecondaryHover};
+    background-image: ${({ primary, secondary }) =>
+      primary ? COLOR.btnPrimaryHover : secondary && COLOR.btnSecondaryHover};
     transition: all 200ms ease-in-out;
   }
   @media screen and (min-width: 480px) {
