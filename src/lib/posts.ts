@@ -58,6 +58,10 @@ export const getPostData = async (id: string) => {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as Omit<PostResponseProps, 'contentHtml'>),
+    markdown: matterResult.content,
+    ...(matterResult.data as Omit<
+      PostResponseProps,
+      'contentHtml' | 'markdown'
+    >),
   };
 };
