@@ -92,3 +92,17 @@ export const BtnLink = css`
     background: ${COLOR.purple50};
   }
 `;
+
+export const Tag = css`
+  margin-right: 0.5rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: ${COLOR.cyan50};
+  font-weight: 500;
+  font-size: 0.925rem;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+`;

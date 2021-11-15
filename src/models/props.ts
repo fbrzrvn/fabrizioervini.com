@@ -87,7 +87,7 @@ export interface PostsProps {
   id: string;
   date: string;
   title: string;
-  tags?: string[];
+  tags: string[];
   thumbnail?: string;
 }
 

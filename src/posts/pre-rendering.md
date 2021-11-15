@@ -1,5 +1,5 @@
 ---
-date: '2021-11-10'
+date: 'Nov 10, 2021'
 title: 'Static Generation vs Server-side Rendering'
 tags: ['#test', '#ssr', '#ssg']
 thumbnail: 'https://miro.medium.com/max/700/0*wmXQfUuyN2IhVDg3'

@@ -44,7 +44,9 @@ const Post = ({
             height={312}
           />
         )}
-        {tags && tags.map((tag, i) => <PostTag key={i}>{tag}</PostTag>)}
+        {tags.map((tag, i) => (
+          <PostTag key={i}>{tag}</PostTag>
+        ))}
         <PostContent components={CodeBlock}>{markdown}</PostContent>
         <Button primary onClick={() => router.back()}>
           Go back

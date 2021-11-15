@@ -7,6 +7,8 @@ import {
   BlogTitle,
   PostDate,
   PostItem,
+  PostTag,
+  PostTagsWrapper,
   PostTitle,
 } from './styled';
 
@@ -15,10 +17,15 @@ const Posts = ({ posts, t }: PostsPageProps & TranslateProps) => {
     <BlogContainer>
       <BlogTitle>{t('blogTitle')}</BlogTitle>
       <ul>
-        {posts.map(({ id, date, title }) => (
+        {posts.map(({ id, date, title, tags }) => (
           <PostItem key={id}>
             <PostDate>{date}</PostDate>
             <PostTitle>{title}</PostTitle>
+            <PostTagsWrapper>
+              {tags.map((tag, i) => (
+                <PostTag key={i}>{tag}</PostTag>
+              ))}
+            </PostTagsWrapper>
             <FLink
               text={'postLinkLabel'}
               url={`${RoutesType.BLOG}/${id}`}
