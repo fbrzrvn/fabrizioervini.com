@@ -1,23 +1,20 @@
 import MainLayout from 'components/MainLayout';
 import Post from 'components/Post';
+import Seo from 'components/Seo';
 import { getAllPostIds, getPostData } from 'lib/posts';
-import { PostResponseProps } from 'models/props';
+import { RoutesType } from 'models/enums';
+import { PostsProps } from 'models/props';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import Head from 'next/head';
 import React from 'react';
 
-const Article: NextPage<PostResponseProps> = (post: PostResponseProps) => {
+const Article: NextPage<PostsProps> = (post: PostsProps) => {
   return (
-    <div>
-      <Head>
-        <title>{post.title}</title>
-        <meta name="description" content={post.title} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <React.Fragment>
+      <Seo title={post.title} path={`${RoutesType.BLOG}/${post.id}`} />
       <MainLayout>
         <Post {...post} />
       </MainLayout>
-    </div>
+    </React.Fragment>
   );
 };
 

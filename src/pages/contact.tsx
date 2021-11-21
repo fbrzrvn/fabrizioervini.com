@@ -1,23 +1,21 @@
 import Form from 'components/Form';
 import MainLayout from 'components/MainLayout';
+import Seo from 'components/Seo';
 import { useTranslation } from 'hooks';
+import { RoutesType } from 'models/enums';
 import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
 
 const Contact: NextPage = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <Head>
-        <title>Contact - faber</title>
-        <meta name="description" content="Contact page" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <React.Fragment>
+      <Seo title="Contact" path={RoutesType.CONTACT} />
       <MainLayout>
         <Form t={t} />
       </MainLayout>
-    </div>
+    </React.Fragment>
   );
 };
 
