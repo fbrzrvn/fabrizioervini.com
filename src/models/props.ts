@@ -102,8 +102,10 @@ export type PostsPageProps = {
 
 export type FLinkProps = {
   text: string;
-  url: string;
+  url?: string;
   noRel?: boolean;
+  goBack?: boolean;
+  onClick?: () => void;
 };
 
 export type SnackbarProps = {

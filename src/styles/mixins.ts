@@ -83,9 +83,13 @@ export const Link = css`
 export const BtnLink = css`
   width: fit-content;
   padding: 0.25rem 0.5rem;
+  border: none;
   border-radius: 4px;
+  background: transparent;
   color: ${COLOR.darkPrimary};
+  font-family: inherit;
   font-weight: 500;
+  font-size: 1rem;
   text-decoration: none;
   transition: all 300ms ease-in-out;
   &:hover {
