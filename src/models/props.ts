@@ -89,11 +89,11 @@ export interface PostsProps {
   title: string;
   tags: string[];
   thumbnail?: string;
+  markdown: string;
 }
 
 export interface PostResponseProps extends Omit<PostsProps, 'id'> {
   contentHtml: string;
-  markdown: string;
 }
 
 export type PostsPageProps = {

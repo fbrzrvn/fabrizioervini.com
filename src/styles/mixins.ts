@@ -98,6 +98,7 @@ export const Tag = css`
   padding: 2px 4px;
   border-radius: 4px;
   background: ${COLOR.cyan50};
+  color: ${({ theme }) => theme.text};
   font-weight: 500;
   font-size: 0.925rem;
   line-height: 1.1;
