@@ -22,7 +22,8 @@ export const getSortedPostsData = () => {
 
     return {
       id,
-      ...(matterResult.data as Omit<PostsProps, 'id'>),
+      markdown: matterResult.content,
+      ...(matterResult.data as Omit<PostsProps, 'id' | 'markdown'>),
     };
   });
 

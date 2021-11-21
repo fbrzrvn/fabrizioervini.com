@@ -1,4 +1,7 @@
-import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLongArrowAltLeft,
+  faLongArrowAltRight,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'hooks';
 import { FLinkProps } from 'models/props';
@@ -10,11 +13,24 @@ import { BtnLink } from 'styles/mixins';
 const FBtnLink = styled.a`
   ${BtnLink}
 `;
+const FBtn = styled.button`
+  ${BtnLink};
+`;
 
-const FLink = ({ text, url, noRel = false }: FLinkProps) => {
+const FLink = ({
+  text,
+  url = '',
+  noRel = false,
+  goBack = false,
+  onClick,
+}: FLinkProps) => {
   const { t } = useTranslation();
 
-  return (
+  return goBack ? (
+    <FBtn onClick={onClick}>
+      <FontAwesomeIcon icon={faLongArrowAltLeft} /> {t(text)}
+    </FBtn>
+  ) : (
     <Link href={url} passHref>
       <FBtnLink
         target={!noRel ? '_blank' : ''}

@@ -1,33 +1,31 @@
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
-import { Main, TextMedium } from 'styles/mixins';
+import { Main, Tag, TextMedium } from 'styles/mixins';
 
 export const PostContainer = styled.main`
   ${Main};
 `;
 export const PostArticle = styled.article`
-  padding: 1rem;
+  padding: 1rem 0;
+  @media screen and (min-width: 768px) {
+    padding: 1rem;
+  }
 `;
 export const PostTitle = styled.h1`
   font-size: 42px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 `;
-export const PostDate = styled.small`
+export const PostStats = styled.small`
+  display: inline-block;
+  margin-right: 4px;
   color: ${COLOR.gris700};
-`;
-export const PostTag = styled.span`
-  margin-right: 0.5rem;
-  padding: 2px 4px;
-  border-radius: 4px;
-  background: ${COLOR.cyan50};
-  font-weight: 500;
-  font-size: 0.925rem;
-  line-height: 1.1;
-  letter-spacing: 1px;
   &:last-of-type {
     margin-right: 0;
   }
+`;
+export const PostTag = styled.span`
+  ${Tag};
 `;
 export const PostThumbnail = styled.img`
   margin: 1rem 0;
@@ -56,8 +54,8 @@ export const PostContent = styled(ReactMarkdown)`
   }
   & blockquote {
     margin: 1rem 0;
-    padding: 0.5rem 1rem;
-    border: 4px;
+    padding: 1rem;
+    border-radius: 8px;
     background: ${COLOR.gris100};
   }
 `;
