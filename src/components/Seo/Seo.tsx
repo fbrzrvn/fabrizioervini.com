@@ -1,11 +1,7 @@
+import { SeoProps } from 'models/props';
 import { NextSeo } from 'next-seo';
 import React from 'react';
 import { BASE_URL } from '../../constants';
-
-export type SeoProps = {
-  title: string;
-  path: string;
-};
 
 const Seo = ({ title, path }: SeoProps) => {
   return (

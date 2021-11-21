@@ -1,6 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import { PostResponseProps, PostsProps } from 'models/props';
+import { PostsProps } from 'models/props';
 import path from 'path';
 import * as remark from 'remark';
 import html from 'remark-html';
@@ -61,8 +61,8 @@ export const getPostData = async (id: string) => {
     contentHtml,
     markdown: matterResult.content,
     ...(matterResult.data as Omit<
-      PostResponseProps,
-      'contentHtml' | 'markdown'
+      PostsProps,
+      'id' | 'contentHtml' | 'markdown'
     >),
   };
 };
