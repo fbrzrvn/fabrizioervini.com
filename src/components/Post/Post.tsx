@@ -1,16 +1,17 @@
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
-import Button from 'components/Button';
 import CodeBlock from 'components/CodeBlock';
+import FLink from 'components/shared/FLink';
 import Snackbar from 'components/shared/Snackbar';
 import { useTranslation } from 'hooks';
 import { PostResponseProps } from 'models/props';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { getRediangTime } from 'utils';
 import {
   PostArticle,
   PostContainer,
   PostContent,
-  PostDate,
+  PostStats,
   PostTag,
   PostThumbnail,
   PostTitle,
@@ -34,7 +35,9 @@ const Post = ({
         icon={faExclamationTriangle}
       />
       <PostArticle>
-        <PostDate>{date}</PostDate>
+        <PostStats>{date}</PostStats>
+        <PostStats>•</PostStats>
+        <PostStats>{getRediangTime(markdown)}</PostStats>
         <PostTitle>{title}</PostTitle>
         {thumbnail && (
           <PostThumbnail
@@ -48,9 +51,7 @@ const Post = ({
           <PostTag key={i}>{tag}</PostTag>
         ))}
         <PostContent components={CodeBlock}>{markdown}</PostContent>
-        <Button primary onClick={() => router.back()}>
-          Go back
-        </Button>
+        <FLink text={'goBack'} onClick={() => router.back()} goBack />
       </PostArticle>
     </PostContainer>
   );

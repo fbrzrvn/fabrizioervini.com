@@ -56,6 +56,7 @@
   "error404HeadLine": "You are in the middle of nowhere",
   "error404Description": "It’s embarrassing... This page does not seem to exist! This might be because you have typed the web address incorrectly, please check the spelling.",
   "goHome": "Go to home",
+  "goBack": "Go back",
   "english": "English",
   "spanish": "Spanish",
   "italian": "Italian"

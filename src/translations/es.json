@@ -56,6 +56,7 @@
   "error404HeadLine": "Estás en el medio de la nada",
   "error404Description": "Es vergonzoso ... ¡Esta página no parece existir! Esto puede deberse a que ha escrito la dirección web de forma incorrecta, compruebe la ortografía.",
   "goHome": "Ir a la home",
+  "goBack": "Regresa",
   "english": "Inglés",
   "spanish": "Español",
   "italian": "Italiano"

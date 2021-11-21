@@ -7,14 +7,22 @@ export const PostContainer = styled.main`
   ${Main};
 `;
 export const PostArticle = styled.article`
-  padding: 1rem;
+  padding: 1rem 0;
+  @media screen and (min-width: 768px) {
+    padding: 1rem;
+  }
 `;
 export const PostTitle = styled.h1`
   font-size: 42px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 `;
-export const PostDate = styled.small`
+export const PostStats = styled.small`
+  display: inline-block;
+  margin-right: 4px;
   color: ${COLOR.gris700};
+  &:last-of-type {
+    margin-right: 0;
+  }
 `;
 export const PostTag = styled.span`
   ${Tag};
