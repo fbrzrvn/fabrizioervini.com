@@ -90,9 +90,6 @@ export interface PostsProps {
   tags: string[];
   thumbnail?: string;
   markdown: string;
-}
-
-export interface PostResponseProps extends Omit<PostsProps, 'id'> {
   contentHtml: string;
 }
 
@@ -112,4 +109,9 @@ export type SnackbarProps = {
   type: string;
   icon?: IconProp;
   text: string;
+};
+
+export type SeoProps = {
+  title: string;
+  path: string;
 };

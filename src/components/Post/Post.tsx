@@ -3,7 +3,7 @@ import CodeBlock from 'components/CodeBlock';
 import FLink from 'components/shared/FLink';
 import Snackbar from 'components/shared/Snackbar';
 import { useTranslation } from 'hooks';
-import { PostResponseProps } from 'models/props';
+import { PostsProps } from 'models/props';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { getRediangTime } from 'utils';
@@ -17,13 +17,7 @@ import {
   PostTitle,
 } from './styles';
 
-const Post = ({
-  date,
-  title,
-  tags,
-  thumbnail,
-  markdown,
-}: PostResponseProps) => {
+const Post = ({ date, title, tags, thumbnail, markdown }: PostsProps) => {
   const router = useRouter();
   const { t } = useTranslation();
 

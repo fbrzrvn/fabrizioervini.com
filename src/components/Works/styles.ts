@@ -12,6 +12,7 @@ export const WorkHeading = styled.h1`
 export const WorksWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   margin: auto;
   padding: 50px 0;
   border-bottom: 1px solid ${COLOR.gris300};
@@ -20,6 +21,9 @@ export const WorksWrapper = styled.div`
   }
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
   }
 `;
 export const WorkImg = styled.img`
@@ -37,7 +41,6 @@ export const WorkInner = styled.div`
   margin: 2rem 1rem 1rem;
   @media screen and (min-width: 768px) {
     margin: 0;
-    margin-left: 1rem;
   }
   @media screen and (min-width: 1100px) {
     padding: 0 1rem;
