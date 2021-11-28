@@ -1,23 +1,6 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
 import { Heading, Main, TextSmall } from 'styles/mixins';
-
-type animationProps = {
-  inViewport: boolean;
-};
-
-const slideIn = keyframes`
-  from {  transform: translateX(-100vw) }
-  to { transform: translateX(0) }
-`;
-const slideOut = keyframes`
-  from {  transform: translateX(0) }
-  to { transform: translateX(-100vw) }
-`;
-const animate = css<animationProps>`
-  animation: ${({ inViewport }) => (inViewport ? slideIn : slideOut)} 2s
-    ease-in-out;
-`;
 
 export const WorksContainer = styled.div`
   ${Main}
@@ -47,7 +30,6 @@ export const WorkImg = styled.img`
   width: 100%;
   max-width: 500px;
   margin: auto;
-  animation: ${slideIn} 2s ease-in-out;
   @media screen and (min-width: 768px) {
     max-width: 50%;
   }
@@ -57,7 +39,6 @@ export const WorkImg = styled.img`
 `;
 export const WorkInner = styled.div`
   margin: 2rem 1rem 1rem;
-  animation: ${slideIn} 2s ease-in-out;
   @media screen and (min-width: 768px) {
     margin: 0;
   }

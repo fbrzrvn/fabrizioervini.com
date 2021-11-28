@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-const useScroll = () => {
+const useScroll = (y: number = 0) => {
   const [scroll, setScroll] = useState(false);
 
   const handleScroll = () => {
-    window.scrollY > 0 ? setScroll(true) : setScroll(false);
+    window.scrollY > y ? setScroll(true) : setScroll(false);
   };
 
   useEffect(() => {
