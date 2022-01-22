@@ -40,7 +40,18 @@ export const PostContent = styled(ReactMarkdown)`
     margin: 0.75rem 0 0.5rem;
     font-weight: 700;
   }
-  & ul {
+  & a {
+    opacity: 1;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      opacity: 0.9;
+      text-decoration: underline;
+    }
+  }
+  & ul,
+  ol {
     padding: 0.5rem 0 0.5rem 1.5rem;
   }
   & li {
@@ -57,5 +68,8 @@ export const PostContent = styled(ReactMarkdown)`
     padding: 1rem;
     border-radius: 8px;
     background: ${COLOR.gris100};
+  }
+  & img {
+    margin: 1rem 0;
   }
 `;

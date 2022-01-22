@@ -27,7 +27,7 @@ export const getSortedPostsData = () => {
     };
   });
 
-  const sortedPost = posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  const sortedPost = posts.sort((a, b) => (a.date > b.date ? 1 : -1));
   return sortedPost;
 };
 
