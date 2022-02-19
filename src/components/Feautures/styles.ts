@@ -8,7 +8,7 @@ export const FeaturesContainer = styled.section`
   background: ${({ theme }) => theme.body};
   box-shadow: rgb(48 76 112 / 25%) 0px 3px 10px;
 `;
-export const FeaturesWraper = styled.div`
+export const FeaturesWrapper = styled.div`
   display: grid;
   grid-template-columns: minmax(auto, calc(100% - 48px));
   align-items: stretch;

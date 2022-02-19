@@ -30,12 +30,6 @@ export const WorkImg = styled.img`
   width: 100%;
   max-width: 500px;
   margin: auto;
-  @media screen and (min-width: 768px) {
-    max-width: 50%;
-  }
-  @media screen and (min-width: 1100px) {
-    max-width: 40%;
-  }
 `;
 export const WorkInner = styled.div`
   margin: 2rem 1rem 1rem;
