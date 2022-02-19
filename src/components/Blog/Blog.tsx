@@ -5,7 +5,7 @@ import { RoutesType } from 'models/enums';
 import { PostsPageProps, TranslateProps } from 'models/props';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { getRediangTime } from 'utils';
+import { getReadingTime } from 'utils';
 import {
   BlogContainer,
   BlogTitle,
@@ -43,7 +43,7 @@ const Posts = ({ posts, t }: PostsPageProps & TranslateProps) => {
               </PostStats>
               <PostStats>
                 <FontAwesomeIcon icon={faBookOpen} />
-                <PostStatsLabel>{getRediangTime(markdown)}</PostStatsLabel>
+                <PostStatsLabel>{getReadingTime(markdown)}</PostStatsLabel>
               </PostStats>
             </PostStatsWrapper>
             <FLink

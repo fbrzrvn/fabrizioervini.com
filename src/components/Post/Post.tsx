@@ -6,7 +6,7 @@ import { useTranslation } from 'hooks';
 import { PostsProps } from 'models/props';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { getRediangTime } from 'utils';
+import { getReadingTime } from 'utils';
 import {
   PostArticle,
   PostContainer,
@@ -31,7 +31,7 @@ const Post = ({ date, title, tags, thumbnail, markdown }: PostsProps) => {
       <PostArticle>
         <PostStats>{date}</PostStats>
         <PostStats>•</PostStats>
-        <PostStats>{getRediangTime(markdown)}</PostStats>
+        <PostStats>{getReadingTime(markdown)}</PostStats>
         <PostTitle>{title}</PostTitle>
         {thumbnail && (
           <PostThumbnail
