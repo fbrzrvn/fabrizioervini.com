@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import { COLOR } from 'styles/colors';
 
 export const FooterContainer = styled.footer`
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
   background: ${({ theme }) => theme.footer};
 `;
 export const FooterWrapper = styled.div`
@@ -9,6 +12,7 @@ export const FooterWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   max-width: 1100px;
   margin: auto;
   padding: 1rem;

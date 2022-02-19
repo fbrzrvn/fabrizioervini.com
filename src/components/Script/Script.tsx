@@ -33,6 +33,11 @@ const Script = () => {
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;500&display=swap"
         rel="stylesheet"
       />
+      {/* AOS  */}
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+      />
     </Head>
   );
 };

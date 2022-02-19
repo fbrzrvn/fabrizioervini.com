@@ -1,5 +1,6 @@
 import { SectionProps, TranslateProps } from 'models/props';
 import React from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import Button from '../Button';
 import {
   BtnWrap,
@@ -34,27 +35,37 @@ const Section = ({
       <SectionWrapper>
         <SectionRow imgStart={imgStart}>
           <Column1>
-            <TextWrapper>
-              {topLine && <TopLine>{t(topLine)}</TopLine>}
-              <HeadLine>{t(headLine)}</HeadLine>
-              <Subtitle>{t(description)}</Subtitle>
-              {hasLink && linkUrl && linkLabel && (
-                <BtnWrap>
-                  <Button href={linkUrl} primary>
-                    {t(linkLabel)}
-                  </Button>
-                </BtnWrap>
-              )}
-            </TextWrapper>
+            <ScrollAnimation
+              initiallyVisible={false}
+              animateIn={imgStart ? 'fadeInRight' : 'fadeInLeft'}
+            >
+              <TextWrapper>
+                {topLine && <TopLine>{t(topLine)}</TopLine>}
+                <HeadLine>{t(headLine)}</HeadLine>
+                <Subtitle>{t(description)}</Subtitle>
+                {hasLink && linkUrl && linkLabel && (
+                  <BtnWrap>
+                    <Button href={linkUrl} primary>
+                      {t(linkLabel)}
+                    </Button>
+                  </BtnWrap>
+                )}
+              </TextWrapper>
+            </ScrollAnimation>
           </Column1>
           <Column2>
-            <Img
-              src={img}
-              alt={altImg}
-              isCircular={isCircular}
-              width={450}
-              height={449}
-            />
+            <ScrollAnimation
+              initiallyVisible={false}
+              animateIn={imgStart ? 'fadeInLeft' : 'fadeInRight'}
+            >
+              <Img
+                src={img}
+                alt={altImg}
+                isCircular={isCircular}
+                width={450}
+                height={449}
+              />
+            </ScrollAnimation>
           </Column2>
         </SectionRow>
       </SectionWrapper>
