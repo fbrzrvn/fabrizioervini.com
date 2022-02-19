@@ -21,8 +21,9 @@ const Features = ({ t }: TranslateProps) => {
             animateIn="flipInX"
             animatePreScroll={true}
             delay={(feature.id / 100) * 1000}
+            key={feature.id}
           >
-            <FeaturesCard key={feature.id}>
+            <FeaturesCard>
               <FeatureIconWrapper>
                 <FeatureIcon icon={feature.icon} />
               </FeatureIconWrapper>

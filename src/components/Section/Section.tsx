@@ -34,8 +34,11 @@ const Section = ({
     <SectionContainer id={id}>
       <SectionWrapper>
         <SectionRow imgStart={imgStart}>
-          <ScrollAnimation initiallyVisible={false} animateIn="fadeInLeft">
-            <Column1>
+          <Column1>
+            <ScrollAnimation
+              initiallyVisible={false}
+              animateIn={imgStart ? 'fadeInRight' : 'fadeInLeft'}
+            >
               <TextWrapper>
                 {topLine && <TopLine>{t(topLine)}</TopLine>}
                 <HeadLine>{t(headLine)}</HeadLine>
@@ -48,10 +51,13 @@ const Section = ({
                   </BtnWrap>
                 )}
               </TextWrapper>
-            </Column1>
-          </ScrollAnimation>
-          <ScrollAnimation initiallyVisible={false} animateIn="fadeInRight">
-            <Column2>
+            </ScrollAnimation>
+          </Column1>
+          <Column2>
+            <ScrollAnimation
+              initiallyVisible={false}
+              animateIn={imgStart ? 'fadeInLeft' : 'fadeInRight'}
+            >
               <Img
                 src={img}
                 alt={altImg}
@@ -59,8 +65,8 @@ const Section = ({
                 width={450}
                 height={449}
               />
-            </Column2>
-          </ScrollAnimation>
+            </ScrollAnimation>
+          </Column2>
         </SectionRow>
       </SectionWrapper>
     </SectionContainer>
